@@ -1,0 +1,8 @@
+*.parquet
+*.parquet
+**/*data/
+.venv
+**/__*/
+**/__*
+**/*.png
+**/*.pdf

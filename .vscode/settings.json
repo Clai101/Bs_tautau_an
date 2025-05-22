@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "My SQLite DB",
+            "database": "${workspaceFolder:bs_tautau}/mydata.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
