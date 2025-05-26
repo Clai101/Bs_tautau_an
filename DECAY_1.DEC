@@ -51,6 +51,8 @@ JetSetPar PARJ(15)=0.05
 JetSetPar PARJ(16)=0.05
 JetSetPar PARJ(17)=0.05
 JetSetPar PARJ(33)=0.3
+Decay vpho
+1.000                     PYCONT   1 1 1 1 0 0   0 0 0 0 0 0;
 Enddecay
 Decay Upsilon(4S)
 0.49948 B+  B-                          VSS;
@@ -1646,911 +1648,181 @@ Decay B+
 0.000400         anti-cd_0       cu_0         PHOTOS PYTHIA 23;
 Enddecay
 
-Decay anti-B_s0
-0.0210   D_s+     e-     anti-nu_e    PHOTOS  ISGW2;
-0.0490   D_s*+    e-     anti-nu_e    PHOTOS  ISGW2;
-0.0040   D_s1+    e-     anti-nu_e    PHOTOS  ISGW2;
-0.0040   D_s0*+   e-     anti-nu_e    PHOTOS  ISGW2;
-0.0070   D'_s1+   e-     anti-nu_e    PHOTOS  ISGW2;
-0.0070   D_s2*+   e-     anti-nu_e    PHOTOS  ISGW2;
-0.0210   D_s+     mu-    anti-nu_mu   PHOTOS  ISGW2;
-0.0490   D_s*+    mu-    anti-nu_mu   PHOTOS  ISGW2;
-0.0040   D_s1+    mu-    anti-nu_mu   PHOTOS  ISGW2;
-0.0040   D_s0*+   mu-    anti-nu_mu   PHOTOS  ISGW2;
-0.0070   D'_s1+   mu-    anti-nu_mu   PHOTOS  ISGW2;
-0.0070   D_s2*+   mu-    anti-nu_mu   PHOTOS  ISGW2;
-0.0080   D_s+     tau-   anti-nu_tau          PHOTOS ISGW2;
-0.0160   D_s*+    tau-   anti-nu_tau            PHOTOS ISGW2;
-0.0018   D_s1+    tau-   anti-nu_tau            PHOTOS ISGW2;
-0.0018   D_s0*+   tau-   anti-nu_tau            PHOTOS ISGW2;
-0.0028   D'_s1+   tau-   anti-nu_tau            PHOTOS ISGW2;
-0.0028   D_s2*+   tau-   anti-nu_tau            PHOTOS ISGW2;
-0.0086   D_s-      D_s+	     PHOTOS PHSP;
-0.0090   D_s*+     D_s-      PHOTOS SVS;
-0.0099   D_s*-     D_s+      PHOTOS SVS;
-0.0197   D_s*-     D_s*+     PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0096   D_s-   D+       K0    PHOTOS PHSP;             
-0.0096   D_s-   anti-D0  K+    PHOTOS PHSP;           
-0.0096   D_s*-  D+       K0    PHOTOS PHSP;       
-0.0096   D_s*-  D0       K+    PHOTOS PHSP;     
-0.0024   D_s-   D+    pi0  K0  PHOTOS PHSP;         
-0.0048   D_s-   D0    pi+  K0  PHOTOS PHSP;    
-0.0048   D_s-   D+    pi-  K+  PHOTOS PHSP;    
-0.0024   D_s-   D0    pi0  K+  PHOTOS PHSP;
-0.0024   D_s*-   D+   pi0  K0  PHOTOS PHSP;       
-0.0048   D_s*-   D0   pi+  K0  PHOTOS PHSP;
-0.0048   D_s*-   D+   pi-  K+  PHOTOS PHSP;    
-0.0024   D_s*-   D0   pi0  K+  PHOTOS PHSP;
-0.0150    D_s*+   anti-D*0 K-        PHOTOS PHSP;
-0.0150    D_s*+   D*-      anti-K0   PHOTOS PHSP;
-0.0050    D_s*+   anti-D0  K-        PHOTOS PHSP;                 
-0.0050    D_s*+   D-       anti-K0   PHOTOS PHSP;
-0.0050    D_s+    anti-D*0 K-        PHOTOS PHSP;      
-0.0050    D_s+    D*-      anti-K0   PHOTOS PHSP;
-0.0020    D_s+    anti-D0  K-        PHOTOS PHSP;                 
-0.0020    D_s+    D-       anti-K0   PHOTOS PHSP;
-0.0030    D_s*+   anti-D*0 K*-       PHOTOS PHSP;           
-0.0030    D_s*+   D*-      anti-K*0  PHOTOS PHSP;
-0.0050    D_s*+   anti-D0  K*-       PHOTOS PHSP;           
-0.0050    D_s*+   D-       anti-K*0  PHOTOS PHSP;            
-0.0025    D_s+    anti-D*0 K*-       PHOTOS PHSP;             
-0.0025    D_s+    D*-      anti-K*0  PHOTOS PHSP;
-0.0025    D_s+    anti-D0  K*-       PHOTOS PHSP;       
-0.0025    D_s+    D-       anti-K*0  PHOTOS PHSP;
-0.0017    D_s-    D+                 PHOTOS PHSP; 
-0.0017    D*+     D_s-               PHOTOS SVS;    
-0.0017    D_s*-   D+                 PHOTOS SVS;
-0.0017    D_s*-   D*+                PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0007    D-      D+        K0       PHOTOS PHSP;        
-0.0007    D-      anti-D0   K+       PHOTOS PHSP;    
-0.0007    D*-     D+        K0       PHOTOS PHSP;    
-0.0007    D*-     D0        K+       PHOTOS PHSP;
-0.0003    D-      D+      pi0   K0   PHOTOS PHSP;         
-0.0007    D-      D0      pi+   K0   PHOTOS PHSP;   
-0.0003    D-      D+      pi-   K+   PHOTOS PHSP;   
-0.0007    D-      D0      pi0   K+   PHOTOS PHSP;
-0.0003    D*-     D+      pi0   K0   PHOTOS PHSP;         
-0.0007    D*-     D0      pi+   K0   PHOTOS PHSP;   
-0.0003    D*-     D+      pi-   K+   PHOTOS PHSP;   
-0.0007    D*-     D0      pi0   K+   PHOTOS PHSP;
-0.00015   D_s*+   K-                 PHOTOS SVS;   
-0.00015   D_s+    K-                 PHOTOS PHSP;
-0.00030   D_s*+   K*-                PHOTOS SVV_HELAMP 0.228 0.0 0.932 0.0 0.283 0.0;
-0.00030   K*-     D_s+               PHOTOS SVS;   
-0.00064   J/psi   eta'               SVS;
-0.00032   J/psi   eta                SVS;
-0.00093   J/psi   phi                SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.00008   J/psi   K0                 SVS;
-0.00070   J/psi   K-       K+        PHOTOS PHSP;
-0.00070   J/psi   anti-K0  K0        PHSP;
-0.00070   J/psi   anti-K0  K+   pi-  PHOTOS PHSP;
-0.00070   J/psi   anti-K0  K0   pi0  PHSP;
-0.00070   J/psi   K-       K+   pi0  PHOTOS PHSP;
-0.000465  psi(2S) eta'               SVS;
-0.000235  psi(2S) eta                SVS;
-0.00048   psi(2S) phi                SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0003    psi(2S) K-       K+        PHOTOS PHSP;       
-0.0003    psi(2S) anti-K0  K0        PHSP;       
-0.0003    psi(2S) anti-K0  K+    pi- PHOTOS PHSP;
-0.0003    psi(2S) anti-K0  K0    pi0 PHSP;
-0.0003    psi(2S) K-       K+    pi0 PHOTOS PHSP;
-0.00010   chi_c0  eta'               PHSP;            
-0.00005   chi_c0  eta                PHSP;
-0.00020   phi     chi_c0             SVS; 
-0.00003   chi_c0  K-       K+        PHOTOS PHSP;       
-0.00003   chi_c0  anti-K0  K0        PHSP;
-0.00003   chi_c0  anti-K0  K+   pi-  PHOTOS PHSP;
-0.00003   chi_c0  anti-K0  K0   pi0  PHSP;
-0.00003   chi_c0  K-       K+   pi0  PHOTOS PHSP;
-0.0007    chi_c1  eta'		     SVS;
-0.0003    chi_c1  eta                SVS;
-0.0014    chi_c1  phi                SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.00026   chi_c1  K-       K+        PHOTOS PHSP;  
-0.00026   chi_c1  anti-K0  K0        PHSP;
-0.00026   chi_c1  anti-K0  K+   pi-  PHOTOS PHSP;
-0.00026   chi_c1  anti-K0  K0   pi0  PHSP;
-0.00026   chi_c1  K-       K+   pi0  PHOTOS PHSP;
-0.000465    chi_c2      eta'                  STS;	 
-0.000235    chi_c2      eta                   STS;
-0.00016     chi_c2      K-         K+	      PHOTOS PHSP;
-0.00016     chi_c2      anti-K0    K0	      PHSP;
-0.00016     chi_c2      anti-K0    K+   pi-   PHOTOS PHSP;
-0.00016     chi_c2      anti-K0    K0   pi0   PHSP;
-0.00016     chi_c2      K-         K+   pi0   PHOTOS PHSP;
-0.0008      eta_c       eta'                  PHSP;
-0.0004      eta_c       eta                   PHSP;
-0.0015      phi         eta_c                 SVS;
-0.00028     eta_c       K-         K+         PHOTOS PHSP;
-0.00028     eta_c       anti-K0    K0         PHSP;
-0.00028     eta_c       anti-K0    K+   pi-   PHOTOS PHSP;
-0.00028     eta_c       anti-K0    K0   pi0   PHSP;
-0.00028     eta_c       K-         K+   pi0   PHOTOS PHSP;
-0.0004      eta_c(2S)   eta'                  PHSP;
-0.0002      eta_c(2S)   eta                   PHSP;
-0.0006      phi         eta_c(2S)             SVS;
-0.00012     eta_c(2S)   K-         K+         PHOTOS PHSP;
-0.00012     eta_c(2S)   anti-K0    K0         PHSP;
-0.00012     eta_c(2S)   anti-K0    K+   pi-   PHOTOS PHSP;
-0.00012     eta_c(2S)   anti-K0    K0   pi0   PHSP;
-0.00012     eta_c(2S)   K-         K+   pi0   PHOTOS PHSP;
-0.000465    h_c         eta'	              SVS;
-0.000235    h_c         eta                   SVS;
-0.0010      h_c         phi                   SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.00016     h_c         K-         K+	      PHOTOS PHSP;
-0.00016     h_c         anti-K0    K0         PHSP;
-0.00016     h_c         anti-K0    K+   pi-   PHOTOS PHSP;
-0.00016     h_c         anti-K0    K0   pi0   PHSP;
-0.00016     h_c         K-         K+   pi0   PHOTOS PHSP;
-0.0008      D_s1+       pi-                   PHOTOS SVS;
-0.0021      D_s1+       rho-                  PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0013      D_s2*+      pi-                   PHOTOS STS;
-0.0027      D_s*+       pi-                   PHOTOS SVS;  
-0.0030      D_s+        pi-                   PHOTOS PHOTOS PHSP;  
-0.0073      rho-        D_s+                  PHOTOS SVS;  
-0.0070      D_s*+       rho-                  PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0085      a_1-        D_s+                  PHOTOS SVS;   
-0.0009      D_s+        rho0       pi-        PHOTOS PHSP;       
-0.0009      D_s+        rho-       pi0        PHOTOS PHSP;       
-0.0084      D_s+        pi+        pi-   pi-  PHOTOS PHSP;       
-0.0084      D_s+        pi0        pi-   pi0  PHOTOS PHSP;
-0.0122      D_s*+       a_1-                  PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0010      D_s*+       rho0       pi-        PHOTOS PHSP;
-0.0010      D_s*+       rho-       pi0        PHOTOS PHSP;
-0.0077      D_s*+       pi+        pi-   pi-  PHOTOS PHSP;
-0.0010      D_s*+       pi0        pi-   pi0  PHOTOS PHSP;
-0.0002      D*0         K0                    SVS; 
-0.0002      D0          K0                    PHSP;
-0.0002      K*0         D0                    SVS; 
-0.0002      D*0         K*0                   SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0; 
-0.0200        cs_0       anti-ud_0         PHOTOS PYTHIA 23;
-0.0400        cs_1       anti-ud_1         PHOTOS PYTHIA 23;
-0.312354678     anti-u       d  c       anti-s       PHOTOS PYTHIA         48;
-0.05000         anti-u       d  c       anti-s       PHOTOS PYTHIA         25;
-0.02000         anti-u       c  d       anti-s       PHOTOS PYTHIA         48;
-0.00400         anti-c       s  u       anti-s       PHOTOS PYTHIA         48;
-0.0150          anti-u       s  c       anti-s       PHOTOS PYTHIA         48;
-0.00220         anti-u       s  c       anti-s       PHOTOS PYTHIA         25;
-0.00090         anti-u       c  s       anti-s       PHOTOS PYTHIA         48;
-0.00600         anti-c       d  c       anti-s       PHOTOS PYTHIA         13;
-0.00200         anti-c       d  c       anti-s       PHOTOS PYTHIA         13;
-0.00410         anti-u     u  d       anti-s       PHOTOS PYTHIA         48;
-0.00070         anti-d     d  d       anti-s       PHOTOS PYTHIA         48;
-0.00090         anti-s     s  d       anti-s       PHOTOS PYTHIA         48;
-0.00220         anti-u     u  s       anti-s       PHOTOS PYTHIA         48;
-0.00180         anti-d     d  s       anti-s       PHOTOS PYTHIA         48;
-0.00150         anti-s     s  s       anti-s       PHOTOS PYTHIA         48;
-0.00500                    s  g       anti-s       PHOTOS PYTHIA         33;
-
-0.000200    K+          e-         anti-nu_e         PHOTOS   ISGW2;
-0.000300    K*+         e-         anti-nu_e         PHOTOS   ISGW2;
-0.000300    K_1+        e-         anti-nu_e         PHOTOS   ISGW2;
-0.000200    K'_1+       e-         anti-nu_e         PHOTOS   ISGW2;
-0.000200    K+          mu-        anti-nu_mu        PHOTOS  ISGW2;
-0.000300    K*+         mu-        anti-nu_mu        PHOTOS  ISGW2;
-0.000300    K_1+        mu-        anti-nu_mu        PHOTOS  ISGW2;
-0.000200    K'_1+       mu-        anti-nu_mu        PHOTOS  ISGW2;
-
-
-0.000033   K-          K+                    PHOTOS PHSP;
-0.0000079   anti-K0     K0                    PHSP;
-0.0000043   pi-         K+                    PHOTOS PHSP;
-0.0000002   pi0         K0                    PHSP;
-0.0000012   omega       eta                   SVS;
-0.0000025   omega       eta'                  SVS;
-0.0000013   phi         eta                   SVS;
-0.0000025   phi         eta'                  SVS;
-0.00000008  omega       anti-K0               SVS;
-0.000000002 phi         anti-K0               SVS;
-0.0000250   K*+         pi-                   PHOTOS SVS;
-0.0000120   rho-        K+                    PHOTOS SVS;
-0.00000002  rho0        K0                    SVS;
-0.00000002  K*0         pi0                   SVS;
-0.0000046   K*-         K+                    PHOTOS SVS;
-0.0000005   anti-K*0    K0                    SVS;
-0.0000082   K*+         K-                    PHOTOS SVS;
-0.0000066   K*0         anti-K0               SVS;
-0.0000580   eta'        eta'                  PHSP;
-0.0000250   eta'        eta                   PHSP;
-0.0000040   eta         eta                   PHSP;
-0.0000200   phi         eta                   SVS;
-0.0000100   phi         eta'                  SVS;
-0.00000007  K0          eta'                  PHSP;
-0.00000023  K0          eta                   PHSP;
-0.00000010  K0          eta'                  PHSP;
-0.00000010  K0          eta                   PHSP;
-0.000000021 K*0         eta'                  SVS;
-0.00000007  K*0         eta                   SVS;
-0.000020    rho-        K*+                   PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0000008   rho0        K*0                   SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000000005 omega       K*0                   SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000006    K*-         K*+                   PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000005    anti-K*0    K*0                   SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000014    phi         phi                   SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000000004 phi         K*0                   SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0000004   phi         K*0                   SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0000002   K*0         eta                   SVS;
-0.0000002   K*0         eta'                  SVS;
-0.0000003   eta         K0                    PHSP;
-0.0000006   eta'        K0                    PHSP;
-Enddecay
 Decay B_s0
-0.0210   D_s-     e+     nu_e         PHOTOS  ISGW2;
-0.0490   D_s*-    e+     nu_e         PHOTOS  ISGW2;
-0.0040   D_s1-    e+     nu_e         PHOTOS  ISGW2;
-0.0040   D_s0*-   e+     nu_e         PHOTOS  ISGW2;
-0.0070   D'_s1-   e+     nu_e         PHOTOS  ISGW2;
-0.0070   D_s2*-   e+     nu_e         PHOTOS  ISGW2;
-0.0210   D_s-     mu+    nu_mu        PHOTOS  ISGW2;
-0.0490   D_s*-    mu+    nu_mu        PHOTOS  ISGW2;
-0.0040   D_s1-    mu+    nu_mu        PHOTOS  ISGW2;
-0.0040   D_s0*-   mu+    nu_mu        PHOTOS  ISGW2;
-0.0070   D'_s1-   mu+    nu_mu        PHOTOS  ISGW2;
-0.0070   D_s2*-   mu+    nu_mu        PHOTOS  ISGW2;
-0.0080   D_s-     tau+   nu_tau                 PHOTOS ISGW2;
-0.0160   D_s*-    tau+   nu_tau                 PHOTOS ISGW2;
-0.0018   D_s1-    tau+   nu_tau                 PHOTOS ISGW2;
-0.0018   D_s0*-   tau+   nu_tau                 PHOTOS ISGW2;
-0.0028   D'_s1-   tau+   nu_tau                 PHOTOS ISGW2;
-0.0028   D_s2*-   tau+   nu_tau                 PHOTOS ISGW2;
-0.0086      D_s-        D_s+          PHOTOS PHSP;
-0.0090      D_s*+       D_s-          PHOTOS SVS;
-0.0099      D_s*-       D_s+          PHOTOS SVS;
-0.0197      D_s*-       D_s*+         PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0096      D_s+        D-          anti-K0                PHOTOS PHSP;
-0.0096      D_s+        D0          K-                     PHOTOS PHSP;
-0.0096      D_s*+       D-          anti-K0                PHOTOS PHSP;
-0.0096      D_s*+       anti-D0     K-                     PHOTOS PHSP;
-0.0024      D_s+        D-          pi0        anti-K0     PHOTOS PHSP;   
-0.0048      D_s+        anti-D0     pi-        anti-K0     PHOTOS PHSP;   
-0.0048      D_s+        D-          pi+        K-          PHOTOS PHSP;
-0.0024      D_s+        anti-D0     pi0        K-          PHOTOS PHSP;          
-0.0024      D_s*+       D-          pi0        anti-K0     PHOTOS PHSP;     
-0.0048      D_s*+       anti-D0     pi-        anti-K0     PHOTOS PHSP;     
-0.0048      D_s*+       D-          pi+        K-          PHOTOS PHSP;
-0.0024      D_s*+       anti-D0     pi0        K-          PHOTOS PHSP;
-0.0150      D_s*-       D*0         K+                     PHOTOS PHSP;
-0.0150      D_s*-       D*+         K0                     PHOTOS PHSP;
-0.0050      D_s*-       D0          K+                     PHOTOS PHSP; 
-0.0050      D_s*-       D+          K0                     PHOTOS PHSP;
-0.0050      D_s-        D*0         K+                     PHOTOS PHSP; 
-0.0050      D_s-        D*+         K0                     PHOTOS PHSP;
-0.0020      D_s-        D0          K+                     PHOTOS PHSP; 
-0.0020      D_s-        D+          K0                     PHOTOS PHSP;  
-0.0030      D_s*-       D*0         K*+                    PHOTOS PHSP; 
-0.0030      D_s*-       D*+         K*0                    PHOTOS PHSP;
-0.0050      D_s*-       D0          K*+                    PHOTOS PHSP;
-0.0050      D_s*-       D+          K*0                    PHOTOS PHSP;
-0.0025      D_s-        D*0         K*+                    PHOTOS PHSP;
-0.0025      D_s-        D*+         K*0                    PHOTOS PHSP;
-0.0025      D_s-        D0          K*+                    PHOTOS PHSP;
-0.0025      D_s-        D+          K*0                    PHOTOS PHSP;
-0.0017      D_s+        D-                                 PHOTOS PHSP;
-0.0017      D*-         D_s+                               PHOTOS SVS;
-0.0017      D_s*+       D-                                 PHOTOS SVS;
-0.0017      D_s*+       D*-    PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0007      D+          D-          anti-K0                PHOTOS PHSP;
-0.0007      D+          D0          K-                     PHOTOS PHSP;
-0.0007      D*+         D-          anti-K0                PHOTOS PHSP;
-0.0007      D*+         anti-D0     K-                     PHOTOS PHSP;
-0.0003      D+          D-          pi0        anti-K0     PHOTOS PHSP;     
-0.0007      D+          anti-D0     pi-        anti-K0     PHOTOS PHSP;  
-0.0003      D+          D-          pi+        K-          PHOTOS PHSP;
-0.0007      D+          anti-D0     pi0        K-          PHOTOS PHSP;
-0.0003      D*+         D-          pi0        anti-K0     PHOTOS PHSP;
-0.0007      D*+         anti-D0     pi-        anti-K0     PHOTOS PHSP; 
-0.0003      D*+         D-          pi+        K-          PHOTOS PHSP;
-0.0007      D*+         anti-D0     pi0        K-          PHOTOS PHSP;
-0.00015     D_s*-       K+                                 PHOTOS SVS;
-0.00015     D_s-        K+                                 PHOTOS PHSP;
-0.00030     D_s*-   K*+                PHOTOS SVV_HELAMP 0.228 0.0 0.932 0.0 0.283 0.0;
-0.00030     K*+     D_s-               PHOTOS SVS;  
-0.00064     J/psi       eta'		                   SVS;
-0.00032     J/psi       eta	                           SVS;
-0.00093     J/psi       phi      SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.00008     J/psi       K0		                   SVS;
-0.00070     J/psi       K-          K+                     PHOTOS PHSP;
-0.00070     J/psi       anti-K0     K0                     PHSP;
-0.00070     J/psi       K0          K-         pi+         PHOTOS PHSP;
-0.00070     J/psi       anti-K0     K0         pi0         PHSP;
-0.00070     J/psi       K-          K+         pi0         PHOTOS PHSP;
-0.000465    psi(2S)     eta'	                           SVS;
-0.000235    psi(2S)     eta                                SVS;
-0.00048     psi(2S)     phi               SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0003      psi(2S)     K-          K+                     PHOTOS PHSP;
-0.0003      psi(2S)     anti-K0     K0                     PHSP;
-0.0003      psi(2S)     K0          K-         pi+         PHOTOS PHSP;
-0.0003      psi(2S)     anti-K0     K0         pi0         PHSP;
-0.0003      psi(2S)     K-          K+         pi0         PHOTOS PHSP;
-0.00010     chi_c0      eta'                               PHSP;
-0.00005     chi_c0      eta                                PHSP;
-0.00020     phi         chi_c0                             SVS;
-0.00003     chi_c0      K-          K+                     PHOTOS PHSP;
-0.00003     chi_c0      anti-K0     K0                     PHSP;
-0.00003     chi_c0      K0          K-         pi+         PHOTOS PHSP;
-0.00003     chi_c0      anti-K0     K0         pi0         PHSP;
-0.00003     chi_c0      K-          K+         pi0         PHOTOS PHSP;
-0.0007       chi_c1      eta'	                           SVS;
-0.0003      chi_c1      eta                                SVS;
-0.0014      chi_c1      phi                SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.00026     chi_c1      K-          K+	                   PHOTOS PHSP;
-0.00026     chi_c1      anti-K0     K0	                   PHSP;
-0.00026     chi_c1      K0          K-         pi+         PHOTOS PHSP;
-0.00026     chi_c1      anti-K0     K0         pi0         PHSP;
-0.00026     chi_c1      K-          K+         pi0         PHOTOS PHSP;
-0.000465    chi_c2      eta'                               STS;
-0.000235    chi_c2      eta                                STS;
-0.00016     chi_c2      K-          K+	                   PHOTOS PHSP;
-0.00016     chi_c2      anti-K0     K0	                   PHSP;
-0.00016     chi_c2      K0          K-         pi+         PHOTOS PHSP;
-0.00016     chi_c2      anti-K0     K0         pi0         PHSP;
-0.00016     chi_c2      K-          K+         pi0         PHOTOS PHSP;
-0.0008      eta_c       eta'                               PHSP;
-0.0004      eta_c       eta                                PHSP;
-0.0015      phi         eta_c                              SVS;
-0.00028     eta_c       K-          K+                     PHOTOS PHSP;
-0.00028     eta_c       K0          anti-K0                PHSP;
-0.00028     eta_c       K0          K-         pi+         PHOTOS PHSP;
-0.00028     eta_c       K0          anti-K0    pi0         PHSP;
-0.00028     eta_c       K-          K+         pi0         PHOTOS PHSP;
-0.0004      eta_c(2S)   eta'                               PHSP;
-0.0002      eta_c(2S)   eta                                PHSP;
-0.0006      phi         eta_c(2S)                          SVS;
-0.00012     eta_c(2S)   K-          K+                     PHOTOS PHSP;
-0.00012     eta_c(2S)   anti-K0     K0                     PHSP;
-0.00012     eta_c(2S)   K0          K-         pi+         PHOTOS PHSP;
-0.00012     eta_c(2S)   anti-K0     K0         pi0         PHSP;
-0.00012     eta_c(2S)   K-          K+         pi0         PHOTOS PHSP;
-0.000465    h_c         eta'	                           SVS;
-0.000235    h_c         eta                                SVS;
-0.0010      h_c         phi                 SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.00016     h_c         K-          K+	                   PHOTOS PHSP;
-0.00016     h_c         anti-K0     K0                     PHSP;
-0.00016     h_c         K0          K-         pi+         PHOTOS PHSP;
-0.00016     h_c         anti-K0     K0         pi0         PHSP;
-0.00016     h_c         K-          K+         pi0         PHOTOS PHSP;
-0.0008      D_s1-       pi+                                PHOTOS SVS;
-0.0021      D_s1-       rho+               PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0013      D_s2*-      pi+                                PHOTOS STS;
-0.0027      D_s*-       pi+                                PHOTOS SVS;
-0.0030      D_s-        pi+                                PHOTOS PHSP;
-0.0073      rho+        D_s-                               PHOTOS SVS;
-0.0070      D_s*-       rho+              PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0085      a_1+        D_s-                               PHOTOS SVS;
-0.0009      D_s-        rho0        pi+                    PHOTOS PHSP;
-0.0009      D_s-        rho+        pi0                    PHOTOS PHSP;
-0.0084      D_s-        pi-         pi+        pi+         PHOTOS PHSP;
-0.0084      D_s-        pi0         pi+        pi0         PHOTOS PHSP;         
-0.0122      D_s*-       a_1+               PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0010      D_s*-       rho0        pi+                    PHOTOS PHSP;
-0.0010      D_s*-       rho+        pi0                    PHOTOS PHSP;
-0.0077      D_s*-       pi-         pi+        pi+         PHOTOS PHSP;
-0.0010      D_s*-       pi0         pi+        pi0         PHOTOS PHSP;
-0.0002      anti-D*0    anti-K0                            SVS;
-0.0002      anti-D0     anti-K0                            PHSP;
-0.0002      anti-K*0    anti-D0                            SVS;
-0.0002      anti-D*0    anti-K*0            SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0200        anti-cs_0       ud_0         PHOTOS PYTHIA 23;
-0.0400        anti-cs_1       ud_1         PHOTOS PYTHIA 23;
-0.312354678     u       anti-d  anti-c       s       PHOTOS PYTHIA         48;
-0.05000         u       anti-d  anti-c       s       PHOTOS PYTHIA         25;
-0.02000         u       anti-c  anti-d       s       PHOTOS PYTHIA         48;
-0.00400         c       anti-s  anti-u       s       PHOTOS PYTHIA         48;
-0.0150          u       anti-s  anti-c       s       PHOTOS PYTHIA         48;
-0.00220         u       anti-s  anti-c       s       PHOTOS PYTHIA         25;
-0.00090         u       anti-c  anti-s       s       PHOTOS PYTHIA         48;
-0.00600         c       anti-d  anti-c       s       PHOTOS PYTHIA         13;
-0.00200         c       anti-d  anti-c       s       PHOTOS PYTHIA         13;
-0.00410         u     anti-u  anti-d       s       PHOTOS PYTHIA         48;
-0.00070         d     anti-d  anti-d       s       PHOTOS PYTHIA         48;
-0.00090         s     anti-s  anti-d       s       PHOTOS PYTHIA         48;
-0.00220         u     anti-u  anti-s       s       PHOTOS PYTHIA         48;
-0.00180         d     anti-d  anti-s       s       PHOTOS PYTHIA         48;
-0.00150         s     anti-s  anti-s       s       PHOTOS PYTHIA         48;
-0.00500                    anti-s  g       s       PHOTOS PYTHIA         33;
-
-0.000200    K-          e+         nu_e         PHOTOS   ISGW2;
-0.000300    K*-         e+         nu_e         PHOTOS   ISGW2;
-0.000300    K_1-        e+         nu_e         PHOTOS   ISGW2;
-0.000200    K'_1-       e+         nu_e         PHOTOS   ISGW2;
-0.000200    K-          mu+        nu_mu        PHOTOS  ISGW2;
-0.000300    K*-         mu+        nu_mu        PHOTOS  ISGW2;
-0.000300    K_1-        mu+        nu_mu        PHOTOS  ISGW2;
-0.000200    K'_1-       mu+        nu_mu        PHOTOS  ISGW2;
-
-0.000033   K-          K+                                 PHOTOS PHSP;
-0.0000079   anti-K0     K0                                 PHSP;
-0.0000043   pi+         K-                                 PHOTOS PHSP;
-0.0000002   pi0         anti-K0                            PHSP;
-0.0000012   omega       eta                                SVS;
-0.0000025   omega       eta'                               SVS;
-0.0000013   phi         eta                                SVS;
-0.0000025   phi         eta'                               SVS;
-0.00000008  omega       K0                                 SVS;
-0.000000002 phi         K0                                 SVS;
-0.0000250   K*-         pi+                                PHOTOS SVS;
-0.0000120   rho+        K-                                 PHOTOS SVS;
-0.00000002  rho0        K0                                 SVS;
-0.00000002  anti-K*0    pi0                                SVS;
-0.0000046   K*+         K-                                 PHOTOS SVS;
-0.0000005   K*0         anti-K0                            SVS;
-0.0000082   K*-         K+                                 PHOTOS SVS;
-0.0000066   anti-K*0    K0                                 SVS;
-0.0000580   eta'        eta'                               PHSP;
-0.0000250   eta'        eta                                PHSP;
-0.0000040   eta         eta                                PHSP;
-0.0000200   phi         eta                                SVS;
-0.0000100   phi         eta'                               SVS;
-0.00000007  anti-K0     eta'                               PHSP;
-0.00000023  anti-K0     eta                                PHSP;
-0.00000010  anti-K0     eta'                               PHSP;
-0.00000010  anti-K0     eta                                PHSP;
-0.000000021 anti-K*0    eta'                               SVS;
-0.00000007  anti-K*0    eta                                SVS;
-0.000020    rho+        K*-                 PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0000008   rho0        anti-K*0            SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000000005 omega       anti-K*0            SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000006    K*-         K*+                    PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000005    anti-K*0    K*0                    SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000014    phi         phi                    SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000000004 phi         anti-K*0               SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0000004   phi         anti-K*0               SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0000002   anti-K*0    eta                                SVS;
-0.0000002   anti-K*0    eta'                               SVS;
-0.0000003   eta         anti-K0                            PHSP;
-0.0000006   eta'        anti-K0                            PHSP;
+0.049000    D_s*- e+ nu_e    PHOTOS ISGW2
+0.004000    D_s1- e+ nu_e    PHOTOS ISGW2
+0.004000    D_s0*- e+ nu_e    PHOTOS ISGW2
+0.007000    D'_s1- e+ nu_e    PHOTOS ISGW2
+0.007000    D_s2*- e+ nu_e    PHOTOS ISGW2
+0.021000    D_s- mu+ nu_mu    PHOTOS ISGW2
+0.049000    D_s*- mu+ nu_mu    PHOTOS ISGW2
+0.004000    D_s1- mu+ nu_mu    PHOTOS ISGW2
+0.004000    D_s0*- mu+ nu_mu    PHOTOS ISGW2
+0.007000    D'_s1- mu+ nu_mu    PHOTOS ISGW2
+0.007000    D_s2*- mu+ nu_mu    PHOTOS ISGW2
+0.008000    D_s- tau+ nu_tau    PHOTOS ISGW2
+0.016000    D_s*- tau+ nu_tau    PHOTOS ISGW2
+0.001800    D_s1- tau+ nu_tau    PHOTOS ISGW2
+0.001800    D_s0*- tau+ nu_tau    PHOTOS ISGW2
+0.002800    D'_s1- tau+ nu_tau    PHOTOS ISGW2
+0.002800    D_s2*- tau+ nu_tau    PHOTOS ISGW2
+0.008600    D_s- D_s+    PHOTOS PHSP
+0.009000    D_s*+ D_s-    PHOTOS SVS
+0.009900    D_s*- D_s+    PHOTOS SVS
+0.019700    D_s*- D_s*+    PHOTOS SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0
+0.009600    D_s+ D- anti-K0    PHOTOS PHSP
+0.009600    D_s+ D0 K-    PHOTOS PHSP
+0.009600    D_s*+ D- anti-K0    PHOTOS PHSP
+0.009600    D_s*+ anti-D0 K-    PHOTOS PHSP
+0.002400    D_s+ D- pi0 anti-K0    PHOTOS PHSP
+0.004800    D_s+ anti-D0 pi- anti-K0    PHOTOS PHSP
+0.004800    D_s+ D- pi+ K-    PHOTOS PHSP
+0.002400    D_s+ anti-D0 pi0 K-    PHOTOS PHSP
+0.002400    D_s*+ D- pi0 anti-K0    PHOTOS PHSP
+0.004800    D_s*+ anti-D0 pi- anti-K0    PHOTOS PHSP
+0.004800    D_s*+ D- pi+ K-    PHOTOS PHSP
+0.002400    D_s*+ anti-D0 pi0 K-    PHOTOS PHSP
+0.015000    D_s*- D*0 K+    PHOTOS PHSP
+0.015000    D_s*- D*+ K0    PHOTOS PHSP
+0.005000    D_s*- D0 K+    PHOTOS PHSP
+0.005000    D_s*- D+ K0    PHOTOS PHSP
+0.005000    D_s- D*0 K+    PHOTOS PHSP
+0.005000    D_s- D*+ K0    PHOTOS PHSP
+0.002000    D_s- D0 K+    PHOTOS PHSP
+0.002000    D_s- D+ K0    PHOTOS PHSP
+0.003000    D_s*- D*0 K*+    PHOTOS PHSP
+0.003000    D_s*- D*+ K*0    PHOTOS PHSP
+0.005000    D_s*- D0 K*+    PHOTOS PHSP
+0.005000    D_s*- D+ K*0    PHOTOS PHSP
+0.002500    D_s- D*0 K*+    PHOTOS PHSP
+0.002500    D_s- D*+ K*0    PHOTOS PHSP
+0.002500    D_s- D0 K*+    PHOTOS PHSP
+0.002500    D_s- D+ K*0    PHOTOS PHSP
+0.001700    D_s+ D-    PHOTOS PHSP
+0.001700    D*- D_s+    PHOTOS SVS
+0.001700    D_s*+ D-    PHOTOS SVS
+0.001700    D_s*+ D*-    PHOTOS SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0
+0.000700    D+ D- anti-K0    PHOTOS PHSP
+0.000700    D+ D0 K-    PHOTOS PHSP
+0.000700    D*+ D- anti-K0    PHOTOS PHSP
+0.000700    D*+ anti-D0 K-    PHOTOS PHSP
+0.000700    D+ anti-D0 pi- anti-K0    PHOTOS PHSP
+0.000700    D+ anti-D0 pi0 K-    PHOTOS PHSP
+0.000700    D*+ anti-D0 pi- anti-K0    PHOTOS PHSP
+0.000700    D*+ anti-D0 pi0 K-    PHOTOS PHSP
+0.000640    J/psi eta'    SVS
+0.000930    J/psi phi    SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0
+0.000700    J/psi K- K+    PHOTOS PHSP
+0.000700    J/psi anti-K0 K0    PHSP
+0.000700    J/psi K0 K- pi+    PHOTOS PHSP
+0.000700    J/psi anti-K0 K0 pi0    PHSP
+0.000700    J/psi K- K+ pi0    PHOTOS PHSP
+0.000800    D_s1- pi+    PHOTOS SVS
+0.002100    D_s1- rho+    PHOTOS SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0
+0.001300    D_s2*- pi+    PHOTOS STS
+0.002700    D_s*- pi+    PHOTOS SVS
+0.003000    D_s- pi+    PHOTOS PHSP
+0.007300    rho+ D_s-    PHOTOS SVS
+0.007000    D_s*- rho+    PHOTOS SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0
+0.008500    a_1+ D_s-    PHOTOS SVS
+0.000900    D_s- rho0 pi+    PHOTOS PHSP
+0.000900    D_s- rho+ pi0    PHOTOS PHSP
+0.008400    D_s- pi- pi+ pi+    PHOTOS PHSP
+0.008400    D_s- pi0 pi+ pi0    PHOTOS PHSP
+0.012200    D_s*- a_1+    PHOTOS SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0
+0.001000    D_s*- rho0 pi+    PHOTOS PHSP
+0.001000    D_s*- rho+ pi0    PHOTOS PHSP
+0.007700    D_s*- pi- pi+ pi+    PHOTOS PHSP
+0.001000    D_s*- pi0 pi+ pi0    PHOTOS PHSP
 Enddecay
 Decay anti-B_s0
-0.0210   D_s+     e-     anti-nu_e    PHOTOS  ISGW2;
-0.0490   D_s*+    e-     anti-nu_e    PHOTOS  ISGW2;
-0.0040   D_s1+    e-     anti-nu_e    PHOTOS  ISGW2;
-0.0040   D_s0*+   e-     anti-nu_e    PHOTOS  ISGW2;
-0.0070   D'_s1+   e-     anti-nu_e    PHOTOS  ISGW2;
-0.0070   D_s2*+   e-     anti-nu_e    PHOTOS  ISGW2;
-0.0210   D_s+     mu-    anti-nu_mu   PHOTOS  ISGW2;
-0.0490   D_s*+    mu-    anti-nu_mu   PHOTOS  ISGW2;
-0.0040   D_s1+    mu-    anti-nu_mu   PHOTOS  ISGW2;
-0.0040   D_s0*+   mu-    anti-nu_mu   PHOTOS  ISGW2;
-0.0070   D'_s1+   mu-    anti-nu_mu   PHOTOS  ISGW2;
-0.0070   D_s2*+   mu-    anti-nu_mu   PHOTOS  ISGW2;
-0.0080   D_s+     tau-   anti-nu_tau          PHOTOS ISGW2;
-0.0160   D_s*+    tau-   anti-nu_tau            PHOTOS ISGW2;
-0.0018   D_s1+    tau-   anti-nu_tau            PHOTOS ISGW2;
-0.0018   D_s0*+   tau-   anti-nu_tau            PHOTOS ISGW2;
-0.0028   D'_s1+   tau-   anti-nu_tau            PHOTOS ISGW2;
-0.0028   D_s2*+   tau-   anti-nu_tau            PHOTOS ISGW2;
-0.0086   D_s-      D_s+	     PHOTOS PHSP;
-0.0090   D_s*+     D_s-      PHOTOS SVS;
-0.0099   D_s*-     D_s+      PHOTOS SVS;
-0.0197   D_s*-     D_s*+     PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0096   D_s-   D+       K0    PHOTOS PHSP;             
-0.0096   D_s-   anti-D0  K+    PHOTOS PHSP;           
-0.0096   D_s*-  D+       K0    PHOTOS PHSP;       
-0.0096   D_s*-  D0       K+    PHOTOS PHSP;     
-0.0024   D_s-   D+    pi0  K0  PHOTOS PHSP;         
-0.0048   D_s-   D0    pi+  K0  PHOTOS PHSP;    
-0.0048   D_s-   D+    pi-  K+  PHOTOS PHSP;    
-0.0024   D_s-   D0    pi0  K+  PHOTOS PHSP;
-0.0024   D_s*-   D+   pi0  K0  PHOTOS PHSP;       
-0.0048   D_s*-   D0   pi+  K0  PHOTOS PHSP;
-0.0048   D_s*-   D+   pi-  K+  PHOTOS PHSP;    
-0.0024   D_s*-   D0   pi0  K+  PHOTOS PHSP;
-0.0150    D_s*+   anti-D*0 K-        PHOTOS PHSP;
-0.0150    D_s*+   D*-      anti-K0   PHOTOS PHSP;
-0.0050    D_s*+   anti-D0  K-        PHOTOS PHSP;                 
-0.0050    D_s*+   D-       anti-K0   PHOTOS PHSP;
-0.0050    D_s+    anti-D*0 K-        PHOTOS PHSP;      
-0.0050    D_s+    D*-      anti-K0   PHOTOS PHSP;
-0.0020    D_s+    anti-D0  K-        PHOTOS PHSP;                 
-0.0020    D_s+    D-       anti-K0   PHOTOS PHSP;
-0.0030    D_s*+   anti-D*0 K*-       PHOTOS PHSP;           
-0.0030    D_s*+   D*-      anti-K*0  PHOTOS PHSP;
-0.0050    D_s*+   anti-D0  K*-       PHOTOS PHSP;           
-0.0050    D_s*+   D-       anti-K*0  PHOTOS PHSP;            
-0.0025    D_s+    anti-D*0 K*-       PHOTOS PHSP;             
-0.0025    D_s+    D*-      anti-K*0  PHOTOS PHSP;
-0.0025    D_s+    anti-D0  K*-       PHOTOS PHSP;       
-0.0025    D_s+    D-       anti-K*0  PHOTOS PHSP;
-0.0017    D_s-    D+                 PHOTOS PHSP; 
-0.0017    D*+     D_s-               PHOTOS SVS;    
-0.0017    D_s*-   D+                 PHOTOS SVS;
-0.0017    D_s*-   D*+                PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0007    D-      D+        K0       PHOTOS PHSP;        
-0.0007    D-      anti-D0   K+       PHOTOS PHSP;    
-0.0007    D*-     D+        K0       PHOTOS PHSP;    
-0.0007    D*-     D0        K+       PHOTOS PHSP;
-0.0003    D-      D+      pi0   K0   PHOTOS PHSP;         
-0.0007    D-      D0      pi+   K0   PHOTOS PHSP;   
-0.0003    D-      D+      pi-   K+   PHOTOS PHSP;   
-0.0007    D-      D0      pi0   K+   PHOTOS PHSP;
-0.0003    D*-     D+      pi0   K0   PHOTOS PHSP;         
-0.0007    D*-     D0      pi+   K0   PHOTOS PHSP;   
-0.0003    D*-     D+      pi-   K+   PHOTOS PHSP;   
-0.0007    D*-     D0      pi0   K+   PHOTOS PHSP;
-0.00015   D_s*+   K-                 PHOTOS SVS;   
-0.00015   D_s+    K-                 PHOTOS PHSP;
-0.00030   D_s*+   K*-                PHOTOS SVV_HELAMP 0.228 0.0 0.932 0.0 0.283 0.0;
-0.00030   K*-     D_s+               PHOTOS SVS;   
-0.00064   J/psi   eta'               SVS;
-0.00032   J/psi   eta                SVS;
-0.00135   J/psi   phi                SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.00008   J/psi   K0                 SVS;
-0.00070   J/psi   K-       K+        PHOTOS PHSP;
-0.00070   J/psi   anti-K0  K0        PHSP;
-0.00070   J/psi   anti-K0  K+   pi-  PHOTOS PHSP;
-0.00070   J/psi   anti-K0  K0   pi0  PHSP;
-0.00070   J/psi   K-       K+   pi0  PHOTOS PHSP;
-0.000465  psi(2S) eta'               SVS;
-0.000235  psi(2S) eta                SVS;
-0.0012    psi(2S) phi                SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0003    psi(2S) K-       K+        PHOTOS PHSP;       
-0.0003    psi(2S) anti-K0  K0        PHSP;       
-0.0003    psi(2S) anti-K0  K+    pi- PHOTOS PHSP;
-0.0003    psi(2S) anti-K0  K0    pi0 PHSP;
-0.0003    psi(2S) K-       K+    pi0 PHOTOS PHSP;
-0.00010   chi_c0  eta'               PHSP;            
-0.00005   chi_c0  eta                PHSP;
-0.00020   phi     chi_c0             SVS; 
-0.00003   chi_c0  K-       K+        PHOTOS PHSP;       
-0.00003   chi_c0  anti-K0  K0        PHSP;
-0.00003   chi_c0  anti-K0  K+   pi-  PHOTOS PHSP;
-0.00003   chi_c0  anti-K0  K0   pi0  PHSP;
-0.00003   chi_c0  K-       K+   pi0  PHOTOS PHSP;
-0.0007    chi_c1  eta'		     SVS;
-0.0003    chi_c1  eta                SVS;
-0.0014    chi_c1  phi                SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.00026   chi_c1  K-       K+        PHOTOS PHSP;  
-0.00026   chi_c1  anti-K0  K0        PHSP;
-0.00026   chi_c1  anti-K0  K+   pi-  PHOTOS PHSP;
-0.00026   chi_c1  anti-K0  K0   pi0  PHSP;
-0.00026   chi_c1  K-       K+   pi0  PHOTOS PHSP;
-0.000465    chi_c2      eta'                  STS;	 
-0.000235    chi_c2      eta                   STS;
-0.00016     chi_c2      K-         K+	      PHOTOS PHSP;
-0.00016     chi_c2      anti-K0    K0	      PHSP;
-0.00016     chi_c2      anti-K0    K+   pi-   PHOTOS PHSP;
-0.00016     chi_c2      anti-K0    K0   pi0   PHSP;
-0.00016     chi_c2      K-         K+   pi0   PHOTOS PHSP;
-0.0008      eta_c       eta'                  PHSP;
-0.0004      eta_c       eta                   PHSP;
-0.0015      phi         eta_c                 SVS;
-0.00028     eta_c       K-         K+         PHOTOS PHSP;
-0.00028     eta_c       anti-K0    K0         PHSP;
-0.00028     eta_c       anti-K0    K+   pi-   PHOTOS PHSP;
-0.00028     eta_c       anti-K0    K0   pi0   PHSP;
-0.00028     eta_c       K-         K+   pi0   PHOTOS PHSP;
-0.0004      eta_c(2S)   eta'                  PHSP;
-0.0002      eta_c(2S)   eta                   PHSP;
-0.0006      phi         eta_c(2S)             SVS;
-0.00012     eta_c(2S)   K-         K+         PHOTOS PHSP;
-0.00012     eta_c(2S)   anti-K0    K0         PHSP;
-0.00012     eta_c(2S)   anti-K0    K+   pi-   PHOTOS PHSP;
-0.00012     eta_c(2S)   anti-K0    K0   pi0   PHSP;
-0.00012     eta_c(2S)   K-         K+   pi0   PHOTOS PHSP;
-0.000465    h_c         eta'	              SVS;
-0.000235    h_c         eta                   SVS;
-0.0010      h_c         phi                   SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.00016     h_c         K-         K+	      PHOTOS PHSP;
-0.00016     h_c         anti-K0    K0         PHSP;
-0.00016     h_c         anti-K0    K+   pi-   PHOTOS PHSP;
-0.00016     h_c         anti-K0    K0   pi0   PHSP;
-0.00016     h_c         K-         K+   pi0   PHOTOS PHSP;
-0.0008      D_s1+       pi-                   PHOTOS SVS;
-0.0021      D_s1+       rho-                  PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0013      D_s2*+      pi-                   PHOTOS STS;
-0.0027      D_s*+       pi-                   PHOTOS SVS;  
-0.0026      D_s+        pi-                   PHOTOS PHOTOS PHSP;  
-0.0073      rho-        D_s+                  PHOTOS SVS;  
-0.0070      D_s*+       rho-                  PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0085      a_1-        D_s+                  PHOTOS SVS;   
-0.0009      D_s+        rho0       pi-        PHOTOS PHSP;       
-0.0009      D_s+        rho-       pi0        PHOTOS PHSP;       
-0.0009      D_s+        pi+        pi-   pi-  PHOTOS PHSP;       
-0.0009      D_s+        pi0        pi-   pi0  PHOTOS PHSP;
-0.0122      D_s*+       a_1-                  PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0010      D_s*+       rho0       pi-        PHOTOS PHSP;
-0.0010      D_s*+       rho-       pi0        PHOTOS PHSP;
-0.0077      D_s*+       pi+        pi-   pi-  PHOTOS PHSP;
-0.0010      D_s*+       pi0        pi-   pi0  PHOTOS PHSP;
-0.0002      D*0         K0                    SVS; 
-0.0002      D0          K0                    PHSP;
-0.0002      K*0         D0                    SVS; 
-0.0002      D*0         K*0                   SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0; 
-0.0200        cs_0       anti-ud_0         PHOTOS PYTHIA 23;
-0.0400        cs_1       anti-ud_1         PHOTOS PYTHIA 23;
-0.312354678     anti-u       d  c       anti-s       PHOTOS PYTHIA         48;
-0.05000         anti-u       d  c       anti-s       PHOTOS PYTHIA         25;
-0.02000         anti-u       c  d       anti-s       PHOTOS PYTHIA         48;
-0.00400         anti-c       s  u       anti-s       PHOTOS PYTHIA         48;
-0.0150          anti-u       s  c       anti-s       PHOTOS PYTHIA         48;
-0.00220         anti-u       s  c       anti-s       PHOTOS PYTHIA         25;
-0.00090         anti-u       c  s       anti-s       PHOTOS PYTHIA         48;
-0.00600         anti-c       d  c       anti-s       PHOTOS PYTHIA         13;
-0.00200         anti-c       d  c       anti-s       PHOTOS PYTHIA         13;
-0.00410         anti-u     u  d       anti-s       PHOTOS PYTHIA         48;
-0.00070         anti-d     d  d       anti-s       PHOTOS PYTHIA         48;
-0.00090         anti-s     s  d       anti-s       PHOTOS PYTHIA         48;
-0.00220         anti-u     u  s       anti-s       PHOTOS PYTHIA         48;
-0.00180         anti-d     d  s       anti-s       PHOTOS PYTHIA         48;
-0.00150         anti-s     s  s       anti-s       PHOTOS PYTHIA         48;
-0.00500                    s  g       anti-s       PHOTOS PYTHIA         33;
-
-0.000200    K+          e-         anti-nu_e         PHOTOS   ISGW2;
-0.000300    K*+         e-         anti-nu_e         PHOTOS   ISGW2;
-0.000300    K_1+        e-         anti-nu_e         PHOTOS   ISGW2;
-0.000200    K'_1+       e-         anti-nu_e         PHOTOS   ISGW2;
-0.000200    K+          mu-        anti-nu_mu        PHOTOS  ISGW2;
-0.000300    K*+         mu-        anti-nu_mu        PHOTOS  ISGW2;
-0.000300    K_1+        mu-        anti-nu_mu        PHOTOS  ISGW2;
-0.000200    K'_1+       mu-        anti-nu_mu        PHOTOS  ISGW2;
-
-0.0000193   K-          K+                    PHOTOS PHSP;
-0.0000079   anti-K0     K0                    PHSP;
-0.0000043   pi-         K+                    PHOTOS PHSP;
-0.0000002   pi0         K0                    PHSP;
-0.0000012   omega       eta                   SVS;
-0.0000025   omega       eta'                  SVS;
-0.0000013   phi         eta                   SVS;
-0.0000025   phi         eta'                  SVS;
-0.00000008  omega       anti-K0               SVS;
-0.000000002 phi         anti-K0               SVS;
-0.0000250   K*+         pi-                   PHOTOS SVS;
-0.0000120   rho-        K+                    PHOTOS SVS;
-0.00000002  rho0        K0                    SVS;
-0.00000002  K*0         pi0                   SVS;
-0.0000046   K*-         K+                    PHOTOS SVS;
-0.0000005   anti-K*0    K0                    SVS;
-0.0000082   K*+         K-                    PHOTOS SVS;
-0.0000066   K*0         anti-K0               SVS;
-0.0000580   eta'        eta'                  PHSP;
-0.0000250   eta'        eta                   PHSP;
-0.0000040   eta         eta                   PHSP;
-0.0000200   phi         eta                   SVS;
-0.0000100   phi         eta'                  SVS;
-0.00000007  K0          eta'                  PHSP;
-0.00000023  K0          eta                   PHSP;
-0.00000010  K0          eta'                  PHSP;
-0.00000010  K0          eta                   PHSP;
-0.000000021 K*0         eta'                  SVS;
-0.00000007  K*0         eta                   SVS;
-0.000020    rho-        K*+                   PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0000008   rho0        K*0                   SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000000005 omega       K*0                   SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000006    K*-         K*+                   PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000005    anti-K*0    K*0                   SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000008    phi         phi                   SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000000004 phi         K*0                   SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0000004   phi         K*0                   SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0000002   K*0         eta                   SVS;
-0.0000002   K*0         eta'                  SVS;
-0.0000003   eta         K0                    PHSP;
-0.0000006   eta'        K0                    PHSP;
+0.049000    D_s*+ e- anti-nu_e    PHOTOS ISGW2
+0.004000    D_s1+ e- anti-nu_e    PHOTOS ISGW2
+0.004000    D_s0*+ e- anti-nu_e    PHOTOS ISGW2
+0.007000    D'_s1+ e- anti-nu_e    PHOTOS ISGW2
+0.007000    D_s2*+ e- anti-nu_e    PHOTOS ISGW2
+0.021000    D_s+ mu- anti-nu_mu    PHOTOS ISGW2
+0.049000    D_s*+ mu- anti-nu_mu    PHOTOS ISGW2
+0.004000    D_s1+ mu- anti-nu_mu    PHOTOS ISGW2
+0.004000    D_s0*+ mu- anti-nu_mu    PHOTOS ISGW2
+0.007000    D'_s1+ mu- anti-nu_mu    PHOTOS ISGW2
+0.007000    D_s2*+ mu- anti-nu_mu    PHOTOS ISGW2
+0.008000    D_s+ tau- anti-nu_tau    PHOTOS ISGW2
+0.016000    D_s*+ tau- anti-nu_tau    PHOTOS ISGW2
+0.001800    D_s1+ tau- anti-nu_tau    PHOTOS ISGW2
+0.001800    D_s0*+ tau- anti-nu_tau    PHOTOS ISGW2
+0.002800    D'_s1+ tau- anti-nu_tau    PHOTOS ISGW2
+0.002800    D_s2*+ tau- anti-nu_tau    PHOTOS ISGW2
+0.008600    D_s- D_s+    PHOTOS PHSP
+0.009000    D_s*+ D_s-    PHOTOS SVS
+0.009900    D_s*- D_s+    PHOTOS SVS
+0.019700    D_s*- D_s*+    PHOTOS SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0
+0.009600    D_s- D+ K0    PHOTOS PHSP
+0.009600    D_s- anti-D0 K+    PHOTOS PHSP
+0.009600    D_s*- D+ K0    PHOTOS PHSP
+0.009600    D_s*- D0 K+    PHOTOS PHSP
+0.002400    D_s- D+ pi0 K0    PHOTOS PHSP
+0.004800    D_s- D0 pi+ K0    PHOTOS PHSP
+0.004800    D_s- D+ pi- K+    PHOTOS PHSP
+0.002400    D_s- D0 pi0 K+    PHOTOS PHSP
+0.002400    D_s*- D+ pi0 K0    PHOTOS PHSP
+0.004800    D_s*- D0 pi+ K0    PHOTOS PHSP
+0.004800    D_s*- D+ pi- K+    PHOTOS PHSP
+0.002400    D_s*- D0 pi0 K+    PHOTOS PHSP
+0.015000    D_s*+ anti-D*0 K-    PHOTOS PHSP
+0.015000    D_s*+ D*- anti-K0    PHOTOS PHSP
+0.005000    D_s*+ anti-D0 K-    PHOTOS PHSP
+0.005000    D_s*+ D- anti-K0    PHOTOS PHSP
+0.005000    D_s+ anti-D*0 K-    PHOTOS PHSP
+0.005000    D_s+ D*- anti-K0    PHOTOS PHSP
+0.002000    D_s+ anti-D0 K-    PHOTOS PHSP
+0.002000    D_s+ D- anti-K0    PHOTOS PHSP
+0.003000    D_s*+ anti-D*0 K*-    PHOTOS PHSP
+0.003000    D_s*+ D*- anti-K*0    PHOTOS PHSP
+0.005000    D_s*+ anti-D0 K*-    PHOTOS PHSP
+0.005000    D_s*+ D- anti-K*0    PHOTOS PHSP
+0.002500    D_s+ anti-D*0 K*-    PHOTOS PHSP
+0.002500    D_s+ D*- anti-K*0    PHOTOS PHSP
+0.002500    D_s+ anti-D0 K*-    PHOTOS PHSP
+0.002500    D_s+ D- anti-K*0    PHOTOS PHSP
+0.001700    D_s- D+    PHOTOS PHSP
+0.001700    D*+ D_s-    PHOTOS SVS
+0.001700    D_s*- D+    PHOTOS SVS
+0.001700    D_s*- D*+    PHOTOS SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0
+0.000700    D- D+ K0    PHOTOS PHSP
+0.000700    D- anti-D0 K+    PHOTOS PHSP
+0.000700    D*- D+ K0    PHOTOS PHSP
+0.000700    D*- D0 K+    PHOTOS PHSP
+0.000700    D- D0 pi+ K0    PHOTOS PHSP
+0.000700    D- D0 pi0 K+    PHOTOS PHSP
+0.000700    D*- D0 pi+ K0    PHOTOS PHSP
+0.000700    D*- D0 pi0 K+    PHOTOS PHSP
+0.000640    J/psi eta'    SVS
+0.001350    J/psi phi    SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0
+0.000700    J/psi K- K+    PHOTOS PHSP
+0.000700    J/psi anti-K0 K0    PHSP
+0.000700    J/psi anti-K0 K+ pi-    PHOTOS PHSP
+0.000700    J/psi anti-K0 K0 pi0    PHSP
+0.000700    J/psi K- K+ pi0    PHOTOS PHSP
+0.000800    D_s1+ pi-    PHOTOS SVS
+0.002100    D_s1+ rho-    PHOTOS SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0
+0.001300    D_s2*+ pi-    PHOTOS STS
+0.002700    D_s*+ pi-    PHOTOS SVS
+0.002600    D_s+ pi-    PHOTOS PHOTOS PHSP
+0.007300    rho- D_s+    PHOTOS SVS
+0.007000    D_s*+ rho-    PHOTOS SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0
+0.008500    a_1- D_s+    PHOTOS SVS
+0.000900    D_s+ rho0 pi-    PHOTOS PHSP
+0.000900    D_s+ rho- pi0    PHOTOS PHSP
+0.000900    D_s+ pi+ pi- pi-    PHOTOS PHSP
+0.000900    D_s+ pi0 pi- pi0    PHOTOS PHSP
+0.012200    D_s*+ a_1-    PHOTOS SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0
+0.001000    D_s*+ rho0 pi-    PHOTOS PHSP
+0.001000    D_s*+ rho- pi0    PHOTOS PHSP
+0.007700    D_s*+ pi+ pi- pi-    PHOTOS PHSP
+0.001000    D_s*+ pi0 pi- pi0    PHOTOS PHSP
 Enddecay
-Decay B_s0
-0.0210   D_s-     e+     nu_e         PHOTOS  ISGW2;
-0.0490   D_s*-    e+     nu_e         PHOTOS  ISGW2;
-0.0040   D_s1-    e+     nu_e         PHOTOS  ISGW2;
-0.0040   D_s0*-   e+     nu_e         PHOTOS  ISGW2;
-0.0070   D'_s1-   e+     nu_e         PHOTOS  ISGW2;
-0.0070   D_s2*-   e+     nu_e         PHOTOS  ISGW2;
-0.0210   D_s-     mu+    nu_mu        PHOTOS  ISGW2;
-0.0490   D_s*-    mu+    nu_mu        PHOTOS  ISGW2;
-0.0040   D_s1-    mu+    nu_mu        PHOTOS  ISGW2;
-0.0040   D_s0*-   mu+    nu_mu        PHOTOS  ISGW2;
-0.0070   D'_s1-   mu+    nu_mu        PHOTOS  ISGW2;
-0.0070   D_s2*-   mu+    nu_mu        PHOTOS  ISGW2;
-0.0080   D_s-     tau+   nu_tau                 PHOTOS ISGW2;
-0.0160   D_s*-    tau+   nu_tau                 PHOTOS ISGW2;
-0.0018   D_s1-    tau+   nu_tau                 PHOTOS ISGW2;
-0.0018   D_s0*-   tau+   nu_tau                 PHOTOS ISGW2;
-0.0028   D'_s1-   tau+   nu_tau                 PHOTOS ISGW2;
-0.0028   D_s2*-   tau+   nu_tau                 PHOTOS ISGW2;
-0.0086      D_s-        D_s+          PHOTOS PHSP;
-0.0090      D_s*+       D_s-          PHOTOS SVS;
-0.0099      D_s*-       D_s+          PHOTOS SVS;
-0.0197      D_s*-       D_s*+         PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0096      D_s+        D-          anti-K0                PHOTOS PHSP;
-0.0096      D_s+        D0          K-                     PHOTOS PHSP;
-0.0096      D_s*+       D-          anti-K0                PHOTOS PHSP;
-0.0096      D_s*+       anti-D0     K-                     PHOTOS PHSP;
-0.0024      D_s+        D-          pi0        anti-K0     PHOTOS PHSP;   
-0.0048      D_s+        anti-D0     pi-        anti-K0     PHOTOS PHSP;   
-0.0048      D_s+        D-          pi+        K-          PHOTOS PHSP;
-0.0024      D_s+        anti-D0     pi0        K-          PHOTOS PHSP;          
-0.0024      D_s*+       D-          pi0        anti-K0     PHOTOS PHSP;     
-0.0048      D_s*+       anti-D0     pi-        anti-K0     PHOTOS PHSP;     
-0.0048      D_s*+       D-          pi+        K-          PHOTOS PHSP;
-0.0024      D_s*+       anti-D0     pi0        K-          PHOTOS PHSP;
-0.0150      D_s*-       D*0         K+                     PHOTOS PHSP;
-0.0150      D_s*-       D*+         K0                     PHOTOS PHSP;
-0.0050      D_s*-       D0          K+                     PHOTOS PHSP; 
-0.0050      D_s*-       D+          K0                     PHOTOS PHSP;
-0.0050      D_s-        D*0         K+                     PHOTOS PHSP; 
-0.0050      D_s-        D*+         K0                     PHOTOS PHSP;
-0.0020      D_s-        D0          K+                     PHOTOS PHSP; 
-0.0020      D_s-        D+          K0                     PHOTOS PHSP;  
-0.0030      D_s*-       D*0         K*+                    PHOTOS PHSP; 
-0.0030      D_s*-       D*+         K*0                    PHOTOS PHSP;
-0.0050      D_s*-       D0          K*+                    PHOTOS PHSP;
-0.0050      D_s*-       D+          K*0                    PHOTOS PHSP;
-0.0025      D_s-        D*0         K*+                    PHOTOS PHSP;
-0.0025      D_s-        D*+         K*0                    PHOTOS PHSP;
-0.0025      D_s-        D0          K*+                    PHOTOS PHSP;
-0.0025      D_s-        D+          K*0                    PHOTOS PHSP;
-0.0017      D_s+        D-                                 PHOTOS PHSP;
-0.0017      D*-         D_s+                               PHOTOS SVS;
-0.0017      D_s*+       D-                                 PHOTOS SVS;
-0.0017      D_s*+       D*-    PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0007      D+          D-          anti-K0                PHOTOS PHSP;
-0.0007      D+          D0          K-                     PHOTOS PHSP;
-0.0007      D*+         D-          anti-K0                PHOTOS PHSP;
-0.0007      D*+         anti-D0     K-                     PHOTOS PHSP;
-0.0003      D+          D-          pi0        anti-K0     PHOTOS PHSP;     
-0.0007      D+          anti-D0     pi-        anti-K0     PHOTOS PHSP;  
-0.0003      D+          D-          pi+        K-          PHOTOS PHSP;
-0.0007      D+          anti-D0     pi0        K-          PHOTOS PHSP;
-0.0003      D*+         D-          pi0        anti-K0     PHOTOS PHSP;
-0.0007      D*+         anti-D0     pi-        anti-K0     PHOTOS PHSP; 
-0.0003      D*+         D-          pi+        K-          PHOTOS PHSP;
-0.0007      D*+         anti-D0     pi0        K-          PHOTOS PHSP;
-0.00015     D_s*-       K+                                 PHOTOS SVS;
-0.00015     D_s-        K+                                 PHOTOS PHSP;
-0.00030     D_s*-   K*+                PHOTOS SVV_HELAMP 0.228 0.0 0.932 0.0 0.283 0.0;
-0.00030     K*+     D_s-               PHOTOS SVS;  
-0.00064     J/psi       eta'		                   SVS;
-0.00032     J/psi       eta	                           SVS;
-0.00135     J/psi       phi      SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.00008     J/psi       K0		                   SVS;
-0.00070     J/psi       K-          K+                     PHOTOS PHSP;
-0.00070     J/psi       anti-K0     K0                     PHSP;
-0.00070     J/psi       K0          K-         pi+         PHOTOS PHSP;
-0.00070     J/psi       anti-K0     K0         pi0         PHSP;
-0.00070     J/psi       K-          K+         pi0         PHOTOS PHSP;
-0.000465    psi(2S)     eta'	                           SVS;
-0.000235    psi(2S)     eta                                SVS;
-0.0012      psi(2S)     phi               SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0003      psi(2S)     K-          K+                     PHOTOS PHSP;
-0.0003      psi(2S)     anti-K0     K0                     PHSP;
-0.0003      psi(2S)     K0          K-         pi+         PHOTOS PHSP;
-0.0003      psi(2S)     anti-K0     K0         pi0         PHSP;
-0.0003      psi(2S)     K-          K+         pi0         PHOTOS PHSP;
-0.00010     chi_c0      eta'                               PHSP;
-0.00005     chi_c0      eta                                PHSP;
-0.00020     phi         chi_c0                             SVS;
-0.00003     chi_c0      K-          K+                     PHOTOS PHSP;
-0.00003     chi_c0      anti-K0     K0                     PHSP;
-0.00003     chi_c0      K0          K-         pi+         PHOTOS PHSP;
-0.00003     chi_c0      anti-K0     K0         pi0         PHSP;
-0.00003     chi_c0      K-          K+         pi0         PHOTOS PHSP;
-0.0007       chi_c1      eta'	                           SVS;
-0.0003      chi_c1      eta                                SVS;
-0.0014      chi_c1      phi                SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.00026     chi_c1      K-          K+	                   PHOTOS PHSP;
-0.00026     chi_c1      anti-K0     K0	                   PHSP;
-0.00026     chi_c1      K0          K-         pi+         PHOTOS PHSP;
-0.00026     chi_c1      anti-K0     K0         pi0         PHSP;
-0.00026     chi_c1      K-          K+         pi0         PHOTOS PHSP;
-0.000465    chi_c2      eta'                               STS;
-0.000235    chi_c2      eta                                STS;
-0.00016     chi_c2      K-          K+	                   PHOTOS PHSP;
-0.00016     chi_c2      anti-K0     K0	                   PHSP;
-0.00016     chi_c2      K0          K-         pi+         PHOTOS PHSP;
-0.00016     chi_c2      anti-K0     K0         pi0         PHSP;
-0.00016     chi_c2      K-          K+         pi0         PHOTOS PHSP;
-0.0008      eta_c       eta'                               PHSP;
-0.0004      eta_c       eta                                PHSP;
-0.0015      phi         eta_c                              SVS;
-0.00028     eta_c       K-          K+                     PHOTOS PHSP;
-0.00028     eta_c       K0          anti-K0                PHSP;
-0.00028     eta_c       K0          K-         pi+         PHOTOS PHSP;
-0.00028     eta_c       K0          anti-K0    pi0         PHSP;
-0.00028     eta_c       K-          K+         pi0         PHOTOS PHSP;
-0.0004      eta_c(2S)   eta'                               PHSP;
-0.0002      eta_c(2S)   eta                                PHSP;
-0.0006      phi         eta_c(2S)                          SVS;
-0.00012     eta_c(2S)   K-          K+                     PHOTOS PHSP;
-0.00012     eta_c(2S)   anti-K0     K0                     PHSP;
-0.00012     eta_c(2S)   K0          K-         pi+         PHOTOS PHSP;
-0.00012     eta_c(2S)   anti-K0     K0         pi0         PHSP;
-0.00012     eta_c(2S)   K-          K+         pi0         PHOTOS PHSP;
-0.000465    h_c         eta'	                           SVS;
-0.000235    h_c         eta                                SVS;
-0.0010      h_c         phi                 SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.00016     h_c         K-          K+	                   PHOTOS PHSP;
-0.00016     h_c         anti-K0     K0                     PHSP;
-0.00016     h_c         K0          K-         pi+         PHOTOS PHSP;
-0.00016     h_c         anti-K0     K0         pi0         PHSP;
-0.00016     h_c         K-          K+         pi0         PHOTOS PHSP;
-0.0008      D_s1-       pi+                                PHOTOS SVS;
-0.0021      D_s1-       rho+               PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0013      D_s2*-      pi+                                PHOTOS STS;
-0.0027      D_s*-       pi+                                PHOTOS SVS;
-0.0026      D_s-        pi+                                PHOTOS PHSP;
-0.0073      rho+        D_s-                               PHOTOS SVS;
-0.0070      D_s*-       rho+              PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0085      a_1+        D_s-                               PHOTOS SVS;
-0.0009      D_s-        rho0        pi+                    PHOTOS PHSP;
-0.0009      D_s-        rho+        pi0                    PHOTOS PHSP;
-0.0009      D_s-        pi-         pi+        pi+         PHOTOS PHSP;
-0.0009      D_s-        pi0         pi+        pi0         PHOTOS PHSP;         
-0.0122      D_s*-       a_1+               PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0010      D_s*-       rho0        pi+                    PHOTOS PHSP;
-0.0010      D_s*-       rho+        pi0                    PHOTOS PHSP;
-0.0077      D_s*-       pi-         pi+        pi+         PHOTOS PHSP;
-0.0010      D_s*-       pi0         pi+        pi0         PHOTOS PHSP;
-0.0002      anti-D*0    anti-K0                            SVS;
-0.0002      anti-D0     anti-K0                            PHSP;
-0.0002      anti-K*0    anti-D0                            SVS;
-0.0002      anti-D*0    anti-K*0            SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0200        anti-cs_0       ud_0         PHOTOS PYTHIA 23;
-0.0400        anti-cs_1       ud_1         PHOTOS PYTHIA 23;
-0.312354678     u       anti-d  anti-c       s       PHOTOS PYTHIA         48;
-0.05000         u       anti-d  anti-c       s       PHOTOS PYTHIA         25;
-0.02000         u       anti-c  anti-d       s       PHOTOS PYTHIA         48;
-0.00400         c       anti-s  anti-u       s       PHOTOS PYTHIA         48;
-0.0150          u       anti-s  anti-c       s       PHOTOS PYTHIA         48;
-0.00220         u       anti-s  anti-c       s       PHOTOS PYTHIA         25;
-0.00090         u       anti-c  anti-s       s       PHOTOS PYTHIA         48;
-0.00600         c       anti-d  anti-c       s       PHOTOS PYTHIA         13;
-0.00200         c       anti-d  anti-c       s       PHOTOS PYTHIA         13;
-0.00410         u     anti-u  anti-d       s       PHOTOS PYTHIA         48;
-0.00070         d     anti-d  anti-d       s       PHOTOS PYTHIA         48;
-0.00090         s     anti-s  anti-d       s       PHOTOS PYTHIA         48;
-0.00220         u     anti-u  anti-s       s       PHOTOS PYTHIA         48;
-0.00180         d     anti-d  anti-s       s       PHOTOS PYTHIA         48;
-0.00150         s     anti-s  anti-s       s       PHOTOS PYTHIA         48;
-0.00500                    anti-s  g       s       PHOTOS PYTHIA         33;
 
-0.000200    K-          e+         nu_e         PHOTOS   ISGW2;
-0.000300    K*-         e+         nu_e         PHOTOS   ISGW2;
-0.000300    K_1-        e+         nu_e         PHOTOS   ISGW2;
-0.000200    K'_1-       e+         nu_e         PHOTOS   ISGW2;
-0.000200    K-          mu+        nu_mu        PHOTOS  ISGW2;
-0.000300    K*-         mu+        nu_mu        PHOTOS  ISGW2;
-0.000300    K_1-        mu+        nu_mu        PHOTOS  ISGW2;
-0.000200    K'_1-       mu+        nu_mu        PHOTOS  ISGW2;
-
-0.0000193   K-          K+                                 PHOTOS PHSP;
-0.0000079   anti-K0     K0                                 PHSP;
-0.0000043   pi+         K-                                 PHOTOS PHSP;
-0.0000002   pi0         anti-K0                            PHSP;
-0.0000012   omega       eta                                SVS;
-0.0000025   omega       eta'                               SVS;
-0.0000013   phi         eta                                SVS;
-0.0000025   phi         eta'                               SVS;
-0.00000008  omega       K0                                 SVS;
-0.000000002 phi         K0                                 SVS;
-0.0000250   K*-         pi+                                PHOTOS SVS;
-0.0000120   rho+        K-                                 PHOTOS SVS;
-0.00000002  rho0        K0                                 SVS;
-0.00000002  anti-K*0    pi0                                SVS;
-0.0000046   K*+         K-                                 PHOTOS SVS;
-0.0000005   K*0         anti-K0                            SVS;
-0.0000082   K*-         K+                                 PHOTOS SVS;
-0.0000066   anti-K*0    K0                                 SVS;
-0.0000580   eta'        eta'                               PHSP;
-0.0000250   eta'        eta                                PHSP;
-0.0000040   eta         eta                                PHSP;
-0.0000200   phi         eta                                SVS;
-0.0000100   phi         eta'                               SVS;
-0.00000007  anti-K0     eta'                               PHSP;
-0.00000023  anti-K0     eta                                PHSP;
-0.00000010  anti-K0     eta'                               PHSP;
-0.00000010  anti-K0     eta                                PHSP;
-0.000000021 anti-K*0    eta'                               SVS;
-0.00000007  anti-K*0    eta                                SVS;
-0.000020    rho+        K*-                 PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0000008   rho0        anti-K*0            SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000000005 omega       anti-K*0            SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000006    K*-         K*+                    PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000005    anti-K*0    K*0                    SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000008    phi         phi                    SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.000000004 phi         anti-K*0               SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0000004   phi         anti-K*0               SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
-0.0000002   anti-K*0    eta                                SVS;
-0.0000002   anti-K*0    eta'                               SVS;
-0.0000003   eta         anti-K0                            PHSP;
-0.0000006   eta'        anti-K0                            PHSP;
-Enddecay
 Decay B*+
 1.0000    B+  gamma                       PHOTOS VSP_PWAVE;
 Enddecay

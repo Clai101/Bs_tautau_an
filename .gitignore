@@ -1,8 +1,12 @@
-*.parquet
-*.parquet
 **/*data/
 .venv
 **/__*/
 **/__*
 **/*.png
 **/*.pdf
+**/*.feather
+*.feather
+**/*.parquet
+*.parquet
+**/*.root
+*.root
