@@ -222,17 +222,15 @@ def final_path_to_file_indexed(particle: str, decay_dict: Dict, file_handle, par
     return paths
 
 
-def flatten_with_trace(products, decay_dict, visited=None, depth=0, max_depth=10):
-    if visited is None:
-        visited = set()
+
+def flatten_with_trace(products, depth=0):
+    global decay_dict, max_depth
     if depth > max_depth:
         print(f"[!] Max depth {max_depth} reached at products: {products}")
         return [([], [])]
 
     paths = []
     for p in products:
-        if p in visited:
-            continue
         if p in final_state_particle:
             paths.append([([p], [])])
         elif (p in decay_dict) :
@@ -240,10 +238,7 @@ def flatten_with_trace(products, decay_dict, visited=None, depth=0, max_depth=10
             for decay in decay_dict[p]:
                 sub_paths = flatten_with_trace(
                     decay["products"],
-                    decay_dict,
-                    visited | {p},
-                    depth + 1,
-                    max_depth
+                    depth = depth + 1
                 )
                 for sub_decay, sub_used in sub_paths:
                     local_paths.append((
@@ -269,8 +264,8 @@ def match_decay_with_trace(final_states, candidates_with_trace):
             matched_traces.append(used)
     return matched_traces
 
-def process_decay(decay, particle, decay_dict, final_states):
-    flat_paths = flatten_with_trace(decay["products"], decay_dict)
+def process_decay(decay, particle, final_states):
+    flat_paths = flatten_with_trace(decay["products"])
     matched = match_decay_with_trace(final_states, flat_paths)
     if matched:
         local_result = defaultdict(list)
@@ -294,11 +289,11 @@ def merge_results(results):
                     final[k].append(v)
     return dict(final)
 
-def filter_decays(particle, decay_dict, final_states):
+def filter_decays(particle, final_states):
     from concurrent.futures import ThreadPoolExecutor
-
+    global decay_dict
     def task(decay):
-        return process_decay(decay, particle, decay_dict, final_states)
+        return process_decay(decay, particle, final_states)
 
     decays = decay_dict.get(particle, [])
     results = []
@@ -310,11 +305,15 @@ def filter_decays(particle, decay_dict, final_states):
     return merge_results(results)
 
 path = Path("/gpfs/home/belle2/matrk/Extend/Decays/")
-filtered1 = filter_decays("B_s0", decays21, find_final_states("B_s0", decays1))
+max_depth=10
+decay_dict = decays21
+filtered1 = filter_decays("B_s0", find_final_states("B_s0", decays1))
 with open(path/"filtered_decays1.json", "w", encoding="utf-8") as f:
     json.dump(filtered1, f, indent=4, ensure_ascii=False)
 del filtered1
-filtered2 = filter_decays("anti-B_s0", decays22, find_final_states("anti-B_s0", decays1))
+decay_dict = decays22
+
+filtered2 = filter_decays("anti-B_s0", find_final_states("anti-B_s0", decays1))
 with open(path/"filtered_decays2.json", "w", encoding="utf-8") as f:
     json.dump(filtered2, f, indent=4, ensure_ascii=False)
 del filtered2
