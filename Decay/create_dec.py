@@ -117,10 +117,10 @@ decays2 = parse_decay_block(text_data2)
 
 path = Path("/gpfs/home/belle2/matrk/Extend/Decays/")
 with open(path/"filtered_decays1.json", "r", encoding="utf-8") as f:
-    filtered1 = json.loads(f)
+    filtered1 = json.load(f)
 
 with open(path/"filtered_decays2.json", "r", encoding="utf-8") as f:
-    filtered2 = json.loads(f)
+    filtered2 = json.load(f)
 
 
 def merge_decay_dicts(*dicts):
