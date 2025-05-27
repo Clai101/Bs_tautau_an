@@ -1,0 +1,527 @@
+{
+    "B_s0": [
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "D_s-",
+                "pi+"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "D_s-",
+                "pi+",
+                "pi0"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "D_s-",
+                "pi+",
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "D_s*-",
+                "pi+"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "D_s*-",
+                "pi+",
+                "pi0"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "D_s*-",
+                "pi+",
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "D_s-",
+                "D_s+"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "D_s*-",
+                "D_s+"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "D_s-",
+                "D_s*+"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "D_s*-",
+                "D_s*+"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "J/psi",
+                "K+",
+                "K-"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "J/psi",
+                "K+",
+                "K-",
+                "pi0"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "anti-D0",
+                "K-",
+                "pi+"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "anti-D*0",
+                "K-",
+                "pi+"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "D_s-",
+                "K+"
+            ],
+            "model": "PHOTOS"
+        }
+    ],
+    "D_s-": [
+        {
+            "products": [
+                "K-",
+                "K+",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K-",
+                "K_S0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K-",
+                "K+",
+                "pi-",
+                "pi0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K-",
+                "K_S0",
+                "pi-",
+                "pi+"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K+",
+                "K_S0",
+                "pi-",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K-",
+                "K+",
+                "pi-",
+                "pi-",
+                "pi+"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K-",
+                "pi-",
+                "pi+"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "pi-",
+                "pi-",
+                "pi+"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K-",
+                "K_S0",
+                "pi0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K_S0",
+                "K_S0",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "eta",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "eta'",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "eta",
+                "pi-",
+                "pi0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "eta'",
+                "pi-",
+                "pi0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "D_s*-": [
+        {
+            "products": [
+                "D_s-",
+                "gamma"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "D_s+": [
+        {
+            "products": [
+                "K+",
+                "K-",
+                "pi+"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K+",
+                "K_S0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K+",
+                "K-",
+                "pi+",
+                "pi0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K+",
+                "K_S0",
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K-",
+                "K_S0",
+                "pi+",
+                "pi+"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K+",
+                "K-",
+                "pi+",
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K+",
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "pi+",
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K+",
+                "K_S0",
+                "pi0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K_S0",
+                "K_S0",
+                "pi+"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "eta",
+                "pi+"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "eta'",
+                "pi+"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "eta",
+                "pi+",
+                "pi0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "eta'",
+                "pi+",
+                "pi0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "D_s*+": [
+        {
+            "products": [
+                "D_s+",
+                "gamma"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "J/psi": [
+        {
+            "products": [
+                "e+",
+                "e-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "mu+",
+                "mi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "anti-D0": [
+        {
+            "products": [
+                "K+",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K+",
+                "pi-",
+                "pi0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K+",
+                "pi-",
+                "pi-",
+                "pi+"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K_S0",
+                "pi-",
+                "pi+"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K_S0",
+                "pi-",
+                "pi+",
+                "pi0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K_S0",
+                "pi-",
+                "pi-",
+                "pi+",
+                "pi+"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K-",
+                "K+"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K-",
+                "K+",
+                "K_S0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "anti-D*0": [
+        {
+            "products": [
+                "anti-D0",
+                "gamma"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "anti-D0",
+                "pi0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ]
+}

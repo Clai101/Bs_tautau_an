@@ -181,7 +181,7 @@ with open("final_state_particle.json", "w", encoding="utf-8") as f:
 with open("decays2_anti-B_s0.json", "r", encoding="utf-8") as f:
     decays22 = json.load(f)
 
-with open("decays1_B_s0.json", "r", encoding="utf-8") as f:
+with open("decays2_B_s0.json", "r", encoding="utf-8") as f:
     decays21 = json.load(f)
 def gen_part_to_int(*decays: Dict[str, List[Dict]]) -> Dict[str, int]:
     part_to_int = {}
@@ -222,7 +222,7 @@ def final_path_to_file_indexed(particle: str, decay_dict: Dict, file_handle, par
     return paths
 
 
-def flatten_with_trace(products, decay_dict, visited=None, depth=0, max_depth=5):
+def flatten_with_trace(products, decay_dict, visited=None, depth=0, max_depth=10):
     if visited is None:
         visited = set()
     if depth > max_depth:
@@ -233,7 +233,9 @@ def flatten_with_trace(products, decay_dict, visited=None, depth=0, max_depth=5)
     for p in products:
         if p in visited:
             continue
-        if p in decay_dict:
+        if p in final_state_particle:
+            paths.append([([p], [])])
+        elif (p in decay_dict) :
             local_paths = []
             for decay in decay_dict[p]:
                 sub_paths = flatten_with_trace(
@@ -293,11 +295,20 @@ def merge_results(results):
     return dict(final)
 
 def filter_decays(particle, decay_dict, final_states):
+    from concurrent.futures import ThreadPoolExecutor
+
+    def task(decay):
+        return process_decay(decay, particle, decay_dict, final_states)
+
+    decays = decay_dict.get(particle, [])
     results = []
-    for decay in decay_dict.get(particle, []):
-        result = process_decay(decay, particle, decay_dict, final_states)
-        results.append(result)
+    with ThreadPoolExecutor(max_workers = 50) as executor:
+        futures = [executor.submit(task, decay) for decay in decays]
+        for future in as_completed(futures):
+            results.append(future.result())
+
     return merge_results(results)
+
 path = Path("/gpfs/home/belle2/matrk/Extend/Decays/")
 filtered1 = filter_decays("B_s0", decays21, find_final_states("B_s0", decays1))
 with open(path/"filtered_decays1.json", "w", encoding="utf-8") as f:
