@@ -175,7 +175,7 @@ def extract_all_products(decay_dict: Dict) -> List[List[str]]:
     return [decay["products"] for decays in decay_dict.values() for decay in decays]
 
 
-def flatten_with_trace(products, decay_dict, visited=None, depth=0, max_depth=10):
+def flatten_with_trace(products, decay_dict, visited=None, depth=0, max_depth=5):
     if visited is None:
         visited = set()
     if depth > max_depth:
