@@ -17,6 +17,13 @@ Decay B_s0
 Enddecay
 CDecay anti-B_s0
 
+Decay D*0
+0   D0 gamma    PHOTOS
+0   D0 pi0    PHOTOS
+Enddecay
+CDecay anti-D*0
+
+
 Decay D_s+
 0   K+ K- pi+   PHOTOS
 0   K+ K_S0 PHOTOS
