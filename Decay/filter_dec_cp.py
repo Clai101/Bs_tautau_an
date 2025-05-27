@@ -6,7 +6,7 @@ from itertools import product
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import defaultdict, Counter
 from typing import Dict, List
-
+from pathlib import Path
 # Этап 1 "Читаем .DEC"
 
 def make_anti(particle: str) -> str:
@@ -180,15 +180,33 @@ with open("decays2_anti-B_s0.json", "r", encoding="utf-8") as f:
 
 with open("decays1_B_s0.json", "r", encoding="utf-8") as f:
     decays21 = json.load(f)
-def final_path_to_file(particle: str, decay_dict: Dict, file_handle, root: bool = True) -> List[Dict]:
+def gen_part_to_int(*decays: Dict[str, List[Dict]]) -> Dict[str, int]:
+    part_to_int = {}
+    i = 0
+    for decay in decays:
+        for particle in decay:
+            if particle not in part_to_int:
+                part_to_int[particle] = i
+                i += 1
+    return part_to_int
+with open("part_to_int.json", "w", encoding="utf-8") as f:
+    json.dump(gen_part_to_int(decays21, decays22), f, indent=4, ensure_ascii=False)
+
+part_to_int = gen_part_to_int(decays21, decays22)
+def final_path_to_file_indexed(particle: str, decay_dict: Dict, file_handle, particle_to_idx: Dict[str, int], root: bool = True) -> List[Dict]:
     if particle not in decay_dict:
         return [{}]
 
     paths = []
+    pid = particle_to_idx[particle]
+
     for i, decay in enumerate(decay_dict[particle]):
-        sub_decay_paths = [final_path_to_file(p, decay_dict, file_handle, root=False) for p in decay["products"]]
+        sub_decay_paths = [
+            final_path_to_file_indexed(p, decay_dict, file_handle, particle_to_idx, root=False)
+            for p in decay["products"]
+        ]
         for combo in product(*sub_decay_paths):
-            combined = {particle: i}
+            combined = {pid: i}
             for sub_dict in combo:
                 combined.update(sub_dict)
             if root:
@@ -197,7 +215,9 @@ def final_path_to_file(particle: str, decay_dict: Dict, file_handle, root: bool 
             paths.append(combined)
 
     return paths
-with open('decays2_gen_path_anti-B_s0.json', 'w') as f:
-     final_path_to_file('anti-B_s0', decays22, f)
-with open('decays2_gen_path_B_s0.json', 'w') as f:
-     final_path_to_file('B_s0', decays21, f)
+
+path = Path("/gpfs/home/belle2/matrk/Extend/Decays/")
+with open(path/'decays2_gen_path_anti-B_s0.json', 'w') as f:
+     final_path_to_file_indexed('anti-B_s0', decays22, f, part_to_int)
+with open(path/'decays2_gen_path_B_s0.json', 'w') as f:
+     final_path_to_file_indexed('B_s0', decays21, f, part_to_int)
