@@ -6,6 +6,7 @@ from itertools import product
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import defaultdict, Counter
 from typing import Dict, List
+from pathlib import Path
 
 def make_anti(particle: str) -> str:
     #print(particle)
@@ -108,65 +109,51 @@ def parse_decay_block(text: str) -> Dict[str, List[Dict]]:
 
 
 text_data2 = str()
+
 with open("DECAY_1.DEC", "r") as outfile:
     text_data2 = reduce(lambda x, y: x +y, [i for i in outfile.readlines()])
-text_data1 = str()
-with open("my_dec.DEC", "r") as outfile:
-    text_data1 = reduce(lambda x, y: x +y, [i for i in outfile.readlines()])
 
-decays1 = parse_decay_block(text_data1)
 decays2 = parse_decay_block(text_data2)
 
-def find_final_states(particle: str, decay_dict: Dict) ->   List[List[str]]:
-    if particle not in decay_dict:
-        return [[particle]]
+path = Path("/gpfs/home/belle2/matrk/Extend/Decays/")
+with open(path/"filtered_decays1.json", "r", encoding="utf-8") as f:
+    filtered1 = json.loads(f)
 
-    final_states = []
+with open(path/"filtered_decays2.json", "r", encoding="utf-8") as f:
+    filtered2 = json.loads(f)
 
-    for decay in decay_dict[particle]:
-        branches = [find_final_states(p, decay_dict) for p in decay["products"]]
-        from itertools import product
-        for combination in product(*branches):
-            flat_state = []
-            for group in combination:
-                flat_state.extend(group)
-            final_states.append(flat_state)
-    for final in final_states:
-        final = final.sort()
-    return final_states
 
-def prune_unreachable_particles(decay_dict: Dict, root: str) -> Dict:
-    reachable = set()
-    frontier = {root}
+def merge_decay_dicts(*dicts):
+    """Объединяет несколько decay-словрей, избегая дубликатов"""
+    merged = defaultdict(list)
+    
+    for decay_dict in dicts:
+        for particle, decays in decay_dict.items():
+            for decay in decays:
+                if decay not in merged[particle]:
+                    merged[particle].append(decay)
+                    
+    return dict(merged)
 
-    while frontier:
-        next_frontier = set()
-        for particle in frontier:
-            if particle not in decay_dict:
-                continue
-            reachable.add(particle)
-            for decay in decay_dict[particle]:
-                for p in decay["products"]:
-                    if p not in reachable:
-                        next_frontier.add(p)
-        frontier = next_frontier
+new_dec = merge_decay_dicts(filtered1, filtered2)
 
-    pruned_dict = {p: d for p, d in decay_dict.items() if p in reachable}
-    return pruned_dict
+for key, dec in new_dec.items():
+    decays2[key] = dec
 
-decays21 = prune_unreachable_particles(decays2, "B_s0")
-decays22 = prune_unreachable_particles(decays2, "anti-B_s0")
-decays11 = prune_unreachable_particles(decays1, "B_s0")
-decays12 = prune_unreachable_particles(decays1, "anti-B_s0")
+def decay_dict_to_evtgen_format(decay_dict):
+    lines = []
+    for particle, decays in decay_dict.items():
+        lines.append(f"Decay {particle}")
+        for d in decays:
+            products = " ".join(d["products"])
+            model = d["model"]
+            br = d["branching_ratio"]
+            lines.append(f"{br:.1f}   {products}   {model}")
+        lines.append("Enddecay\n")
+    return "\n".join(lines)
 
-with open("decays1_B_s0.json", "w", encoding="utf-8") as f:
-    json.dump(decays11, f, indent=4, ensure_ascii=False)
+dec_text = decay_dict_to_evtgen_format(decays2)
 
-with open("decays1_anti-B_s0.json", "w", encoding="utf-8") as f:
-    json.dump(decays12, f, indent=4, ensure_ascii=False)
+with open(path/"decays_evtgen_format.txt", "w", encoding="utf-8") as f:
+    f.write(dec_text)
 
-with open("decays2_B_s0.json", "w", encoding="utf-8") as f:
-    json.dump(decays21, f, indent=4, ensure_ascii=False)
-
-with open("decays2_anti-B_s0.json", "w", encoding="utf-8") as f:
-    json.dump(decays22, f, indent=4, ensure_ascii=False)
