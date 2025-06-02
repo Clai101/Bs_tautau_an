@@ -1200,7 +1200,7 @@
                 "e+",
                 "nu_e"
             ],
-            "model": "PHOTOS ISGW2;"
+            "model": "PHOTOS ISGW2"
         },
         {
             "branching_ratio": 0.009,
@@ -1310,7 +1310,7 @@
                 "mu+",
                 "nu_mu"
             ],
-            "model": "PHOTOS ISGW2;"
+            "model": "PHOTOS ISGW2"
         },
         {
             "branching_ratio": 0.009,
@@ -1465,7 +1465,7 @@
                 "anti-K''*0",
                 "pi+"
             ],
-            "model": "PHOTOS SVS;"
+            "model": "PHOTOS SVS"
         },
         {
             "branching_ratio": 0.0081,
@@ -1927,7 +1927,7 @@
                 "f_2",
                 "pi+"
             ],
-            "model": "PHOTOS PHSP;"
+            "model": "PHOTOS PHSP"
         },
         {
             "branching_ratio": 0.003,
@@ -1964,7 +1964,7 @@
                 "K*0",
                 "pi+"
             ],
-            "model": "PHOTOS SVS;"
+            "model": "PHOTOS SVS"
         },
         {
             "branching_ratio": 0.0003,
@@ -1972,7 +1972,7 @@
                 "rho0",
                 "K+"
             ],
-            "model": "PHOTOS SVS;"
+            "model": "PHOTOS SVS"
         },
         {
             "branching_ratio": 0.0002,
@@ -3311,7 +3311,7 @@
                 "phi",
                 "K*0"
             ],
-            "model": "SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0;"
+            "model": "SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0"
         },
         {
             "branching_ratio": 7e-05,
@@ -3320,7 +3320,7 @@
                 "K+",
                 "pi-"
             ],
-            "model": "PHOTOS PHSP;"
+            "model": "PHOTOS PHSP"
         },
         {
             "branching_ratio": 6e-05,
@@ -3329,7 +3329,7 @@
                 "K+",
                 "K-"
             ],
-            "model": "PHOTOS PHSP;"
+            "model": "PHOTOS PHSP"
         },
         {
             "branching_ratio": 0.0048,
@@ -3348,7 +3348,7 @@
                 "K+",
                 "pi-"
             ],
-            "model": "PHOTOS PHSP;"
+            "model": "PHOTOS PHSP"
         },
         {
             "branching_ratio": 0.0009,
@@ -3420,19 +3420,17 @@
             "branching_ratio": 0.001,
             "products": [
                 "phi",
-                "pi0",
-                "SVS;"
+                "pi0"
             ],
-            "model": ""
+            "model": "SVS"
         },
         {
             "branching_ratio": 0.00014,
             "products": [
                 "phi",
-                "eta",
-                "SVS;"
+                "eta"
             ],
-            "model": ""
+            "model": "SVS"
         },
         {
             "branching_ratio": 0.0064,
@@ -3688,7 +3686,7 @@
                 "K*-",
                 "pi+"
             ],
-            "model": "PHOTOS SVS;"
+            "model": "PHOTOS SVS"
         },
         {
             "branching_ratio": 0.00046,
@@ -4209,7 +4207,7 @@
                 "phi",
                 "anti-K*0"
             ],
-            "model": "SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0;"
+            "model": "SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0"
         },
         {
             "branching_ratio": 7e-05,
@@ -4218,7 +4216,7 @@
                 "K-",
                 "pi+"
             ],
-            "model": "PHOTOS PHSP;"
+            "model": "PHOTOS PHSP"
         },
         {
             "branching_ratio": 6e-05,
@@ -4227,7 +4225,7 @@
                 "K+",
                 "K-"
             ],
-            "model": "PHOTOS PHSP;"
+            "model": "PHOTOS PHSP"
         },
         {
             "branching_ratio": 0.0048,
@@ -4246,7 +4244,7 @@
                 "K-",
                 "pi+"
             ],
-            "model": "PHOTOS PHSP;"
+            "model": "PHOTOS PHSP"
         },
         {
             "branching_ratio": 0.0009,
@@ -4318,19 +4316,17 @@
             "branching_ratio": 0.001,
             "products": [
                 "phi",
-                "pi0",
-                "SVS;"
+                "pi0"
             ],
-            "model": ""
+            "model": "SVS"
         },
         {
             "branching_ratio": 0.00014,
             "products": [
                 "phi",
-                "eta",
-                "SVS;"
+                "eta"
             ],
-            "model": ""
+            "model": "SVS"
         },
         {
             "branching_ratio": 0.0064,
@@ -4586,7 +4582,7 @@
                 "K*+",
                 "pi-"
             ],
-            "model": "PHOTOS SVS;"
+            "model": "PHOTOS SVS"
         },
         {
             "branching_ratio": 0.00046,

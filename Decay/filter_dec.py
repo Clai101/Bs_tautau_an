@@ -7,6 +7,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import defaultdict, Counter
 from typing import Dict, List
 from pathlib import Path
+from numba import float64
 # Этап 1 "Читаем .DEC"
 
 def make_anti(particle: str) -> str:
@@ -132,9 +133,11 @@ def find_final_states(particle: str, decay_dict: Dict) ->   List[List[str]]:
             flat_state = []
             for group in combination:
                 flat_state.extend(group)
-            final_states.append(flat_state)
-    for final in final_states:
-        final = final.sort()
+
+            flat_state.sort()
+
+            if flat_state not in final_states:
+                final_states.append(flat_state)
     return final_states
 
 def prune_unreachable_particles(decay_dict: Dict, root: str) -> Dict:
@@ -155,8 +158,10 @@ def prune_unreachable_particles(decay_dict: Dict, root: str) -> Dict:
 
     pruned_dict = {p: d for p, d in decay_dict.items() if p in reachable}
     return pruned_dict
-
-
+with open("final_states_B_0s.json", "w", encoding="utf-8") as f:
+    json.dump(find_final_states("B_s0",decays1), f, indent=4, ensure_ascii=False)
+with open("final_states_anty_B_0s.json", "w", encoding="utf-8") as f:
+    json.dump(find_final_states("anti-B_s0",decays1), f, indent=4, ensure_ascii=False)
 decays21 = prune_unreachable_particles(decays2, "B_s0")
 decays22 = prune_unreachable_particles(decays2, "anti-B_s0")
 decays11 = prune_unreachable_particles(decays1, "B_s0")
@@ -173,7 +178,6 @@ with open("decays2_B_s0.json", "w", encoding="utf-8") as f:
 
 with open("decays2_anti-B_s0.json", "w", encoding="utf-8") as f:
     json.dump(decays22, f, indent=4, ensure_ascii=False)
-
 final_state_particle = list(set(reduce(lambda x,y: x+y, find_final_states('B_s0', decays1) + find_final_states('anti-B_s0', decays1))))
 with open("final_state_particle.json", "w", encoding="utf-8") as f:
     json.dump(final_state_particle, f, indent=4, ensure_ascii=False)
@@ -221,18 +225,28 @@ def final_path_to_file_indexed(particle: str, decay_dict: Dict, file_handle, par
 
     return paths
 
-
-
 def flatten_with_trace(products, depth=0):
-    global decay_dict, max_depth
+    global decay_dict, decay_dict_sup , max_depth
     if depth > max_depth:
         print(f"[!] Max depth {max_depth} reached at products: {products}")
         return [([], [])]
-
     paths = []
     for p in products:
         if p in final_state_particle:
             paths.append([([p], [])])
+        elif (p in decay_dict_sup) :
+            local_paths = []
+            for decay in decay_dict_sup[p]:
+                sub_paths = flatten_with_trace(
+                    decay["products"],
+                    depth = depth + 1
+                )
+                for sub_decay, sub_used in sub_paths:
+                    local_paths.append((
+                        sub_decay,
+                        sub_used + [(p, decay["products"])]
+                    ))
+            paths.append(local_paths)
         elif (p in decay_dict) :
             local_paths = []
             for decay in decay_dict[p]:
@@ -294,30 +308,77 @@ def filter_decays(particle, final_states):
     global decay_dict
     def task(decay):
         return process_decay(decay, particle, final_states)
-
     decays = decay_dict.get(particle, [])
     results = []
     with ThreadPoolExecutor(max_workers = 50) as executor:
         futures = [executor.submit(task, decay) for decay in decays]
         for future in as_completed(futures):
             results.append(future.result())
-
     return merge_results(results)
 
 path = Path("/gpfs/home/belle2/matrk/Extend/Decays/")
+
 max_depth=10
+decays11.pop('B_s0')
+decays12.pop('anti-B_s0')
 decay_dict = decays21
+decay_dict_sup = decays11
 filtered1 = filter_decays("B_s0", find_final_states("B_s0", decays1))
 with open(path/"filtered_decays1.json", "w", encoding="utf-8") as f:
     json.dump(filtered1, f, indent=4, ensure_ascii=False)
-del filtered1
+filtered1
 decay_dict = decays22
-
+decay_dict_sup = decays12
 filtered2 = filter_decays("anti-B_s0", find_final_states("anti-B_s0", decays1))
 with open(path/"filtered_decays2.json", "w", encoding="utf-8") as f:
     json.dump(filtered2, f, indent=4, ensure_ascii=False)
-del filtered2
-#with open(path/'decays2_gen_path_anti-B_s0.json', 'w') as f:
-#     final_path_to_file_indexed('anti-B_s0', decays22, f, part_to_int)
-#with open(path/'decays2_gen_path_B_s0.json', 'w') as f:
-#     final_path_to_file_indexed('B_s0', decays21, f, part_to_int)
+filtered2
+with open(path/'decays2_gen_path_anti-B_s0.json', 'w') as f:
+     final_path_to_file_indexed('anti-B_s0', decays22, f, part_to_int)
+with open(path/'decays2_gen_path_B_s0.json', 'w') as f:
+     final_path_to_file_indexed('B_s0', decays21, f, part_to_int)
+def merge_decay_dicts(*dicts):
+    """Объединяет несколько decay-словрей, избегая дубликатов"""
+    merged = defaultdict(list)
+    
+    for decay_dict in dicts:
+        for particle, decays in decay_dict.items():
+            for decay in decays:
+                if decay not in merged[particle]:
+                    merged[particle].append(decay)
+                    
+    return dict(merged)
+new_dec = merge_decay_dicts(filtered1, filtered2)
+
+def update_branching_ratios(target_dict, source_dict):
+    for particle, decays in target_dict.items():
+        if particle not in source_dict:
+            continue
+        for decay in decays:
+            for src_decay in source_dict[particle]:
+                if (sorted(decay["products"]) == sorted(src_decay["products"])):
+                    decay["branching_ratio"] = src_decay["branching_ratio"]
+                    decay["model"] = src_decay["model"]
+                    break  # переходим к следующему decay
+    return target_dict
+
+new_dec = update_branching_ratios(new_dec, decays2)
+def decay_dict_to_evtgen_format(decay_dict):
+    lines = []
+    for particle, decays in decay_dict.items():
+        lines.append(f"Decay {particle}")
+        norm = 0
+        for d in decays:
+            #print(d["branching_ratio"])
+            norm += float64(d["branching_ratio"])
+        #print(particle, norm)
+
+        for d in decays:
+            products = " ".join(d["products"])
+            model = d["model"]
+            br = str(float64(d["branching_ratio"])/norm)
+            lines.append(f"{br}\t{products}\t{model}")
+        lines.append("Enddecay\n")
+    return "\n".join(lines)
+with open(path/"decays_evtgen_format.txt", "w", encoding="utf-8") as f:
+    f.write(decay_dict_to_evtgen_format(new_dec))

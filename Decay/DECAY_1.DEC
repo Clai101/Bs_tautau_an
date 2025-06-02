@@ -89,13 +89,13 @@ Decay anti-B0
 0.0003   D*+  pi0  mu-  anti-nu_mu  PHOTOS  GOITY_ROBERTS;
 0.0006   D*0  pi+  mu-  anti-nu_mu  PHOTOS  GOITY_ROBERTS;
 0.0005   D+   pi0  mu-  anti-nu_mu  PHOTOS  GOITY_ROBERTS;
-0.0010   D0   pi+  mu-  anti-nu_mu  PHOTOS  GOITY_ROBERTS;# ====B->DXlnu End
+0.0010   D0   pi+  mu-  anti-nu_mu  PHOTOS  GOITY_ROBERTS;
 0.0142   D*+       tau- anti-nu_tau         PHOTOS ISGW2;
 0.0071   D+        tau- anti-nu_tau         PHOTOS ISGW2;
 0.0012   D_1+      tau- anti-nu_tau         PHOTOS ISGW2;
 0.0015   D_0*+     tau- anti-nu_tau         PHOTOS ISGW2;
 0.0012   D'_1+     tau- anti-nu_tau         PHOTOS ISGW2;
-0.0008   D_2*+     tau- anti-nu_tau         PHOTOS ISGW2;# ====B->DXtaunu End
+0.0008   D_2*+     tau- anti-nu_tau         PHOTOS ISGW2;
 0.000580   eta_c K_S0    SSS_CP beta dm -1 1 0 1 0.0;
 0.000580   eta_c K_L0    SSS_CP beta dm  1 1 0 1 0.0;
 0.000266   anti-K*S eta_c          SVS_CP beta dm -1 1 0 1 0.0;
@@ -125,7 +125,7 @@ Decay anti-B0
 0.000218   J/psi anti-K*S          SVV_CP beta dm  1 Aplus phAplus Azero phAzero Aminus phAminus;
 0.000218   J/psi anti-K*L          SVV_CP beta dm -1 Aplus phAplus Azero phAzero Aminus phAminus; 
 0.000874   J/psi anti-K*0T    SVV_HELAMP    PKHplus PKphHplus PKHzero PKphHzero PKHminus PKphHminus;
-0.000000   J/psi K- pi+      PHOTOS PHSP; #?????
+0.000000   J/psi K- pi+      PHOTOS PHSP;
 0.001300   J/psi anti-K_10    SVV_HELAMP    PKHplus PKphHplus PKHzero PKphHzero PKHminus PKphHminus;
 0.000000   J/psi anti-K'_10   SVV_HELAMP    PKHplus PKphHplus PKHzero PKphHzero PKHminus PKphHminus;
 0.000540   J/psi anti-K0 rho0       PHSP;
@@ -482,7 +482,7 @@ Decay anti-B0
 0.000036 D*0 anti-K0              SVS;
 0.000042 D*0 anti-K*0             SVV_HELAMP 0.228 0.0 0.932 0.0 0.283 0;
 0.024297  anti-u  s  c  anti-d            PHOTOS PYTHIA 48;
-0.372909  anti-u  d  c  anti-d           PHOTOS PYTHIA 48;# ====B->DX End
+0.372909  anti-u  d  c  anti-d           PHOTOS PYTHIA 48;
 0.000022       Lambda_c+ anti-p-                 PHOTOS PHSP;
 0.000022       Sigma_c+  anti-p-                 PHOTOS PHSP;
 0.000022       Sigma_c0  anti-n0                 PHSP;
@@ -505,7 +505,7 @@ Decay anti-B0
 0.000040        Lambda_c+    anti-Sigma_c-      PHOTOS PHSP;
 0.000040        Sigma_c+     anti-Sigma_c-      PHOTOS PHSP;
 0.000040        Sigma_c0     anti-Sigma_c0      PHSP;
-0.000400         cd_0       anti-cd_0         PHOTOS PYTHIA 23;# ====B->BaryonX End
+0.000400         cd_0       anti-cd_0         PHOTOS PYTHIA 23;
 Enddecay
 Decay B0
 0.0533   D*-           e+   nu_e    PHOTOS  HQET2 1.3 1.18 0.71;
@@ -568,7 +568,7 @@ Decay B0
 0.000218   J/psi K*S          SVV_CP beta dm  1 Aplus phAplus Azero phAzero Aminus phAminus;
 0.000218   J/psi K*L          SVV_CP beta dm -1 Aplus phAplus Azero phAzero Aminus phAminus; 
 0.000874   J/psi K*0T    SVV_HELAMP    PKHplus PKphHplus PKHzero PKphHzero PKHminus PKphHminus;
-0.000000   J/psi K+ pi-      PHOTOS PHSP; #?????
+0.000000   J/psi K+ pi-      PHOTOS PHSP;
 0.001300   J/psi K_10    SVV_HELAMP    PKHplus PKphHplus PKHzero PKphHzero PKHminus PKphHminus;
 0.000000   J/psi K'_10   SVV_HELAMP    PKHplus PKphHplus PKHzero PKphHzero PKHminus PKphHminus;
 0.000540   J/psi K0 rho0       PHSP;
@@ -1913,7 +1913,7 @@ CDecay tau+
 Decay D+
 0.0310   anti-K*0   e+  nu_e           PHOTOS   ISGW2;
 0.0680   anti-K0    e+  nu_e           PHOTOS   ISGW2;
-0.0200   anti-K_10  e+  nu_e           PHOTOS   ISGW2; # new
+0.0200   anti-K_10  e+  nu_e           PHOTOS   ISGW2; 
 0.0090   anti-K_2*0 e+  nu_e           PHOTOS   ISGW2;
 0.0031   pi0   e+  nu_e          PHOTOS   ISGW2;
 0.0030   eta   e+  nu_e          PHOTOS   ISGW2;
@@ -1925,7 +1925,7 @@ Decay D+
 0.0100   anti-K0  pi0  e+ nu_e      PHOTOS   PYTHIA 42;
 0.0310   anti-K*0   mu+  nu_mu         PHOTOS  ISGW2;
 0.0680   anti-K0    mu+  nu_mu         PHOTOS  ISGW2;
-0.0200   anti-K_10  mu+  nu_mu         PHOTOS  ISGW2; # new
+0.0200   anti-K_10  mu+  nu_mu         PHOTOS  ISGW2; 
 0.0090   anti-K_2*0 mu+  nu_mu         PHOTOS  ISGW2;
 0.0031   pi0   mu+  nu_mu        PHOTOS  ISGW2;
 0.0030   eta   mu+  nu_mu        PHOTOS  ISGW2;
@@ -1943,7 +1943,7 @@ Decay D+
 0.0195   anti-K*0    pi+                PHOTOS SVS;
 0.0380   anti-K'_10  pi+                PHOTOS SVS;
 0.0378   anti-K_0*0  pi+                PHOTOS PHSP;
-0.0147   anti-K''*0  pi+                PHOTOS SVS; # new
+0.0147   anti-K''*0  pi+                PHOTOS SVS; 
 0.0081   anti-K*0 rho+                  PHOTOS SVV_HELAMP  1.0 0.0 1.0 0.0 1.0 0.0;
 0.0531   K-  pi+  pi+                    PHOTOS PHSP;
 0.0451   anti-K0   pi+  pi0                    PHOTOS PHSP;
@@ -1993,12 +1993,12 @@ Decay D+
 0.0020   pi+  pi+  pi+  pi-  pi-  pi0    PHOTOS PHSP;
 0.0030   eta  pi+                       PHOTOS PHSP;
 0.0051   eta' pi+                       PHOTOS PHSP;
-0.0011   f_2  pi+                       PHOTOS PHSP; # new
+0.0011   f_2  pi+                       PHOTOS PHSP; 
 0.0030   eta  pi+ pi0                   PHOTOS PHSP;
 0.0010   eta  pi+ pi+ pi-               PHOTOS PHSP;
 0.0010   eta  pi+ pi0 pi0               PHOTOS PHSP;
-0.0004   K*0 pi+                        PHOTOS SVS; # new
-0.0003   rho0 K+                        PHOTOS SVS; # new
+0.0004   K*0 pi+                        PHOTOS SVS; 
+0.0003   rho0 K+                        PHOTOS SVS; 
 0.0002   K+ pi+ pi-                     PHOTOS PHSP;
 0.0001   K+ K+ K-                       PHOTOS PHSP;
 Enddecay
@@ -2130,32 +2130,32 @@ Decay anti-D0
 0.0120   f_0   K0                         PHSP;
 0.0120   f'_0  K0                         PHSP;
 0.0058   K_0*+  pi-                       PHOTOS PHSP;
-0.0004   K_2*+  pi-                       PHOTOS PHSP;#   new
+0.0004   K_2*+  pi-                       PHOTOS PHSP;
 0.0034   K_0*0  pi0                       PHSP;
 0.0066   K+  pi-  pi0                    PHOTOS PHSP;
 0.0070   K0  pi0  pi0                    PHSP;
 0.0106   K*0 pi+  pi-                    PHOTOS PHSP;
-0.0106   K*0 pi0  pi0                    PHSP;#   ?
-0.0068   K+  rho- pi0                    PHOTOS PHSP;#   ?
+0.0106   K*0 pi0  pi0                    PHSP;
+0.0068   K+  rho- pi0                    PHOTOS PHSP;
 0.0046   K+  pi-  rho0                   PHOTOS PHSP;
 0.0226   K+  pi-  omega                   PHOTOS PHSP;
 0.0070   K+  pi-  eta                    PHOTOS PHSP;
 0.0070   K+  pi-  eta'                   PHOTOS PHSP;
-0.0041   K*0 pi-  pi+   pi0              PHOTOS PHSP;#   new
+0.0041   K*0 pi-  pi+   pi0              PHOTOS PHSP;
 0.0117   K+  pi-  pi+   pi-              PHOTOS PHSP;
 0.0256   K0  pi+  pi-   pi0              PHOTOS PHSP;
-0.0400   K+  pi-  pi0   pi0              PHOTOS PHSP;#   ?
-0.0165   K0  pi0  pi0   pi0              PHSP;#   ?
+0.0400   K+  pi-  pi0   pi0              PHOTOS PHSP;
+0.0165   K0  pi0  pi0   pi0              PHSP;
 0.0049   K+  pi-  pi+   pi-   pi0        PHOTOS PHSP;
-0.0050   K+  pi-  pi0   pi0   pi0        PHOTOS PHSP;#   ?
-0.0260   K0   pi-  pi+   pi0   pi0        PHOTOS PHSP;#   ?
-0.0268   K0   pi-  pi+   pi0   pi0   pi0  PHOTOS PHSP;#   ?
+0.0050   K+  pi-  pi0   pi0   pi0        PHOTOS PHSP;
+0.0260   K0   pi-  pi+   pi0   pi0        PHOTOS PHSP;
+0.0268   K0   pi-  pi+   pi0   pi0   pi0  PHOTOS PHSP;
 0.0094   phi K0                          SVS;
-0.0003   phi K*0                         SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0; # new
-0.00007  phi K+ pi-                      PHOTOS PHSP; # new
-0.00006  K*0 K+ K-                       PHOTOS PHSP; # new
+0.0003   phi K*0                         SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0; 
+0.00007  phi K+ pi-                      PHOTOS PHSP; 
+0.00006  K*0 K+ K-                       PHOTOS PHSP; 
 0.0048   K0  K+ K-                       PHOTOS PHSP;
-0.00003  K-  K+ K+ pi-                   PHOTOS PHSP; # new
+0.00003  K-  K+ K+ pi-                   PHOTOS PHSP; 
 
 0.0009    K_S0 K_S0  K_S0                    PHSP;
 0.0009    K_L0 K_L0  K_L0                    PHSP;
@@ -2165,8 +2165,8 @@ Decay anti-D0
 0.0012   K*+ K-                          PHOTOS SVS;
 0.0044   K*- K+                          PHOTOS SVS;
 0.0002   K*0 anti-K*0                    SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0;
-0.0010   phi pi0                         SVS; # new
-0.00014   phi eta                        SVS; # new
+0.0010   phi pi0                         SVS; 
+0.00014   phi eta                        SVS; 
 0.0064   anti-K0    K+   pi-             PHOTOS PHSP;
 0.0052   K0    K-   pi+                  PHOTOS PHSP;
 0.0013   phi  rho0                       SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0;
@@ -2194,7 +2194,7 @@ Decay anti-D0
 0.0060   pi+  pi-  pi0  pi0  pi0         PHOTOS PHSP;
 0.0004   pi+  pi-  pi+  pi-  pi+  pi-    PHOTOS PHSP;
 0.00014   pi+  K-                         PHOTOS PHSP;
-0.0003    K*-  pi+                        PHOTOS SVS; # new
+0.0003    K*-  pi+                        PHOTOS SVS; 
 0.00046   pi+  K-  pi0                    PHOTOS PHSP;
 0.0003    pi+  K-  pi-   pi+              PHOTOS PHSP;
 Enddecay
@@ -2234,7 +2234,7 @@ Decay D0
 0.0120   f_0   anti-K0                    PHSP;
 0.0120   f'_0  anti-K0                    PHSP;
 0.0058   K_0*-  pi+                       PHOTOS PHSP;
-0.0004   K_2*-  pi+                       PHOTOS PHSP;#   new
+0.0004   K_2*-  pi+                       PHOTOS PHSP;
 0.0034   anti-K_0*0  pi0                  PHSP;
 0.0066   K-  pi+  pi0                    PHOTOS PHSP;
 0.0070   anti-K0   pi0  pi0              PHSP;
@@ -2255,11 +2255,11 @@ Decay D0
 0.0260   anti-K0   pi+  pi-   pi0   pi0        PHOTOS PHSP;
 0.0268   anti-K0   pi+  pi-   pi0   pi0   pi0  PHOTOS PHSP;
 0.0094   phi anti-K0                     SVS;
-0.0003   phi anti-K*0                    SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0; # new
-0.00007  phi K- pi+                      PHOTOS PHSP; # new
-0.00006  anti-K*0 K+ K-                  PHOTOS PHSP; # new
+0.0003   phi anti-K*0                    SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0; 
+0.00007  phi K- pi+                      PHOTOS PHSP; 
+0.00006  anti-K*0 K+ K-                  PHOTOS PHSP; 
 0.0048   anti-K0   K+   K-               PHOTOS PHSP;
-0.00003  K+  K- K- pi+                   PHOTOS PHSP; # new
+0.00003  K+  K- K- pi+                   PHOTOS PHSP; 
 
 0.0009    K_S0 K_S0  K_S0                PHSP;
 0.0009    K_L0 K_L0  K_L0                PHSP;
@@ -2269,8 +2269,8 @@ Decay D0
 0.0012   K*- K+                          PHOTOS SVS;
 0.0044   K*+ K-                          PHOTOS SVS;
 0.0002   anti-K*0 K*0                    SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0;
-0.0010   phi pi0                         SVS; # new
-0.00014   phi eta                        SVS; # new
+0.0010   phi pi0                         SVS; 
+0.00014   phi eta                        SVS; 
 0.0064   K0    K-   pi+                  PHOTOS PHSP;
 0.0052   anti-K0    K+   pi-             PHOTOS PHSP;
 0.0013   phi  rho0                       SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0;
@@ -2298,7 +2298,7 @@ Decay D0
 0.0060   pi+  pi-  pi0  pi0  pi0         PHOTOS PHSP;
 0.0004   pi+  pi-  pi+  pi-  pi+  pi-    PHOTOS PHSP;
 0.00014   pi-  K+                         PHOTOS PHSP;
-0.0003    K*+  pi-                        PHOTOS SVS; # new
+0.0003    K*+  pi-                        PHOTOS SVS; 
 0.00046   pi-  K+  pi0                    PHOTOS PHSP;
 0.0003    pi-  K+  pi+   pi-              PHOTOS PHSP;
 Enddecay
@@ -2595,9 +2595,9 @@ Enddecay
 Decay J/psi
 0.0593    e+   e-          PHOTOS      VLL;
 0.0588    mu+  mu-         PHOTOS      VLL;
-0.0056    rho0 pi0                    HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#VVS_PWAVE 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0057    rho+ pi-           PHOTOS   HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#VVS_PWAVE 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0057    rho- pi+           PHOTOS   HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#VVS_PWAVE 0.0 0.0  1.0 0.0  0.0 0.0;
+0.0056    rho0 pi0                    HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0057    rho+ pi-           PHOTOS   HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0057    rho- pi+           PHOTOS   HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 0.0036    a_20  rho0                      PHSP;
 0.0036    a_2+  rho-           PHOTOS           PHSP;
 0.0036    a_2-  rho+            PHOTOS          PHSP;
@@ -2609,10 +2609,10 @@ Decay J/psi
 0.0013    omega anti-K*0 K0               PHSP;
 0.0013    omega K*+ K-           PHOTOS    PHSP;
 0.0013    omega K+ K*-           PHOTOS    PHSP;
-0.0025    K*+ K-            PHOTOS   HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#VVS_PWAVE 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0025    K*- K+            PHOTOS   HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#VVS_PWAVE 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0021    K*0 anti-K0                     HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#VVS_PWAVE 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0021    anti-K*0 K0                HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#VVS_PWAVE 0.0 0.0  1.0 0.0  0.0 0.0;
+0.0025    K*+ K-            PHOTOS   HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0025    K*- K+            PHOTOS   HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0021    K*0 anti-K0                     HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0021    anti-K*0 K0                HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 0.0019    K_1+ K-           PHOTOS   VVS_PWAVE 1.0 0.0  0.0 0.0  0.0 0.0;
 0.0019    K_1- K+           PHOTOS   VVS_PWAVE 1.0 0.0  0.0 0.0  0.0 0.0;
 0.0034    omega pi0 pi0                   PHSP;
@@ -2631,7 +2631,7 @@ Decay J/psi
 0.0009    omega K+ K-            PHOTOS         PHSP;
 0.0016    Delta++ anti-p- pi-    PHOTOS         PHSP;
 0.0016    anti-Delta-- p+ pi+    PHOTOS         PHSP;
-0.0016    omega eta                       HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#VVS_PWAVE 0.0 0.0  1.0 0.0  0.0 0.0;
+0.0016    omega eta                       HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 0.0004    phi K0 anti-K0                  PHSP;
 0.0004    phi anti-K0 K0                  PHSP;
 0.0004    phi K+ K-              PHOTOS         PHSP;
@@ -2645,12 +2645,12 @@ Decay J/psi
 0.0009    phi pi+ pi-              PHOTOS       PHSP;
 0.0003    phi K+ K_S0 pi-          PHOTOS       PHSP;
 0.0003    phi K- K_S0 pi+          PHOTOS       PHSP;
-0.0007    phi eta                         HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#VVS_PWAVE 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0004    omega pi0                       HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#VVS_PWAVE 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0003    phi eta'                        HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#VVS_PWAVE 0.0 0.0  1.0 0.0  0.0 0.0;
+0.0007    phi eta                         HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0004    omega pi0                       HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0003    phi eta'                        HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 0.0003    phi f_0                         VVS_PWAVE 1.0 0.0  0.0 0.0  0.0 0.0;
 0.0003    phi f_1                         PHSP;
-0.0002    rho0 eta                        HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#VVS_PWAVE 0.0 0.0  1.0 0.0  0.0 0.0;
+0.0002    rho0 eta                        HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 0.0002    omega eta'                      PHSP;
 0.0001    omega f_0                       PHSP;
 0.0001    rho0 eta'                       PHSP;
@@ -2711,8 +2711,8 @@ Decay psi(2S)
 0.0028    tau+ tau-      PHOTOS                VLL;
 0.3170    J/psi  pi+ pi-      PHOTOS             VVPIPI;
 0.1860    J/psi  pi0 pi0      VVPIPI;
-0.0308    J/psi  eta          HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#VVS_PWAVE 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0012    J/psi  pi0          HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#VVS_PWAVE 0.0 0.0  1.0 0.0  0.0 0.0;
+0.0308    J/psi  eta          HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0012    J/psi  pi0          HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 0.0001    a_20  rho0    PHSP;
 0.0001    a_2+  rho-    PHOTOS PHSP;
 0.0001    a_2-  rho+    PHOTOS PHSP;
@@ -2767,7 +2767,7 @@ Decay psi(2S)
 0.05884  s anti-s           PHOTOS             PYTHIA      12;
 Enddecay
 Decay chi_c0
-0.0113    gamma J/psi                          HELAMP 1.0 0.0  1.0 0.0;#(L,S)=(0,0)
+0.0113    gamma J/psi                          HELAMP 1.0 0.0  1.0 0.0;
 0.0071    pi+  pi-                PHOTOS       PHSP;
 0.0007    f_0 f_0		  	       PHSP;
 0.0251    pi+ pi- pi+ pi-         PHOTOS       PHSP;
@@ -2862,17 +2862,17 @@ Decay h_c
 0.1567   s    anti-s             PHOTOS  PYTHIA      12;
 Enddecay
 Decay X(3872)
-0.164 J/psi rho0	PHSP;# 1.00
-0.180 J/psi omega	PHSP;# 1.1(3pi)/0.89(omega->3pi)=1.24
-0.036 J/psi gamma	VVP 1.0 0.0  1.0 0.0  -1.0 0.0 -1.0 0.0;# 0.22
-0.068 chi_c2 gamma	PHSP;# 0.42
-0.138 D*0 anti-D0	VVS_PWAVE  1.0 0.0 0.0 0.0 0.0 0.0; # 0.85
-0.138 anti-D*0 D0	VVS_PWAVE  1.0 0.0 0.0 0.0 0.0 0.0; # 0.85
-0.138 D*+ D-		VVS_PWAVE  1.0 0.0 0.0 0.0 0.0 0.0; # 0.85
-0.138 D*- D+		VVS_PWAVE  1.0 0.0 0.0 0.0 0.0 0.0; # 0.85
+0.164 J/psi rho0	PHSP;
+0.180 J/psi omega	PHSP;
+0.036 J/psi gamma	VVP 1.0 0.0  1.0 0.0  -1.0 0.0 -1.0 0.0;
+0.068 chi_c2 gamma	PHSP;
+0.138 D*0 anti-D0	VVS_PWAVE  1.0 0.0 0.0 0.0 0.0 0.0; 
+0.138 anti-D*0 D0	VVS_PWAVE  1.0 0.0 0.0 0.0 0.0 0.0; 
+0.138 D*+ D-		VVS_PWAVE  1.0 0.0 0.0 0.0 0.0 0.0; 
+0.138 D*- D+		VVS_PWAVE  1.0 0.0 0.0 0.0 0.0 0.0; 
 Enddecay
 Decay Y(3940)
-1.000 J/psi omega	PHSP;# BF(B->YK)(Y->omegaJ/psi)=7.1x10^-5
+1.000 J/psi omega	PHSP;
 Enddecay
 Decay X(3940)
 0.250 D*0 anti-D0	VVS_PWAVE  1.0 0.0 0.0 0.0 0.0 0.0;
@@ -2890,12 +2890,12 @@ Decay psi(4040)
 0.000005  tau+ tau-              PHOTOS  VLL;
 0.00056   D0 anti-D0                     VSS;
 0.00044   D+ D-                    PHOTOS      VSS;
-0.1255    D*0 anti-D0                    HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.1255    anti-D*0 D0                    HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0975    D*+ D-                PHOTOS         HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0975    D*- D+                PHOTOS         HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.2520    D*0 anti-D*0                   PHSP;#  0.0 0.0  1.0 0.0  0.0 0.0;
-0.1960    D*+ D*-               PHOTOS   PHSP;#  0.0 0.0  1.0 0.0  0.0 0.0;
+0.1255    D*0 anti-D0                    HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.1255    anti-D*0 D0                    HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0975    D*+ D-                PHOTOS         HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0975    D*- D+                PHOTOS         HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.2520    D*0 anti-D*0                   PHSP;
+0.1960    D*+ D*-               PHOTOS   PHSP;
 0.104967    D_s+ D_s-           PHOTOS           VSS;
 Enddecay
 Decay psi(4160)
@@ -2904,15 +2904,15 @@ Decay psi(4160)
 0.000006  tau+ tau-              PHOTOS        VLL;
 0.1240    D0 anti-D0                     VSS;
 0.0960    D+ D-                 PHOTOS         VSS;
-0.0014    D*0 anti-D0                    HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0014    anti-D*0 D0                    HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0011    D*+ D-               PHOTOS    HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0011    D*- D+                PHOTOS   HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.2700    D*0 anti-D*0                   PHSP;#  0.0 0.0  1.0 0.0  0.0 0.0;
-0.2100    D*+ D*-               PHOTOS         PHSP;#  0.0 0.0  1.0 0.0  0.0 0.0;
+0.0014    D*0 anti-D0                    HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0014    anti-D*0 D0                    HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0011    D*+ D-               PHOTOS    HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0011    D*- D+                PHOTOS   HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.2700    D*0 anti-D*0                   PHSP;
+0.2100    D*+ D*-               PHOTOS         PHSP;
 0.1100    D_s+ D_s-             PHOTOS         VSS;
-0.092487  D_s*+ D_s-            PHOTOS         HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.092487  D_s*- D_s+            PHOTOS         HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
+0.092487  D_s*+ D_s-            PHOTOS         HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.092487  D_s*- D_s+            PHOTOS         HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 0.0000    D_s+ D_s- pi0         PHOTOS         PHSP;
 Enddecay
 Decay psi(4415)
@@ -2921,16 +2921,16 @@ Decay psi(4415)
 0.000007  tau+ tau-              PHOTOS        VLL;
 0.0028    D0 anti-D0                     VSS;
 0.0022    D+ D-                  PHOTOS        VSS;
-0.0085    D*0 anti-D0                    HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0085    anti-D*0 D0                    HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0065    D*+ D-                PHOTOS   HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0065    D*- D+                PHOTOS   HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.1120  D*0 anti-D*0                     PHSP;#  0.0 0.0  1.0 0.0  0.0 0.0;
-0.0880    D*+ D*-               PHOTOS   PHSP;#  0.0 0.0  1.0 0.0  0.0 0.0;
+0.0085    D*0 anti-D0                    HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0085    anti-D*0 D0                    HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0065    D*+ D-                PHOTOS   HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0065    D*- D+                PHOTOS   HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.1120  D*0 anti-D*0                     PHSP;
+0.0880    D*+ D*-               PHOTOS   PHSP;
 0.0170    D_s+ D_s-           PHOTOS           VSS;
-0.0150    D_s*+ D_s-          PHOTOS     HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0150    D_s*- D_s+          PHOTOS     HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.008971    D_s*+ D_s*-         PHOTOS   PHSP;#  0.0 0.0  1.0 0.0  0.0 0.0;
+0.0150    D_s*+ D_s-          PHOTOS     HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0150    D_s*- D_s+          PHOTOS     HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.008971    D_s*+ D_s*-         PHOTOS   PHSP;
 0.1110    D_10 anti-D0                   VVS_PWAVE 1.0 0.0  0.0 0.0  0.0 0.0;
 0.1110    anti-D_10 D0                   VVS_PWAVE 1.0 0.0  0.0 0.0  0.0 0.0;
 0.0870    D_1+ D-             PHOTOS     VVS_PWAVE 1.0 0.0  0.0 0.0  0.0 0.0;
@@ -3018,9 +3018,9 @@ CDecay a_0-
 Decay phi
 0.492076  K+   K-                         PHOTOS VSS;
 0.340000  K_L0  K_S0                      VSS;
-0.043000  rho+ pi-                        PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.043000  rho0 pi0                        PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.043000  rho- pi+                        PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
+0.043000  rho+ pi-                        PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.043000  rho0 pi0                        PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.043000  rho- pi+                        PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 0.023300  pi+  pi- pi0                    PHOTOS PHSP;
 0.013050  eta gamma                        VSP_PWAVE;
 0.001240  pi0 gamma                       VSP_PWAVE;
@@ -3028,7 +3028,7 @@ Decay phi
 0.000285  mu+ mu-             		 PHOTOS      PHOTOS VLL;
 0.000115  eta e+ e-           		 PHOTOS      PHSP;
 0.000073  pi+ pi-                         PHOTOS VSS;
-0.000052  omega pi0                       HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
+0.000052  omega pi0                       HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 0.000041  pi+ pi- gamma                   PHOTOS PHSP;
 0.000111  f_0 gamma                       VSP_PWAVE;
 0.000109  pi0 pi0 gamma                   PHSP;
@@ -3040,8 +3040,8 @@ Decay phi
 0.000014  mu+ mu- gamma       		 PHOTOS      PHSP;
 Enddecay
 Decay h_1
-0.3333   rho+ pi-                        PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#  1.0 0.0 0.0 0.0 0.0 0.0;
-0.3333   rho- pi+                        PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#  1.0 0.0 0.0 0.0 0.0 0.0;
+0.3333   rho+ pi-                        PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.3333   rho- pi+                        PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 0.3334   rho0 pi0                        VVS_PWAVE  1.0 0.0 0.0 0.0 0.0 0.0;
 Enddecay
 Decay b_1+
@@ -3098,7 +3098,7 @@ Decay f_1
 0.0300   anti-K0   K+   pi-              PHOTOS PHSP;
 0.0300   K0   K-   pi+                   PHOTOS PHSP;
 0.0593   gamma rho0                       PHSP;
-0.0007   phi gamma                       HELAMP 1. 0. 1. 0. -1. 0. -1. 0.;#(L,S)=(0,1)
+0.0007   phi gamma                       HELAMP 1. 0. 1. 0. -1. 0. -1. 0.;
 Enddecay
 Decay eta(2S)
 0.2500   a_00  pi0                        PHSP;
@@ -3150,10 +3150,10 @@ Decay eta(1405)
 0.10	a_00 pi0			PHOTOS PHSP;
 Enddecay
 Decay phi(1680)
-0.2425	 anti-K*0 K0			HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#  0.0 0.0  1.0 0.0  0.0 0.0;
-0.2425	 K*0 anti-K0			HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#  0.0 0.0  1.0 0.0  0.0 0.0;
-0.2425	 K*+ K-				PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#  0.0 0.0  1.0 0.0  0.0 0.0;
-0.2425	 K*- K+				PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#  0.0 0.0  1.0 0.0  0.0 0.0;
+0.2425	 anti-K*0 K0			HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.2425	 K*0 anti-K0			HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.2425	 K*+ K-				PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.2425	 K*- K+				PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 0.015	 K_S0 K_L0			VSS;
 0.015	 K+ K-				PHOTOS VSS;
 Enddecay
@@ -3181,12 +3181,12 @@ Decay f'_1
 0.0004   phi gamma			 	VVP 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0;
 Enddecay
 Decay omega(2S)
-0.233   rho+  pi-                   PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#  0.0 0.0  1.0 0.0  0.0 0.0;
-0.233   rho-  pi+                   PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#  0.0 0.0  1.0 0.0  0.0 0.0;
-0.234   rho0  pi0                          HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#  0.0 0.0  1.0 0.0  0.0 0.0;
-0.100   b_1+  pi-                   PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#  0.0 0.0  1.0 0.0  0.0 0.0;
-0.100   b_1-  pi+                   PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#  0.0 0.0  1.0 0.0  0.0 0.0;
-0.100   b_10  pi0                          HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;#  0.0 0.0  1.0 0.0  0.0 0.0;
+0.233   rho+  pi-                   PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.233   rho-  pi+                   PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.234   rho0  pi0                          HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.100   b_1+  pi-                   PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.100   b_1-  pi+                   PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.100   b_10  pi0                          HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 Enddecay
 Decay f_0(1500)
 0.0500   eta  eta'                       PHSP;
@@ -3306,26 +3306,26 @@ Decay K_0*0N
 Enddecay
 CDecay anti-K_0*0N
 Decay K_10
-0.2800   rho-  K+                 PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.1400   rho0  K0                        HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.1067   K*+   pi-                PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0533   K*0   pi0                       HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
+0.2800   rho-  K+                 PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.1400   rho0  K0                        HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.1067   K*+   pi-                PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0533   K*0   pi0                       HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 0.1867   K_0*+   pi-                     PHOTOS VSS;
 0.0933   K_0*0   pi0                     VSS;
-0.1100   omega  K0                       HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
+0.1100   omega  K0                       HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 0.0140   K0    pi+ pi-                   PHOTOS PHSP;
 0.0120   K+    pi- pi0                   PHOTOS PHSP;
 0.0040   K0    pi0 pi0                   PHSP;
 Enddecay
 CDecay anti-K_10
 Decay K_1+
-0.2800   rho+  K0                        PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.1400   rho0  K+                        PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.1067   K*0   pi+                       PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0533   K*+   pi0                       PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
+0.2800   rho+  K0                        PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.1400   rho0  K+                        PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.1067   K*0   pi+                       PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0533   K*+   pi0                       PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 0.1867   K_0*0   pi+                     PHOTOS VSS;
 0.0933   K_0*+   pi0                     PHOTOS VSS;
-0.1100   omega  K+                       PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0 0.0 0.0;
+0.1100   omega  K+                       PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 0.0140   K+    pi+ pi-                   PHOTOS PHSP;
 0.0120   K0    pi+ pi0                   PHOTOS PHSP;
 0.0040   K+    pi0 pi0                   PHOTOS PHSP;
@@ -3382,37 +3382,37 @@ CDecay anti-K_2*0
 Decay K'*0
 0.0440   K+  pi-                     PHOTOS VSS;
 0.0220   K0  pi0                     VSS;
-0.5973   K*+ pi-                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.2987   K*0 pi0                            HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0267   rho- K+                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0113   rho0 K0                            HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
+0.5973   K*+ pi-                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.2987   K*0 pi0                            HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0267   rho- K+                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0113   rho0 K0                            HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 Enddecay
 CDecay anti-K'*0
 Decay K'*+
 0.0440   K0  pi+                     PHOTOS VSS;
 0.0220  K+  pi0                      PHOTOS VSS;
-0.5973   K*0 pi+                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.2987   K*+ pi0                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0267   rho+ K0                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0113   rho0 K+                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
+0.5973   K*0 pi+                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.2987   K*+ pi0                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0267   rho+ K0                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0113   rho0 K+                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 Enddecay
 CDecay K'*-
 Decay K''*0                
 0.2580   K+  pi-                     PHOTOS VSS;
 0.1290   K0  pi0                     VSS;
-0.2093   K*+ pi-                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.1047   K*0 pi0                            HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.1993   rho- K+                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0997   rho0 K0                            HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
+0.2093   K*+ pi-                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.1047   K*0 pi0                            HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.1993   rho- K+                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0997   rho0 K0                            HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 Enddecay
 CDecay anti-K''*0              
 Decay K''*+                            
 0.2580   K0  pi+                     PHOTOS VSS;
 0.1290   K+  pi0                     PHOTOS VSS;
-0.2093   K*0 pi+                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.1047   K*+ pi0                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.1993   rho+ K0                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
-0.0997   rho0 K+                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;# 0.0 0.0  1.0 0.0  0.0 0.0;
+0.2093   K*0 pi+                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.1047   K*+ pi0                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.1993   rho+ K0                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
+0.0997   rho0 K+                     PHOTOS HELAMP 1.0 0.0  0.0 0.0  -1.0 0.0;
 Enddecay
 CDecay K''*-                       
 Decay K_2(1770)0
