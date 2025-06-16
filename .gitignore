@@ -18,7 +18,6 @@
 *.feather
 
 # Игнорировать файлы Parquet
-*.parquet
 
 # Игнорировать ROOT-файлы
 **/*.root
