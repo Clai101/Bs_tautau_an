@@ -1,0 +1,71 @@
+#
+# Aliases
+# Alias will have the same properties as the original 
+# particle except the decay table
+#
+Alias MyBs0 B_s0
+Alias Myanti-Bs0 anti-B_s0
+ChargeConj MyBs0 Myanti-Bs0
+
+Alias B_s0_FEI B_s0
+Alias anti-B_s0_FEI anti-B_s0
+ChargeConj B_s0_FEI anti-B_s0_FEI
+
+Alias MyBs*0 B_s*0
+Alias Myanti-Bs*0 anti-B_s*0
+ChargeConj MyBs*0 Myanti-Bs*0 
+
+Alias B_s*0_FEI B_s*0
+Alias anti-B_s*0_FEI anti-B_s*0
+ChargeConj B_s*0_FEI anti-B_s*0_FEI
+
+Alias MyD_s*- D_s*-
+Alias MyD_s*+ D_s*+
+ChargeConj MyD_s*- MyD_s*+
+
+Alias MyD_s- D_s-
+Alias MyD_s+ D_s+
+ChargeConj MyD_s+ MyD_s-
+
+Alias Mya_1+ a_1+
+Alias Mya_1- a_1-
+ChargeConj Mya_1+ Mya_1-
+
+Alias MyJ/psi J/psi
+
+Alias MyK*0 K*0
+Alias Myanti-K*0 anti-K*0
+ChargeConj MyK*0 Myanti-K*0
+
+Alias Myrho+ rho+
+Alias Myrho- rho-
+ChargeConj Myrho+ Myrho-
+
+Alias MyK*+ K*+
+Alias MyK*- K*-
+ChargeConj MyK*- MyK*+
+
+Alias MyK0 K0
+Alias Myanti-K0 anti-K0
+ChargeConj MyK0 Myanti-K0
+
+Alias Myanti-K_0*0 anti-K_0*0
+Alias MyK_0*0 K_0*0
+ChargeConj MyK0 Myanti-K0
+
+Alias Myrho0 rho0
+Alias Myrho(2S)0 rho(2S)0
+Alias Myf_0 f_0
+Alias Myf'_0 f'_0
+Alias Myf_0(1500) f_0(1500)
+Alias Myf_2 f_2
+Alias Myphi phi
+Alias Myomega omega
+Alias MyUpsilon(5S) Upsilon(5S)
+
+
+Decay MyUpsilon(5S)
+0.500 pi0 pi0	PHSP;
+Enddecay
+
+End

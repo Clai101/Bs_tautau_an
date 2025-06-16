@@ -1,0 +1,497 @@
+{
+    "D_s-": [
+        {
+            "branching_ratio": 0.0006,
+            "products": [
+                "K-",
+                "pi-",
+                "pi+"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.045,
+            "products": [
+                "K0",
+                "K-"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.012,
+            "products": [
+                "phi",
+                "pi-",
+                "pi0"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.045,
+            "products": [
+                "phi",
+                "pi-"
+            ],
+            "model": "PHOTOS SVS"
+        },
+        {
+            "branching_ratio": 0.041,
+            "products": [
+                "phi",
+                "rho-"
+            ],
+            "model": "PHOTOS SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0"
+        },
+        {
+            "branching_ratio": 0.0059,
+            "products": [
+                "phi",
+                "pi-",
+                "pi-",
+                "pi+"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.0026,
+            "products": [
+                "rho0",
+                "K-"
+            ],
+            "model": "PHOTOS SVS"
+        },
+        {
+            "branching_ratio": 0.032,
+            "products": [
+                "K-",
+                "K+",
+                "pi-",
+                "pi0"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.0023,
+            "products": [
+                "anti-K*0",
+                "pi-"
+            ],
+            "model": "PHOTOS SVS"
+        },
+        {
+            "branching_ratio": 0.054,
+            "products": [
+                "K*-",
+                "K0"
+            ],
+            "model": "PHOTOS SVS"
+        },
+        {
+            "branching_ratio": 0.0021,
+            "products": [
+                "f_2",
+                "pi-"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.032,
+            "products": [
+                "K0",
+                "K-",
+                "pi-",
+                "pi+"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.0216,
+            "products": [
+                "eta",
+                "pi-"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.0221,
+            "products": [
+                "anti-K0",
+                "K+",
+                "pi-",
+                "pi-"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.0027,
+            "products": [
+                "K-",
+                "K+",
+                "pi-",
+                "pi-",
+                "pi+"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.0005,
+            "products": [
+                "rho(2S)0",
+                "pi-"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.0063,
+            "products": [
+                "phi",
+                "rho0",
+                "pi-"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.072,
+            "products": [
+                "K*0",
+                "K*-"
+            ],
+            "model": "PHOTOS SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0"
+        },
+        {
+            "branching_ratio": 0.0018,
+            "products": [
+                "K-",
+                "rho(2S)0"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.0073,
+            "products": [
+                "K_0*0",
+                "K-"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.0242,
+            "products": [
+                "f'_0",
+                "pi-"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.0105,
+            "products": [
+                "f_0",
+                "pi-"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.0034,
+            "products": [
+                "omega",
+                "pi-"
+            ],
+            "model": "PHOTOS SVS"
+        },
+        {
+            "branching_ratio": 0.0916,
+            "products": [
+                "rho-",
+                "eta"
+            ],
+            "model": "PHOTOS SVS"
+        },
+        {
+            "branching_ratio": 0.0376,
+            "products": [
+                "K*0",
+                "K-"
+            ],
+            "model": "PHOTOS SVS"
+        },
+        {
+            "branching_ratio": 0.048,
+            "products": [
+                "eta'",
+                "pi-"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.084,
+            "products": [
+                "rho-",
+                "eta'"
+            ],
+            "model": "PHOTOS SVS"
+        },
+        {
+            "branching_ratio": 0.0245,
+            "products": [
+                "f_0(1500)",
+                "pi-"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.0005,
+            "products": [
+                "pi-",
+                "pi-",
+                "pi+"
+            ],
+            "model": "PHOTOS PHSP"
+        },
+        {
+            "branching_ratio": 0.0019,
+            "products": [
+                "anti-K_0*0",
+                "pi-"
+            ],
+            "model": "PHOTOS PHSP"
+        }
+    ],
+    "K0": [
+        {
+            "products": [
+                "K_S0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "phi": [
+        {
+            "products": [
+                "K+",
+                "K-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "rho-": [
+        {
+            "products": [
+                "pi-",
+                "pi0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "rho0": [
+        {
+            "products": [
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "anti-K*0": [
+        {
+            "products": [
+                "K-",
+                "pi+"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "anti-K0": [
+        {
+            "products": [
+                "K_S0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "K*-": [
+        {
+            "products": [
+                "anti-K0",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K-",
+                "pi0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "f_2": [
+        {
+            "products": [
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K+",
+                "K-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "rho(2S)0": [
+        {
+            "products": [
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "K*0": [
+        {
+            "products": [
+                "K+",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "K_0*0": [
+        {
+            "products": [
+                "K+",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K0",
+                "pi0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "f'_0": [
+        {
+            "products": [
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K+",
+                "K-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K_S0",
+                "K_S0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "f_0": [
+        {
+            "products": [
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K+",
+                "K-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K_S0",
+                "K_S0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "omega": [
+        {
+            "products": [
+                "pi-",
+                "pi+"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "f_0(1500)": [
+        {
+            "products": [
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K+",
+                "K-"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        },
+        {
+            "products": [
+                "K_S0",
+                "K_S0"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ],
+    "anti-K_0*0": [
+        {
+            "products": [
+                "K-",
+                "pi+"
+            ],
+            "model": "PHOTOS",
+            "branching_ratio": 0.0
+        }
+    ]
+}

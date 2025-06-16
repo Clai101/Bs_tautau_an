@@ -1,0 +1,65 @@
+Decay B_s0
+0   D_s- pi+  PHOTOS
+0   D_s- pi+ pi0  PHOTOS
+0   D_s- pi+ pi+ pi-  PHOTOS
+0   D_s*- pi+ PHOTOS
+0   D_s*- pi+ pi0 PHOTOS
+0   D_s*- pi+ pi+ pi- PHOTOS
+0   D_s- D_s+ PHOTOS
+0   D_s*- D_s+    PHOTOS
+0   D_s- D_s*+    PHOTOS
+0   D_s*- D_s*+   PHOTOS
+0   J/psi K+ K-   PHOTOS
+0   J/psi K+ K- pi0   PHOTOS
+0   anti-D0 K- pi+    PHOTOS
+0   anti-D*0 K- pi+   PHOTOS
+0   D_s- K+   PHOTOS
+Enddecay
+CDecay anti-B_s0
+
+Decay D*0
+0   D0 gamma    PHOTOS
+0   D0 pi0    PHOTOS
+Enddecay
+CDecay anti-D*0
+
+
+Decay D_s+
+0   K+ K- pi+   PHOTOS
+0   K+ K_S0 PHOTOS
+0   K+ K- pi+ pi0   PHOTOS
+0   K+ K_S0 pi+ pi- PHOTOS
+0   K- K_S0 pi+ pi+ PHOTOS
+0   K+ K- pi+ pi+ pi-   PHOTOS
+0   K+ pi+ pi-  PHOTOS
+0   pi+ pi+ pi- PHOTOS
+0   K+ K_S0 pi0 PHOTOS
+0   K_S0 K_S0 pi+   PHOTOS
+0   eta pi+ PHOTOS
+0   eta' pi+    PHOTOS
+0   eta pi+ pi0 PHOTOS
+0   eta' pi+ pi0    PHOTOS
+Enddecay
+CDecay D_s-
+
+Decay D0
+0   K- pi+  PHOTOS
+0   K- pi+ pi0  PHOTOS
+0   K- pi+ pi+ pi-  PHOTOS
+0   K_S0 pi+ pi-    PHOTOS
+0   K_S0 pi+ pi- pi0    PHOTOS
+0   K_S0 pi+ pi+ pi- pi-    PHOTOS
+0   K+ K-   PHOTOS
+0   K+ K- K_S0  PHOTOS
+Enddecay
+CDecay anti-D0
+
+Decay J/psi
+0   e+ e-   PHOTOS
+0   mu+ mi- PHOTOS
+Enddecay
+
+Decay D_s*+
+0 D_s+ gamma PHOTOS
+Enddecay
+CDecay D_s*-

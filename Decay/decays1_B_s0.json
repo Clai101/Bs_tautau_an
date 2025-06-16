@@ -1,0 +1,132 @@
+{
+    "D_s+": [
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "K+",
+                "K-",
+                "pi+"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "K+",
+                "K_S0"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "K+",
+                "K-",
+                "pi+",
+                "pi0"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "K+",
+                "K_S0",
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "K-",
+                "K_S0",
+                "pi+",
+                "pi+"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "K+",
+                "K-",
+                "pi+",
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "K+",
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "pi+",
+                "pi+",
+                "pi-"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "K+",
+                "K_S0",
+                "pi0"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "K_S0",
+                "K_S0",
+                "pi+"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "eta",
+                "pi+"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "eta'",
+                "pi+"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "eta",
+                "pi+",
+                "pi0"
+            ],
+            "model": "PHOTOS"
+        },
+        {
+            "branching_ratio": 0.0,
+            "products": [
+                "eta'",
+                "pi+",
+                "pi0"
+            ],
+            "model": "PHOTOS"
+        }
+    ]
+}

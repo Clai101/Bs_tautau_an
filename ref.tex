@@ -1,0 +1,317 @@
+\documentclass[russian]{beamer}
+\usecolortheme{seahorse} % Выбор цветовой схемы
+
+\usepackage{amsmath} % американское математическое сообщество.
+\usepackage{amssymb} % миллион разных значков и готический, ажурный шрифты.
+\usepackage{amscd} % диаграммы, графики.
+\usepackage{amsthm} % окружения теорем, определений и тд.
+\usepackage{physics} % основные физические символы
+%\usepackage{latexsym} % треугольники и пьяная стрелка.
+
+%пакеты для шрифтов:
+%\usepackage{euscript} % прописной шрифт с завитушками.
+%\usepackage{MnSymbol} % Значеки дaxs[i//n, i%n]ельства
+%\usepackage{verbatim} % улучшенный шрифт "пишущей машинки".
+\usepackage{array} % более удобные таблицы.
+\usepackage{multirow} % мультистолбцы в таблицах.
+\usepackage{epstopdf} % Векторная графика
+\usepackage{longtable} % таблицы на несколько страниц.
+%\usepackage{latexsym}
+%\usepackage{tikz-feynhand} % Феймановские диограммы
+\usepackage{animate}
+\usepackage{hyphenat}
+%\usepackage{etoolbox}
+%\usepackage{collectbox} % Добавляет коробочки, можно складывать туда текст)
+
+
+
+%Пакеты для оформления:
+%\usepackage[x11names]{xcolor} % 317 новых цветов для текста.
+%\usepackage{multicol} % набор текста в несколько колонн.
+%\usepackage{breqn} % мультистоки в урвнениях 
+%\usepackage{anyfontsize}
+\usepackage{graphicx} % расширенные возможности вставки стандартных картинок.
+%\usepackage{subcaption} % возможность вставлять картинки в строчку
+%\usepackage{caption} % возможность подавить нумерацию у caption.
+%\usepackage{wrapfig} % вставка картинок и таблиц, обтекаемых текстом.
+\usepackage{cancel} % значки для сокращения дробей, упрощения, стремления.
+\usepackage{multirow}
+\usepackage{pdfpages} % вставка pdf в документ
+%\usepackage{misccorr} % в заголовках появляется точка, но при ссылке на них ее нет.
+%\usepackage{indentfirst} % отступ у первой строки раздела
+%\usepackage{showkeys} % показывает label формул над их номером.
+%\usepackage{fancyhdr} % удобное создание верхних и нижних колонтитулов.
+%\usepackage{titlesec} % еще одно создание верхних и нижних колонтитулов
+
+%Пакеты шрифтов, кодировок. НЕ МЕНЯТЬ РАСПОЛОЖЕНИЕ.
+\usepackage[utf8x]{inputenc} % кодировка символов.
+%\usepackage{mathtext} % позволяет использовать русские буквы в формулах. НЕСОВМЕСТИМО С tempora.
+\usepackage[T1, T2A]{fontenc} % кодировка шрифта.
+\usepackage[english, russian]{babel} % доступные языки.
+
+
+%Сокращения
+\newcommand{\piv}[2]{\cfrac{\partial #1}{\partial #2}}
+
+
+%Скобочки
+\newcommand{\inrad}[1]{\left( #1 \right)}
+\newcommand{\inner}[1]{\left( #1 \right)}
+\newcommand{\infig}[1]{\left\{ #1 \right\}}
+\newcommand{\insqr}[1]{\left[ #1 \right]}
+\newcommand{\ave}[1]{\left\langle #1 \right\rangle}
+
+
+%% Красивые <= и >=
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+
+%%Значек выполнятся
+\newcommand{\per}{\hookrightarrow}
+
+
+%% Более привычные греческие буквы
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\Eps}{\mathfrak{E}}
+\newcommand{\com}{\mathbb{C}}
+\newcommand{\re}{\mathbb{R}}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\stp}{$\filledmedtriangleleft$}
+\newcommand{\enp}{$\filledmedsquare$}
+
+
+\newcommand{\mergelines}[2]{
+\begin{tabular}{llp{.5\textwidth}}
+    #1 \\ #2
+\end{tabular}
+}
+\newcommand\tab[1][0.51cm]{\hspace*{#1}}
+\newcommand\difh[2]{\frac{\partial #1}{\partial #2}}
+
+\newcommand{\llp}[1]{\lambda_{\Lambda_{#1}}}
+
+    
+
+\title{Оценка редких распадов $B^0_{s} \to \tau^+ \tau^-$}
+\author[Карибджанов Матвей]{\underline{Карибджанов Матвей}, Пахлов Павел}
+
+    
+\begin{document}
+\begin{frame}% первый слайд
+    \titlepage
+\end{frame}
+
+% Slide 1: Motivation
+\begin{frame}{Поиски редкого распада: $B^0_s \to \tau^+ \tau^-$}
+  \begin{itemize}
+    \item Редкие лептонные распады $B_s$-мезонов --- могут быть чувствительны к новой физике.
+    \item Теоретическое предсказание:
+    \begin{align*}
+      \mathcal{B}(B^0_s \to \tau^+ \tau^-) &\approx 7.7 \times 10^{-7}
+    \end{align*}
+  \end{itemize}
+\end{frame}
+
+% Slide 2: Methodology
+\begin{frame}{Реконструкция}
+  \begin{itemize}
+    \item Данные: 3 fb$^{-1}$ от LHCb (2011--2012).
+    \item Канал распада: $\tau^- \to \pi^- \pi^+ \pi^- \nu_\tau$.
+    \item Решения:
+    \begin{itemize}
+      \item Аналитическая реконструкция с использованием топологии распада и масс.
+      \item Классификатор на MC сгенерированных по результатам BaBar $\tau^- \to \pi^- \pi^+ \pi^- \nu_\tau$.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Нормировка через $B^0 \to D^- D^+_s$}
+  \begin{itemize}
+    \item Для получения абсолютного значения используется нормализация на канал:
+    \[ B^0 \to D^- D^+_s,\quad D^- \to K^+ \pi^- \pi^-,\quad D^+_s \to K^+ K^- \pi^+ \]
+    \item Величина ветвления восстанавливается как:
+    \[ \mathcal{B}(B^0_s \to \tau^+ \tau^-) = \alpha_s \cdot s \]
+    \item Где нормализационный коэффициент:
+    \begin{align*}
+    \alpha_s = \frac{\varepsilon_{D_s} \cdot \mathcal{B}_{B^0 \to D_s} \cdot \mathcal{B}_{D^-} \cdot \mathcal{B}_{D^+_s}}
+    {N_{DD_s}^{\text{obs}} \cdot \varepsilon_{\tau^+\tau^-} \cdot \mathcal{B}_{\tau}^2} \cdot \frac{f_d}{f_s}
+    \end{align*}
+    \item Получено: \( \alpha_s = (4.07 \pm 0.70) \times 10^{-5} \)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Результат}
+  \begin{itemize}
+    \item Верхний предел $B_0$:
+    \begin{align*}
+      \mathcal{B}(B^0 \to \tau^+ \tau^-) < 2.1 \times 10^{-3}
+    \end{align*}
+    \item Верхний предел $B_0$:
+    \begin{align*}
+      \mathcal{B}(B^0_s \to \tau^+ \tau^-)< 6.8 \times 10^{-3}
+    \end{align*}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Каналы распада $\tau$}
+
+  \begin{itemize}
+    \item $\tau^+ \to e^+ \nu_e \bar \nu_\tau$
+    \item $\tau^+ \to \mu^+ \nu_\mu \bar \nu_\tau$
+    \item $\tau^+ \to \pi^+ \bar \nu_\tau$
+    \item $\tau^+ \to \rho^+ (\pi^+ \pi^0) \bar \nu_\tau$ --- нет
+    \item $\tau^+ \to \pi^+ \pi^+ \pi^- \bar \nu_\tau$ --- нет
+    \item $\tau^+ \to \rho^+ (\pi^+ \gamma) \bar \nu_\tau$ --- нет
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Распады $\tau^+\tau^-$ с двумя нейтрино (сигнальный MC)}
+\centering
+\begin{tabular}{cc}
+\subfigure{\includegraphics[width=0.45\linewidth]{output/E_miss_tau_2nu-1.png}} &
+\subfigure{\includegraphics[width=0.45\linewidth]{output/E_miss_tau_2nu-2.png}}
+
+\end{tabular}
+{
+  \centering
+  \subfigure{\includegraphics[width=0.45\linewidth]{output/E_miss_tau_2nu-3.png}}
+}
+\end{frame}
+
+
+% ---------- 3 нейтрино ----------
+\begin{frame}{Распады $\tau^+\tau^-$ с тремя нейтрино (сигнальный MC)}
+  \centering
+  \begin{tabular}{cc}
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_miss_tau_3nu-1.png}} &
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_miss_tau_3nu-2.png}} \\
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_miss_tau_3nu-3.png}}&
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_miss_tau_3nu-4.png}}
+  \end{tabular}
+\end{frame}
+
+
+% ---------- 4 нейтрино ----------
+\begin{frame}{Распады $\tau^+\tau^-$ с тремя нейтрино (сигнальный MC)}
+  \centering
+  \begin{tabular}{cc}
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_miss_tau_4nu-1.png}} &
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_miss_tau_4nu-2.png}} \\
+  \end{tabular}
+  {
+  \centering
+  \subfigure{\includegraphics[width=0.45\linewidth]{output/E_miss_tau_4nu-3.png}}
+  }
+\end{frame}
+
+% ---------- 2 нейтрино ----------
+
+\begin{frame}{Распады $\tau^+\tau^-$ (GenMC)}
+  \begin{itemize}
+    \item Тагирующий $B^{tag}_s$ восстановлен --- верно
+    \item $mu - 2\sigma < E_{miss} < mu + 2\sigma$
+    \item $5.547< M^{tag}_{B_s} < 5.347 GeV$
+    \item $N_{chr} = 0$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Распады $\tau^+\tau^-$ с двумя нейтрино (GenMC)}
+\centering
+\begin{tabular}{cc}
+\subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_is_2nu-1.png}} &
+\subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_is_2nu-2.png}}
+
+\end{tabular}
+{
+  \centering
+  \subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_is_2nu-3.png}}
+}
+\end{frame}
+
+% ---------- 3 нейтрино ----------
+\begin{frame}{Распады $\tau^+\tau^-$ с тремя нейтрино (GenMC)}
+  Тагирующий $B^{tag}_s$ восстановлен --- верно, $mu - 2\sigma < E_{miss} < mu + 2\sigma$, $5.547< M^{tag}_{B_s} < 5.347 GeV$
+
+  \centering
+  \begin{tabular}{cc}
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_is_2nu-1.png}} &
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_is_2nu-2.png}} \\
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_is_2nu-3.png}}&
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_is_2nu-4.png}}
+  \end{tabular}
+\end{frame}
+
+
+% ---------- 4 нейтрино ----------
+\begin{frame}{Распады $\tau^+\tau^-$ с четырьмя нейтрино (GenMC)}
+  Тагирующий $B^{tag}_s$ восстановлен --- верно, $mu - 2\sigma < E_{miss} < mu + 2\sigma$, $5.547< M^{tag}_{B_s} < 5.347 GeV$
+
+  \centering
+  \begin{tabular}{cc}
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_is_4nu-1.png}} &
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_is_4nu-2.png}} \\
+  \end{tabular}
+  {
+  \centering
+  \subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_is_4nu-3.png}}
+  }
+\end{frame}
+
+% ---------- 2 нейтрино ----------
+
+\begin{frame}{Распады $\tau^+\tau^-$ (GenMC)}
+  \begin{itemize}
+    \item Тагирующий $B^{tag}_s$ восстановлен --- не
+    \item $mu - 2\sigma < E_{miss} < mu + 2\sigma$
+    \item $5.547< M^{tag}_{B_s} < 5.347 GeV$
+    \item $N_{chr} = 0$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Распады $\tau^+\tau^-$ с двумя нейтрино (GenMC)}
+Тагирующий $B^{tag}_s$ восстановлен --- неверно, $mu - 2\sigma < E_{miss} < mu + 2\sigma$, $5.547< M^{tag}_{B_s} < 5.347 GeV$
+
+\centering
+\begin{tabular}{cc}
+\subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_not_2nu-1.png}} &
+\subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_not_2nu-2.png}}
+
+\end{tabular}
+{
+  \centering
+  \subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_not_2nu-3.png}}
+}
+\end{frame}
+
+% ---------- 3 нейтрино ----------
+\begin{frame}{Распады $\tau^+\tau^-$ с тремя нейтрино (GenMC)}
+  Тагирующий $B^{tag}_s$ восстановлен --- неверно, $mu - 2\sigma < E_{miss} < mu + 2\sigma$, $5.547< M^{tag}_{B_s} < 5.347 GeV$
+
+  \centering
+  \begin{tabular}{cc}
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_not_2nu-1.png}} &
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_not_2nu-2.png}} \\
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_not_2nu-3.png}}&
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_not_2nu-4.png}}
+  \end{tabular}
+\end{frame}
+
+
+% ---------- 4 нейтрино ----------
+\begin{frame}{Распады $\tau^+\tau^-$ с тремя нейтрино (сигнальный MC)}
+  Тагирующий $B^{tag}_s$ восстановлен --- неверно, $mu - 2\sigma < E_{miss} < mu + 2\sigma$, $5.547< M^{tag}_{B_s} < 5.347 GeV$
+  \centering
+  \begin{tabular}{cc}
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_not_4nu-1.png}} &
+    \subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_not_4nu-2.png}} \\
+  \end{tabular}
+  {
+  \centering
+  \subfigure{\includegraphics[width=0.45\linewidth]{output/E_gamma_not_4nu-3.png}}
+  }
+\end{frame}
+
+\end{document}
