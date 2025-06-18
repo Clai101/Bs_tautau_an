@@ -149,58 +149,28 @@ def rm(fname):
 
 from iminuit import Minuit
 
-#def max_bin_lik(f, bin_centers, counts, args0, des=False, norm=False, h=1e-7, bounds=None, normm=None, method='SLSQP'):
-#    def likelihoodn(x, n, norm, *args):
-#        if norm == 0:
-#            return np.log(puasson(f(x, *args), n))
-#        return np.log(puasson(f(x, *args) / norm, n))
-#    dx = bin_centers[1] - bin_centers[0]
-#    counts = counts / np.sum(counts) * dx
-#    def df(*args0):
-#        normf = np.sum(f(bin_centers, *args0)) * dx
-#        return -np.sum(likelihoodn(bin_centers, counts, normf, *args0))
-#    minuit = Minuit(df, *args0)
-#    if bounds != None:
-#        minuit.limits = bounds
-#    minuit.migrad()
-#    rez = minuit.values
-#    normf = np.sum(f(bin_centers, *rez)) * dx
-#    print(rez)
-#    if normm is None:
-#        return rez, normf
-#    return rez, normf
-
-#def max_bin_lik(f, bin_centers, counts, args0, wbin = 1, h=1e-7, bounds=None, normm=None, method='SLSQP'):
-#    counts = counts*wbin
-#    def df(*args0):
-#        try:
-#            return -np.sum(np.log(puasson(f(bin_centers, *args0)*wbin, counts)))
-#        except:
-#            print(np.vstack((f(bin_centers, *args0)*wbin, counts)).T)
-#    minuit = Minuit(df, *args0)
-#    minuit.migrad()
-#    rez = minuit.values
-#    print(rez)
-#    return rez
-
-def max_bin_lik(f, bin_centers, counts, args0, wbin = 1, h=1e-7, bounds=None, normm=None, method='SLSQP', err_need = False):
+def max_bin_lik(f, bin_centers, counts, args0, bounds=None, err_need = False):
     normalization = np.max(counts)//10
     counts = counts/normalization
     norm = np.sum(counts)
-    pdf = lambda x, norm, *args, bin_centers = None: f(x,*args)/(np.sum(f(x, *args)))*norm if bin_centers is None else f(x,*args)/(np.sum(f(bin_centers, *args)))*norm
-    args0 = [norm,] + list(args0)
+    args0["norm"] = norm
+
+    pdf = lambda x, **args: f(x, **{k: v for k, v in args.items() if k != "norm"}) * args["norm"]
+
     if bounds != None:
-        bounds = [(0, norm*100), ] + list(bounds)
-    def df(*args0):
-            return -np.sum(np.log(puasson(pdf(bin_centers, *args0), counts)))
-    minuit = Minuit(df, *args0)
+        bounds["norm"] = (0, norm*100)
+    def df(*args):
+        current_args = {k: v for k, v in zip(args0.keys(), args)}
+        return -np.sum(np.log(puasson(pdf(bin_centers, **current_args), counts)))
+    
+    minuit = Minuit(df, *[args0[__key] for __key in args0.keys()], name=args0.keys())
     minuit.migrad()
-    rez = minuit.values
-    norm = rez[0]*normalization
+    rez = minuit.values.to_dict()
     print(rez)
+    rez["norm"] = rez["norm"]* normalization
     if err_need:
-        return rez[1:], pdf, norm, minuit.errors[0]*normalization
-    return rez[1:], pdf, norm
+        return rez, pdf, norm, minuit.errors
+    return rez, pdf
 
 
 def max_lik(f, x, args0, cross = None, bounds = None, fix = None):

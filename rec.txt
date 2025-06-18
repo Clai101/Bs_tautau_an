@@ -5,3 +5,4 @@ numba
 iminuit
 pandas
 pyarrow
+scienceplots
