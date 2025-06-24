@@ -22,8 +22,8 @@ plt.rc('legend', fontsize=MEDIUM_SIZE)
 plt.rc('legend', title_fontsize=MEDIUM_SIZE)
 plt.rc('figure', titlesize=BIGGER_SIZE) 
 plt.rcParams['axes.titlesize'] = BIGGER_SIZE 
-plt.rcParams['figure.constrained_layout.use'] = True
-plt.rcParams['text.usetex'] = True
+#plt.rcParams['figure.constrained_layout.use'] = True
+#plt.rcParams['text.usetex'] = True
 
 Lamc_m = 2.28646
 Lamc_25_m = 2.5925
