@@ -216,7 +216,7 @@ from typing import List, Tuple, Optional
 import pandas as pd
 import pyarrow as pa
 
-def compute_histogram(dataset, bins, target, fun = lambda x: x, filter_mask = None) -> Tuple[np.ndarray[np.float64], np.ndarray[np.int64], int]:
+def compute_histogram(dataset, bins, target, fun = lambda x: x, filter_mask = None, norm = False) -> Tuple[np.ndarray[np.float64], np.ndarray[np.int64], int]:
     scanner = dataset.scanner(batch_size=100_000, filter=filter_mask)
     hist_counts = np.zeros(len(bins) - 1)
     total_events = 0
@@ -231,6 +231,8 @@ def compute_histogram(dataset, bins, target, fun = lambda x: x, filter_mask = No
     del scanner, batch
 
     bin_centers = 0.5 * (bins[:-1] + bins[1:])
+    if norm:
+        hist_counts /= np.sum(hist_counts)
     return bin_centers, hist_counts, total_events
 
 def get_values(dataset, target: List[str], filter_mask = None, max_size_gb: float = 3.0) -> Tuple[pd.DataFrame]:
