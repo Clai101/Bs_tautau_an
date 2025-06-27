@@ -219,17 +219,16 @@ import pyarrow as pa
 def compute_histogram(dataset, bins, target, fun = lambda x: x, filter_mask = None, norm = False) -> Tuple[np.ndarray[np.float64], np.ndarray[np.int64], int]:
     scanner = dataset.scanner(batch_size=100_000, filter=filter_mask)
     hist_counts = np.zeros(len(bins) - 1)
-    total_events = 0
 
     for batch in scanner.to_batches():
         table = pa.Table.from_batches([batch])
         dt = table[target].to_numpy()
         counts, _ = np.histogram(fun(dt), bins=bins)
         hist_counts += counts
-        total_events += len(dt)
         del dt, counts, _, table
     del scanner, batch
 
+    total_events = int(np.sum(hist_counts))
     bin_centers = 0.5 * (bins[:-1] + bins[1:])
     if norm:
         hist_counts /= np.sum(hist_counts)
