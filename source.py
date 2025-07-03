@@ -223,6 +223,7 @@ def compute_histogram(dataset, bins, target, fun = lambda x: x, filter_mask = No
     for batch in scanner.to_batches():
         table = pa.Table.from_batches([batch])
         dt = table[target].to_numpy()
+        dt =dt[~np.isnan(dt)]
         counts, _ = np.histogram(fun(dt), bins=bins)
         hist_counts += counts
         del dt, counts, _, table
