@@ -212,21 +212,55 @@ def errorhist(data, bins=10, fmt='.', color='dimgrey', err_func = np.sqrt, axs =
         return counts, bin_centers
 
 
-from typing import List, Tuple, Optional
+from typing import List, Tuple, Optional, Union
 import pandas as pd
 import pyarrow as pa
 
-def compute_histogram(dataset: pa.dataset.dataset, bins, target: str, fun = lambda x: x, filter_mask: pa.compute.Expression = None, norm: bool = False, nanto = None) -> Tuple[np.ndarray[np.float64], np.ndarray[np.int64], int]:
+def compute_histogram(
+    dataset: pa.dataset.dataset,
+    bins: np.ndarray,
+    target: Union[str, list],
+    fun=lambda x: x,
+    filter_mask: Optional[pa.compute.Expression] = None,
+    norm: bool = False,
+    nanto: float = np.nan
+) -> Tuple[np.ndarray, np.ndarray, int]:
+
     scanner = dataset.scanner(batch_size=100_000, filter=filter_mask)
     hist_counts = np.zeros(len(bins) - 1)
 
     for batch in scanner.to_batches():
         table = pa.Table.from_batches([batch])
-        dt = table[target].to_numpy().copy()
-        if nanto is not None:
-            dt[np.isnan(dt)] = nanto
+
+        if isinstance(target, (list, tuple)):
+            df = table.select(target).to_pandas()
+            df = df.fillna(nanto)
+            values = fun(df.values.T)  # shape (N, len(target))
         else:
-            dt = dt[~np.isnan(dt)]
+            df = table.select([target]).to_pandas()
+            values = fun(df[target].fillna(nanto).values)
+
+        counts, _ = np.histogram(values, bins=bins)
+        hist_counts += counts
+
+    total_events = int(np.sum(hist_counts))
+    bin_centers = 0.5 * (bins[:-1] + bins[1:])
+
+    if norm and total_events > 0:
+        hist_counts /= total_events
+
+    return bin_centers, hist_counts, total_events    scanner = dataset.scanner(batch_size=100_000, filter=filter_mask)
+    hist_counts = np.zeros(len(bins) - 1)
+
+    for batch in scanner.to_batches():
+        table = pa.Table.from_batches([batch])
+        if isinstance(target, (list, tuple)):
+            df = table.select(target).to_pandas()
+            df = df.fillna(nanto)
+            values = fun(df.values.T)  # Transpose: shape (n_features, N) → (N, n_features)
+        else:
+            df = table.select([target]).to_pandas()
+            values = fun(df[target].fillna(nanto).values)
         counts, _ = np.histogram(fun(dt), bins=bins)
         hist_counts += counts
         del dt, counts, _, table
