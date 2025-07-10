@@ -173,42 +173,32 @@ def max_bin_lik(f, bin_centers, counts, args0, bounds=None, err_need = False):
     return rez, pdf
 
 
-def max_lik(f, x, args0, cross = None, bounds = None, fix = None):
-    if cross:
-        param_ind = x[cross[0]] - 1
-        crosss_params = cross[1:]
-        l = len(cross[1:])
-        def df(*args0):
-            args0 = np.array(args0)
-            i = 0
-            lik_val = 0
-            while i <= len(args0):
-                if i in crosss_params:
-                    lik_val += np.sum(np.log(f(*[_[param_ind == i] for _ in x], args0[i], *args0[l:])))
-                i += 1
-            return -2*lik_val
-    else:
-        print(-np.sum(2*np.log(f(x, *args0))))
-        def df(*args0):
-            return -np.sum(2*np.log(f(x, *args0)))
-    print(df(*args0))
-    minuit = Minuit(df, *args0)
-    if None != bounds:
-        minuit.limits = bounds
-    if not (fix is None):
-        minuit.fixed()
-    minuit.migrad()
-    rez = minuit.values
-    print(minuit.values)
-    print(minuit.errors)
-    print(df(*minuit.values))
-    return minuit.values, minuit.errors
+def max_lik(f, x, args0, bounds=None, err_need = False):
 
-#
-def errorhist(data, bins=10, fmt='.', color='dimgrey', err_func = np.sqrt, axs = plt, markersize=10, label = None):
+    pdf = lambda x, **args: f(x, **{k: v for k, v in args.items() if k != "norm"}) * args["norm"]
+
+    def df(*args):
+        current_args = {k: v for k, v in zip(args0.keys(), args)}
+        return -np.sum(np.log(pdf(x, **current_args)))
+    
+    minuit = Minuit(df, *[args0[__key] for __key in args0.keys()], name=args0.keys())
+    minuit.migrad()
+    rez = minuit.values.to_dict()
+    print(rez)
+    if err_need:
+        return rez, pdf, minuit.errors
+    return rez, pdf
+
+
+def errorhist(data, bins=10, fmt='o', err_func = np.sqrt, axs = plt, density=False, **kwargs):
         counts, bin_edges = np.histogram(data, bins=bins)
+        if density:
+            errors = err_func(counts) / np.sum(counts * np.diff(bins))
+            counts = counts / np.sum(counts * np.diff(bins)) 
+        else:
+            errors = err_func(counts)
         bin_centers = bin_edges[:-1] + (bin_edges[1] - bin_edges[0]) / 2
-        axs.errorbar(bin_centers, counts, yerr=err_func(counts), fmt=fmt, color=color, markersize=markersize, label = label)
+        axs.errorbar(bin_centers, counts, yerr=errors, fmt=fmt, **kwargs)
         return counts, bin_centers
 
 
@@ -249,28 +239,7 @@ def compute_histogram(
     if norm and total_events > 0:
         hist_counts /= total_events
 
-    return bin_centers, hist_counts, total_events    scanner = dataset.scanner(batch_size=100_000, filter=filter_mask)
-    hist_counts = np.zeros(len(bins) - 1)
-
-    for batch in scanner.to_batches():
-        table = pa.Table.from_batches([batch])
-        if isinstance(target, (list, tuple)):
-            df = table.select(target).to_pandas()
-            df = df.fillna(nanto)
-            values = fun(df.values.T)  # Transpose: shape (n_features, N) → (N, n_features)
-        else:
-            df = table.select([target]).to_pandas()
-            values = fun(df[target].fillna(nanto).values)
-        counts, _ = np.histogram(fun(dt), bins=bins)
-        hist_counts += counts
-        del dt, counts, _, table
-    del scanner, batch
-
-    total_events = int(np.sum(hist_counts))
-    bin_centers = 0.5 * (bins[:-1] + bins[1:])
-    if norm:
-        hist_counts /= np.sum(hist_counts)
-    return bin_centers, hist_counts, total_events
+    return bin_centers, hist_counts, total_events    
 
 def get_values(dataset, target: List[str], filter_mask = None, max_size_gb: float = 3.0) -> Tuple[pd.DataFrame]:
     scanner = dataset.scanner(batch_size=100_000, filter=filter_mask)
@@ -297,35 +266,3 @@ def get_values(dataset, target: List[str], filter_mask = None, max_size_gb: floa
     dt = pd.concat(parts, ignore_index=True)
     del parts, part_bytes, total_bytes
     return dt
-
-
-#class CustomedAxes(Axes):
-#    def errorhist(self, data, bins=10, fmt='.', color='dimgrey', err_func = np.sqrt, **kwargs):
-#        counts, bin_edges = np.histogram(data, bins=bins, **kwargs)
-#        bin_centers = bin_edges[:-1] + (bin_edges[1] - bin_edges[0]) / 2
-#        self.errorbar(bin_centers, counts, yerr=err_func(counts), fmt=fmt, color=color, **kwargs)
-#        return counts, bin_centers
-#
-#__subplot = plt.subplots
-#
-#def subplots(nrows=1, ncols=1, **kwargs):
-#    fig, axes = __subplot(nrows=nrows, ncols=ncols, layout='constrained', **kwargs)
-#    if isinstance(axes, np.ndarray):
-#        custom_axes = []
-#        for ax in axes.flat:
-#            position = ax.get_position()
-#            ax.remove() 
-#            custom_ax = CustomedAxes(fig, position)
-#            fig.add_axes(custom_ax)
-#            custom_axes.append(custom_ax)
-#        custom_axes = np.array(custom_axes).reshape(axes.shape)
-#    else:
-#        position = axes.get_position()
-#        axes.remove()
-#        custom_axes = CustomedAxes(fig, position)
-#        fig.add_axes(custom_axes)
-#    return fig, custom_axes
-#
-#plt.subplots = subplots
-
-

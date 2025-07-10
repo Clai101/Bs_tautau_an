@@ -73,25 +73,59 @@ Enddecay
 CDecay anti-B_s*0_FEI
 
 Decay MyBs0
-0.24974515800203873    D_s*- e+ nu_e    PHOTOS ISGW2
-0.020387359836901122    D_s1- e+ nu_e    PHOTOS ISGW2
-0.020387359836901122    D_s0*- e+ nu_e    PHOTOS ISGW2
-0.03567787971457696    D'_s1- e+ nu_e    PHOTOS ISGW2
-0.03567787971457696    D_s2*- e+ nu_e    PHOTOS ISGW2
-0.10703363914373089    D_s- mu+ nu_mu    PHOTOS ISGW2
-0.24974515800203873    D_s*- mu+ nu_mu    PHOTOS ISGW2
-0.020387359836901122    D_s1- mu+ nu_mu    PHOTOS ISGW2
-0.020387359836901122    D_s0*- mu+ nu_mu    PHOTOS ISGW2
-0.03567787971457696    D'_s1- mu+ nu_mu    PHOTOS ISGW2
-0.03567787971457696    D_s2*- mu+ nu_mu    PHOTOS ISGW2
-0.040774719673802244    D_s- tau+ nu_tau    PHOTOS ISGW2
-0.08154943934760449    D_s*- tau+ nu_tau    PHOTOS ISGW2
-0.009174311926605503    D_s1- tau+ nu_tau    PHOTOS ISGW2
-0.009174311926605503    D_s0*- tau+ nu_tau    PHOTOS ISGW2
-0.014271151885830783    D'_s1- tau+ nu_tau    PHOTOS ISGW2
-0.014271151885830783    D_s2*- tau+ nu_tau    PHOTOS ISGW2
+0.24974515800203873    D_s*- e+ nu_e    PHOTOS ISGW2;
+0.020387359836901122    D_s1- e+ nu_e    PHOTOS ISGW2;
+0.020387359836901122    D_s0*- e+ nu_e    PHOTOS ISGW2;
+0.03567787971457696    D'_s1- e+ nu_e    PHOTOS ISGW2;
+0.03567787971457696    D_s2*- e+ nu_e    PHOTOS ISGW2;
+0.10703363914373089    D_s- mu+ nu_mu    PHOTOS ISGW2;
+0.24974515800203873    D_s*- mu+ nu_mu    PHOTOS ISGW2;
+0.020387359836901122    D_s1- mu+ nu_mu    PHOTOS ISGW2;
+0.020387359836901122    D_s0*- mu+ nu_mu    PHOTOS ISGW2;
+0.03567787971457696    D'_s1- mu+ nu_mu    PHOTOS ISGW2;
+0.03567787971457696    D_s2*- mu+ nu_mu    PHOTOS ISGW2;
+0.040774719673802244    D_s- tau+ nu_tau    PHOTOS ISGW2;
+0.08154943934760449    D_s*- tau+ nu_tau    PHOTOS ISGW2;
+0.009174311926605503    D_s1- tau+ nu_tau    PHOTOS ISGW2;
+0.009174311926605503    D_s0*- tau+ nu_tau    PHOTOS ISGW2;
+0.014271151885830783    D'_s1- tau+ nu_tau    PHOTOS ISGW2;
+0.014271151885830783    D_s2*- tau+ nu_tau    PHOTOS ISGW2;
 Enddecay
 CDecay Myanti-Bs0
+
+Decay D_s2*+
+0.0500    D*+ K0                         PHOTOS TVS_PWAVE  0.0 0.0 1.0 0.0 0.0 0.0;
+0.0500    D*0 K+                         PHOTOS TVS_PWAVE  0.0 0.0 1.0 0.0 0.0 0.0;
+0.4300    D+  K0                         PHOTOS TSS;
+0.4700    D0  K+                         PHOTOS TSS;
+Enddecay
+CDecay D_s2*-
+
+Decay D_s0*+
+0.9700   D_s+ pi0                            PHOTOS PHSP;
+0.0300   D_s*+ gamma                         PHOTOS SVP_HELAMP 1.0 0.0 1.0 0.0;
+Enddecay
+CDecay D_s0*-
+
+Decay D'_s1+
+0.6304347826086956   D_s*+ pi0                         PHOTOS VVS_PWAVE  0.0 0.0 0.0 0.0 1.0 0.0;
+0.2717391304347826   D_s+ gamma                        PHOTOS VSP_PWAVE;
+0.05434782608695652   D_s*+ gamma                       PHOTOS VVP 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0;
+0.043478260869565216   D_s+ pi0 pi0                      PHOTOS PHSP;
+Enddecay
+CDecay D'_s1-
+
+Decay D_s1+
+0.5000   D*+ K0                            PHOTOS VVS_PWAVE  0.0 0.0 0.0 0.0 1.0 0.0;
+0.5000   D*0 K+                            PHOTOS VVS_PWAVE  0.0 0.0 0.0 0.0 1.0 0.0;
+Enddecay
+CDecay D_s1-
+
+Decay D_s*+
+1.0 D_s+ pi0	PHOTOS PHSP;
+Enddecay
+CDecay D_s*-
+
 
 Decay D_s-
 0.033816425120772944    mu-    anti-nu_mu              PHOTOS   SLN;

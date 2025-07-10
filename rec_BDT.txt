@@ -1,0 +1,10 @@
+#ONLY PYTHON 3.9.13
+
+numpy
+scipy
+matplotlib
+numba
+iminuit
+pandas
+pyarrow
+scienceplots
