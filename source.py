@@ -1,12 +1,25 @@
 import numpy as np
+import pandas as pd
+from pathlib import Path
+
 from scipy.optimize import curve_fit, minimize
 from numpy import log, sqrt, exp, pi, e
 from matplotlib.axes import Axes
+
 import matplotlib.pyplot as plt
 import os
 from numba import njit
 from iminuit import Minuit
 from iminuit.cost import UnbinnedNLL
+
+from pyarrow import Table
+import pyarrow.dataset as ds
+import pyarrow.compute as pc
+import pyarrow.parquet as pq
+
+import matplotlib.pyplot as plt
+
+from itertools import cycle
 
 SMALL_SIZE = 20/1.5
 MEDIUM_SIZE = 23/1.5
@@ -22,8 +35,12 @@ plt.rc('legend', fontsize=MEDIUM_SIZE)
 plt.rc('legend', title_fontsize=MEDIUM_SIZE)
 plt.rc('figure', titlesize=BIGGER_SIZE) 
 plt.rcParams['axes.titlesize'] = BIGGER_SIZE 
-#plt.rcParams['figure.constrained_layout.use'] = True
-#plt.rcParams['text.usetex'] = True
+plt.rcParams["figure.figsize"] = (12/1.5, 6/1.5) 
+
+import scienceplots
+plt.style.use(['science','ieee', 'grid'])
+prop_cycle = plt.rcParams['axes.prop_cycle']
+colors = prop_cycle.by_key()['color']
 
 Lamc_m = 2.28646
 Lamc_25_m = 2.5925
@@ -132,20 +149,12 @@ def exp_dis(x, lam, a=0, b=0):
     else:
         normalization_factor = lam / (np.exp(lam * (b)) - np.exp(lam * (a)))
     return normalization_factor * np.exp(lam * x)
-    
-
 
 
 def normalization(counts, bin_edges):
     total_counts = np.sum(counts)
     bin_width = bin_edges[1] - bin_edges[0]
     return bin_width * total_counts
-
-def rm(fname):
-    if os.path.exists(fname):
-        os.remove(fname)
-    else:
-        print("The file does not exist") 
 
 from iminuit import Minuit
 
@@ -204,14 +213,13 @@ def errorhist(data, bins=10, fmt='o', err_func = np.sqrt, axs = plt, density=Fal
 
 from typing import List, Tuple, Optional, Union
 import pandas as pd
-import pyarrow as pa
 
 def compute_histogram(
-    dataset: pa.dataset.dataset,
+    dataset: ds.dataset,
     bins: np.ndarray,
     target: Union[str, list],
     fun=lambda x: x,
-    filter_mask: Optional[pa.compute.Expression] = None,
+    filter_mask: Optional[pc.Expression] = None,
     norm: bool = False,
     nanto: float = np.nan
 ) -> Tuple[np.ndarray, np.ndarray, int]:
@@ -220,7 +228,7 @@ def compute_histogram(
     hist_counts = np.zeros(len(bins) - 1)
 
     for batch in scanner.to_batches():
-        table = pa.Table.from_batches([batch])
+        table = Table.from_batches([batch])
 
         if isinstance(target, (list, tuple)):
             df = table.select(target).to_pandas()
@@ -241,12 +249,51 @@ def compute_histogram(
 
     return bin_centers, hist_counts, total_events    
 
+
+def compute_nd_histogram(
+    dataset: ds.Dataset,
+    bins: Union[np.ndarray, List[np.ndarray]],
+    targets: Union[str, List[str]],
+    fun=lambda x: x,
+    filter_mask: Optional[pc.Expression] = None,
+    norm: bool = False,
+    nanto: float = np.nan
+) -> Tuple[List[np.ndarray], np.ndarray, int]:
+    if isinstance(targets, str):
+        targets = [targets]
+
+    if isinstance(bins, np.ndarray):
+        bins = [bins] * len(targets)
+
+    bin_centers = [0.5 * (b[:-1] + b[1:]) for b in bins]
+    hist_counts = np.zeros_like(np.meshgrid(*bin_centers, indexing='ij')[0])
+    scanner = dataset.scanner(batch_size=100_000, filter=filter_mask)
+
+    for batch in scanner.to_batches():
+        table = Table.from_batches([batch])
+        df = table.select(targets).to_pandas()
+        df = df.fillna(nanto)
+        values = df.values
+
+        counts, _ = np.histogramdd(values, bins=bins)
+        hist_counts += counts
+
+    total_events = int(np.sum(hist_counts))
+
+    # Вычисляем центры биннов по каждой оси
+
+    if norm and total_events > 0:
+        hist_counts /= total_events
+    bin_centers = np.meshgrid(*bin_centers, indexing='ij')
+    return bin_centers, hist_counts, total_events
+
+
 def get_values(dataset, target: List[str], filter_mask = None, max_size_gb: float = 3.0) -> Tuple[pd.DataFrame]:
     scanner = dataset.scanner(batch_size=100_000, filter=filter_mask)
     parts = []
     total_bytes = 0
     for batch in scanner.to_batches():
-        table = pa.Table.from_batches([batch])
+        table = Table.from_batches([batch])
         df_part = table.select(target).to_pandas()
         del table
         part_bytes = df_part.memory_usage(deep=True).sum()
