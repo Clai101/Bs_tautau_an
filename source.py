@@ -313,3 +313,64 @@ def get_values(dataset, target: List[str], filter_mask = None, max_size_gb: floa
     dt = pd.concat(parts, ignore_index=True)
     del parts, part_bytes, total_bytes
     return dt
+
+
+
+class hist_approx:
+    def __init__(self) -> None:
+        self.kdtree: Union[None, 'KDTree'] = None
+        self.points: Union[None, np.ndarray] = None
+        self.N: Union[None, float] = None
+        self.hist_counts: Union[None, np.ndarray] = None
+        self.bin_centers: Union[None, List[np.ndarray]] = None
+
+    def put_hist(self, bin_centers: List[np.ndarray], hist_counts: np.ndarray) -> None:
+        from scipy.spatial import KDTree
+
+        self.N = np.sum(hist_counts)
+        bin_widths = [np.mean(np.diff(np.unique(bc))) for bc in bin_centers]
+        self.bin_volume = np.prod(bin_widths)  # V_bin
+        self.hist_counts = hist_counts / self.N / self.bin_volume
+        self.bin_centers = bin_centers
+
+        self.points = np.stack([m.reshape(-1) for m in bin_centers], axis=-1)
+        self.kdtree = KDTree(self.points)
+
+    def get_pdf(self, x: List[np.ndarray]) -> np.ndarray:
+        sp = x[0].shape
+        x_flat = np.stack([np.asarray(xi).ravel() for xi in x], axis=-1)
+        _, idxs = self.kdtree.query(x_flat)
+        result = self.hist_counts.ravel()[idxs]
+        return result.reshape(sp)
+
+    def get_counts(self, x: List[np.ndarray]) -> np.ndarray:
+        sp = x[0].shape
+        x_flat = np.stack([np.asarray(xi).ravel() for xi in x], axis=-1)
+        _, idxs = self.kdtree.query(x_flat)
+        result = self.hist_counts.ravel()[idxs] * self.N * self.bin_volume
+        return result.reshape(sp)
+
+    def save_hist(self, filename: str) -> None:
+        import json
+        data_to_save = {
+            "bin_centers": [bc.tolist() for bc in self.bin_centers],
+            "counts": (self.hist_counts * self.N).tolist(),
+            "N": self.N
+        }
+        with open(filename, "w") as f:
+            json.dump(data_to_save, f, indent=4)
+
+    @classmethod
+    def load_hist(cls, filename: str) -> 'hist_approx':
+        import json
+
+        with open(filename, "r") as f:
+            data = json.load(f)
+
+        bin_centers = [np.array(bc) for bc in data["bin_centers"]]
+        hist_counts = np.array(data["counts"])
+        hist_counts = hist_counts.reshape(bin_centers[0].shape)
+
+        obj = cls()
+        obj.put_hist(bin_centers, hist_counts)
+        return obj
