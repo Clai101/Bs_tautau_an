@@ -18,6 +18,7 @@ import pyarrow.compute as pc
 import pyarrow.parquet as pq
 
 import matplotlib.pyplot as plt
+from typing import List, Tuple, Optional, Union, Callable
 
 from itertools import cycle
 
@@ -150,15 +151,39 @@ def exp_dis(x, lam, a=0, b=0):
         normalization_factor = lam / (np.exp(lam * (b)) - np.exp(lam * (a)))
     return normalization_factor * np.exp(lam * x)
 
+def normalization(values: Union[np.ndarray, Callable],
+                  a: Union[float, List[float]],
+                  b: Union[float, List[float]],
+                  func: bool = False,
+                  n_points: int = 200):
+    from numpy import trapz
 
-def normalization(counts, bin_edges):
-    total_counts = np.sum(counts)
-    bin_width = bin_edges[1] - bin_edges[0]
-    return bin_width * total_counts
+    # Приводим к списку, даже если это одно число
+    if isinstance(a, (int, float)) and isinstance(b, (int, float)):
+        a = [a]
+        b = [b]
 
-from iminuit import Minuit
+    dims = len(a)
+
+    # Если передана функция — строим сетку
+    if func:
+        grids = [np.linspace(a[i], b[i], n_points) for i in range(dims)]
+        mesh = np.meshgrid(*grids, indexing='ij')
+        coords = np.stack([m.ravel() for m in mesh], axis=-1)  # (N, dims)
+        vals = values(coords).reshape([n_points]*dims)
+    else:
+        vals = values
+
+    summ = vals
+    for dim in range(dims):
+        x_dim = np.linspace(a[dim], b[dim], summ.shape[0])
+        summ = trapz(summ, x=x_dim, axis=0)
+    return summ
+
+
 
 def max_bin_lik(f, bin_centers, counts, args0, bounds=None, err_need = False):
+    from iminuit import Minuit
     normalization = np.max(counts)//10
     counts = counts/normalization
     norm = np.sum(counts)
@@ -179,64 +204,132 @@ def max_bin_lik(f, bin_centers, counts, args0, bounds=None, err_need = False):
     rez["norm"] = rez["norm"]* normalization
     if err_need:
         return rez, pdf, norm, minuit.errors
-    return rez, pdf
+    return rez, pdf, norm
 
 
-def max_lik(f, x, args0, bounds=None, err_need = False):
-
-    pdf = lambda x, **args: f(x, **{k: v for k, v in args.items() if k != "norm"}) * args["norm"]
-
+def max_lik(f, x, args0, a=0, b=0, bounds=None, err_need=False):
+    from iminuit import Minuit
     def df(*args):
         current_args = {k: v for k, v in zip(args0.keys(), args)}
-        return -np.sum(np.log(pdf(x, **current_args)))
-    
-    minuit = Minuit(df, *[args0[__key] for __key in args0.keys()], name=args0.keys())
+        return -2*np.sum(np.log(f(x, **current_args)))
+
+    from iminuit import Minuit
+    minuit = Minuit(df, *[args0[k] for k in args0], name=list(args0.keys()))
+
+    if bounds:
+        for k, bnd in bounds.items():
+            minuit.limits[k] = bnd
+
     minuit.migrad()
+
     rez = minuit.values.to_dict()
-    print(rez)
+    errs = minuit.errors.to_dict() if err_need else None
+
+
     if err_need:
-        return rez, pdf, minuit.errors
-    return rez, pdf
+        return rez, errs
+    return rez
 
 
-def errorhist(data, bins=10, fmt='o', err_func = np.sqrt, axs = plt, density=False, **kwargs):
-        counts, bin_edges = np.histogram(data, bins=bins)
-        if density:
-            errors = err_func(counts) / np.sum(counts * np.diff(bins))
-            counts = counts / np.sum(counts * np.diff(bins)) 
-        else:
-            errors = err_func(counts)
-        bin_centers = bin_edges[:-1] + (bin_edges[1] - bin_edges[0]) / 2
-        axs.errorbar(bin_centers, counts, yerr=errors, fmt=fmt, **kwargs)
-        return counts, bin_centers
+def max_lik_ext(f, x, args0, a=0, b=0, bounds=None, err_need=False):
+    
+    from scipy.special import factorial
+    from numpy import log, exp, power
+    from numpy import sum as summ
+    def poisson(x, n):
+        return exp(-x)*power(x, n)*power(factorial(n), -1)
+    
+    if a == b:
+        def df(*args):
+            current_args = {k: v for k, v in zip(args0.keys(), args)}
+            N_args = sum([v for k, v in current_args.items() if k[0] == "N"])
+            return -2*(summ(log(f(x, **current_args)))) - 2*log(poisson(len(x.T),  N_args))
+    else:
+        def df(*args):
+            current_args = {k: v for k, v in zip(args0.keys(), args)}
+            N_args = sum([v for k, v in current_args.items() if k[0] == "N"])
+            return -2*(summ(log(f(x, **current_args)/normalization(lambda x: f(x.T, **current_args), a, b, func=True, n_points=300)))) - 2*log(poisson(len(x.T), N_args))
+
+    from iminuit import Minuit
+    minuit = Minuit(df, *[args0[k] for k in args0], name=list(args0.keys()))
+
+    if bounds:
+        for k, bnd in bounds.items():
+            minuit.limits[k] = bnd
+
+    minuit.migrad()
+
+    rez = minuit.values.to_dict()
+    errs = minuit.errors.to_dict() if err_need else None
 
 
-from typing import List, Tuple, Optional, Union
+    if err_need:
+        return {k: v for k, v in rez.items() if k != "norm"}, errs
+    return {k: v for k, v in rez.items() if k != "norm"}
+
+
+def errorhist(data, bins=10, fmt='o', err_func=np.sqrt, axs=plt, density=False, **kwargs):
+    counts, bin_edges = np.histogram(data, bins=bins)
+    
+    if density:
+        norm = np.sum(counts)
+        counts = counts / norm
+        errors = err_func(counts) / norm  # нормируем ошибки
+    else:
+        errors = err_func(counts)
+
+    bin_centers = 0.5 * (bin_edges[:-1] + bin_edges[1:])
+    axs.errorbar(bin_centers, counts, yerr=errors, fmt=fmt, **kwargs)
+    return counts, bin_centers
+
+def errordot(counts, bins, fmt='o', err_func=np.sqrt, axs=plt, density=False, **kwargs):
+    counts = np.asarray(counts)
+    bins = np.asarray(bins)
+
+    if density:
+        norm = np.sum(counts)
+        counts = counts / norm
+        errors = err_func(counts) / norm
+    else:
+        errors = err_func(counts)
+
+    bin_centers = 0.5 * (bins[:-1] + bins[1:])
+    axs.errorbar(bin_centers, counts, yerr=errors, fmt=fmt, **kwargs)
+    return counts, bin_centers
+
+
+
 import pandas as pd
 
 def compute_histogram(
     dataset: ds.dataset,
     bins: np.ndarray,
-    target: Union[str, list],
+    target: str,
     fun=lambda x: x,
     filter_mask: Optional[pc.Expression] = None,
     norm: bool = False,
     nanto: float = np.nan
 ) -> Tuple[np.ndarray, np.ndarray, int]:
+    """
+    Универсальная гистограмма из PyArrow Dataset.
+
+    - `target`: поле(я) для гистограммы (может быть результатом `fun`)
+    - `fun`: функция над pandas.DataFrame, применяется до выбора `target`
+    - `filter_mask`: PyArrow filter
+    - `norm`: нормировать ли на число событий
+    """
 
     scanner = dataset.scanner(batch_size=100_000, filter=filter_mask)
     hist_counts = np.zeros(len(bins) - 1)
 
     for batch in scanner.to_batches():
         table = Table.from_batches([batch])
+        df = table.to_pandas()       # 💡 теперь всегда загружаем всё
+        df = fun(df)                 # применяем произвольное преобразование
 
-        if isinstance(target, (list, tuple)):
-            df = table.select(target).to_pandas()
-            df = df.fillna(nanto)
-            values = fun(df.values.T)  # shape (N, len(target))
-        else:
-            df = table.select([target]).to_pandas()
-            values = fun(df[target].fillna(nanto).values)
+  
+        df = df[[target]].fillna(nanto)
+        values = df[target].values
 
         counts, _ = np.histogram(values, bins=bins)
         hist_counts += counts
@@ -245,9 +338,9 @@ def compute_histogram(
     bin_centers = 0.5 * (bins[:-1] + bins[1:])
 
     if norm and total_events > 0:
-        hist_counts /= total_events
+        hist_counts /= total_events 
 
-    return bin_centers, hist_counts, total_events    
+    return bin_centers, hist_counts, total_events
 
 
 def compute_nd_histogram(

@@ -1732,7 +1732,7 @@ Decay B_s0
 0.012200    D_s*- a_1+    PHOTOS SVV_HELAMP 1.0 0.0 1.0 0.0 1.0 0.0
 0.001000    D_s*- rho0 pi+    PHOTOS PHSP
 0.001000    D_s*- rho+ pi0    PHOTOS PHSP
-0.007700    D_s*- pi- pi+ pi+    PHOTOS PHSP
+0.007700    D_s*- pi- pi+ pD_s+i+    PHOTOS PHSP
 0.001000    D_s*- pi0 pi+ pi0    PHOTOS PHSP
 Enddecay
 Decay anti-B_s0
