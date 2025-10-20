@@ -1,0 +1,22 @@
+{
+    "columns": [
+        "cmpmiss",
+        "missedE",
+        "ang_taus",
+        "asymmetry",
+        "ang_tau0_pmiss",
+        "ang_tau1_pmiss",
+        "p_tau_0_tagcm",
+        "p_tau_1_tagcm",
+        "theta_Btag",
+        "cmthetamiss",
+        "tau_d_0_0",
+        "tau_d_1_0",
+        "N_KL",
+        "ang_tau1_ROE",
+        "ang_tau0_ROE"
+    ],
+    "FoM": {
+        "lep": 0
+    }
+}

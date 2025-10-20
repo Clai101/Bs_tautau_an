@@ -147,7 +147,7 @@ CDecay D_s*-
 
 Decay D_s-
 0.033816425120772944    mu-    anti-nu_mu              PHOTOS   SLN;
-0.3435319377348363    tau-   anti-nu_tau             PHOTOS   SLN;
+#0.3435319377348363    tau-   anti-nu_tau             PHOTOS   SLN;
 0.10574342458400428    phi     e-     nu_e            PHOTOS   ISGW2;
 0.13633923778851315    eta     e-     nu_e            PHOTOS   ISGW2;
 0.04723564143853999    eta'    e-     nu_e            PHOTOS   ISGW2;

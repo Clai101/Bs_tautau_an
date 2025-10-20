@@ -1,0 +1,24 @@
+{
+    "columns": [
+        "cmpmiss",
+        "missedE",
+        "ang_taus",
+        "ang_tau0_pmiss",
+        "ang_tau1_pmiss",
+        "p_tau_0_tagcm",
+        "p_tau_1_tagcm",
+        "theta_Btag",
+        "tau_d_0_0",
+        "tau_d_1_0",
+        "N_KL",
+        "ang_tau1_ROE",
+        "ang_tau0_ROE",
+        "idec0",
+        "idec1"
+    ],
+    "FoM": {
+        "pipi": 0.8471001757469244,
+        "rhorho": 0.6329479768786127,
+        "pirho": 0.696969696969697
+    }
+}

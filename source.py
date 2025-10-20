@@ -1,24 +1,15 @@
 import numpy as np
 import pandas as pd
-from pathlib import Path
 
-from scipy.optimize import curve_fit, minimize
 from numpy import log, sqrt, exp, pi, e
-from matplotlib.axes import Axes
 
-import matplotlib.pyplot as plt
 import os
 from numba import njit
-from iminuit import Minuit
-from iminuit.cost import UnbinnedNLL
-
-from pyarrow import Table
-import pyarrow.dataset as ds
-import pyarrow.compute as pc
-import pyarrow.parquet as pq
 
 import matplotlib.pyplot as plt
-from typing import List, Tuple, Optional, Union, Callable
+
+import scienceplots
+plt.style.use(['science','ieee', 'grid'])
 
 from itertools import cycle
 
@@ -43,23 +34,15 @@ plt.style.use(['science','ieee', 'grid'])
 prop_cycle = plt.rcParams['axes.prop_cycle']
 colors = prop_cycle.by_key()['color']
 
-Lamc_m = 2.28646
-Lamc_25_m = 2.5925
-Lamc_26_m = 2.628
-Lam_m = 1.115683
-D_0_m = 1.86483
-D_p_m = 1.86966
-D_st_p_m = 2.01026
-D_st_0_m = 2.00685
-Pi_p_m = 0.13957
-Pi_0_m = 0.13498
-D_st_D_dif = 0.142014
-K_s_m = 0.497611
-K_p_m = 0.493677
-Bs_m = 5.36693
-tau_m = 1.77693
-mu_m = 0.1056583755
-D_s_m = 1.96835
+
+
+from pyarrow import Table
+import pyarrow.dataset as ds
+import pyarrow.compute as pc
+import pyarrow.parquet as pq
+
+from typing import List, Tuple, Optional, Union, Callable
+
 
 x = np.array([1. , 2. ])
 n = np.array([1, 2])
@@ -141,8 +124,6 @@ def puasson(x, n):
     return np.exp(-x)*np.power(x, n)*np.power(factoriall(n), -1)
 puasson(x, n)
 
-
-
 @njit(fastmath=True)
 def exp_dis(x, lam, a=0, b=0):
     if a == b:
@@ -150,6 +131,26 @@ def exp_dis(x, lam, a=0, b=0):
     else:
         normalization_factor = lam / (np.exp(lam * (b)) - np.exp(lam * (a)))
     return normalization_factor * np.exp(lam * x)
+
+
+def json_update(filename, new_data):
+
+    import json
+    if os.path.exists(filename):
+        with open(filename, "r", encoding="utf-8") as f:
+            try:
+                data = json.load(f)
+            except json.JSONDecodeError:
+                data = {}
+    else:
+        data = {}
+
+    data.update(new_data)
+
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+
+    print(f"Файл '{filename}' обновлён или создан заново.")
 
 def normalization(values: Union[np.ndarray, Callable],
                   a: Union[float, List[float]],
@@ -268,19 +269,54 @@ def max_lik_ext(f, x, args0, a=0, b=0, bounds=None, err_need=False):
     return {k: v for k, v in rez.items() if k != "norm"}
 
 
-def errorhist(data, bins=10, fmt='o', err_func=np.sqrt, axs=plt, density=False, **kwargs):
+def errorhist(
+    data, bins=10, fmt='o',
+    err_func=np.sqrt, axs=plt,
+    density=False, norm_type='count',  # новый параметр norm_type
+    **kwargs
+):
+    """
+    Рисует гистограмму с ошибками.
+
+    Параметры:
+      density : bool
+        False -> без нормировки (счёты).
+        True  -> включить нормировку.
+      norm_type : str
+        'count' (по умолчанию)  -> нормировка на количество событий (сумма=1).
+        'integral'              -> нормировка на интеграл (PDF).
+    """
     counts, bin_edges = np.histogram(data, bins=bins)
-    
-    if density:
-        norm = np.sum(counts)
-        counts = counts / norm
-        errors = err_func(counts) / norm  # нормируем ошибки
-    else:
+    bin_widths = np.diff(bin_edges)
+    bin_centers = 0.5 * (bin_edges[:-1] + bin_edges[1:])
+    Ntot = counts.sum()
+
+    # --- варианты ---
+    if not density:
+        heights = counts
         errors = err_func(counts)
 
-    bin_centers = 0.5 * (bin_edges[:-1] + bin_edges[1:])
-    axs.errorbar(bin_centers, counts, yerr=errors, fmt=fmt, **kwargs)
-    return counts, bin_centers
+    elif norm_type == "count":
+        if Ntot > 0:
+            heights = counts / Ntot
+            errors = err_func(counts) / Ntot
+        else:
+            heights = counts
+            errors = err_func(counts)
+
+    elif norm_type == "integral":
+        if Ntot > 0:
+            heights = counts / (Ntot * bin_widths)
+            errors = err_func(counts) / (Ntot * bin_widths)
+        else:
+            heights = counts
+            errors = err_func(counts)
+
+    else:
+        raise ValueError("norm_type должен быть 'count' или 'integral'")
+
+    axs.errorbar(bin_centers, heights, yerr=errors, fmt=fmt, **kwargs)
+    return heights, bin_centers, errors
 
 def errordot(counts, bins, fmt='o', err_func=np.sqrt, axs=plt, density=False, **kwargs):
     counts = np.asarray(counts)
@@ -291,10 +327,11 @@ def errordot(counts, bins, fmt='o', err_func=np.sqrt, axs=plt, density=False, **
         counts = counts / norm
         errors = err_func(counts) / norm
     else:
+
         errors = err_func(counts)
 
     bin_centers = 0.5 * (bins[:-1] + bins[1:])
-    axs.errorbar(bin_centers, counts, yerr=errors, fmt=fmt, **kwargs)
+    axs.errorbar(bin_centers, counts, yerr= None if (errors == np.zeros_like(errors)).all() else errors, fmt=fmt, **kwargs)
     return counts, bin_centers
 
 
