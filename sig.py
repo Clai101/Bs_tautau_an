@@ -27,8 +27,8 @@ mask_is1 = pc.field("correct_nu_0") & pc.field("correct_nu_1") & pc.field("corre
 mask_is0 = pc.field("is0") == 1
 mask_sig = (pc.field("is0") == 1) & mask & mask_is1
 mask_lep = ((pc.field("idec0") == 0) | (pc.field("idec0") == 1)) & ((pc.field("idec1") == 0) | (pc.field("idec1") == 1))
-mask_pi = ((pc.field("idec0") == 2) & (pc.field("idec0") == 2))
-mask_rho = ((pc.field("idec0") == 3) & (pc.field("idec0") == 3))
+mask_pi = ((pc.field("idec0") == 2) & (pc.field("idec1") == 2))
+mask_rho = ((pc.field("idec0") == 3) & (pc.field("idec1") == 3))
 mask_pirho = ((pc.field("idec0") == 2) & (pc.field("idec1") == 3)) | ((pc.field("idec0") == 3) & (pc.field("idec1") == 2))
 mask_pi_lep = ((pc.field("idec0") == 2)) & ((pc.field("idec1") == 0) | (pc.field("idec1") == 1)) | ((pc.field("idec0") == 0) | (pc.field("idec0") == 1)) & ((pc.field("idec1") == 2)) 
 mask_rho_lep = ((pc.field("idec0") == 3)) & ((pc.field("idec1") == 0) | (pc.field("idec1") == 1)) | ((pc.field("idec0") == 0) | (pc.field("idec0") == 1)) & ((pc.field("idec1") == 3))

@@ -6,3 +6,4 @@ iminuit
 pandas
 pyarrow
 scienceplots
+scikit-learn

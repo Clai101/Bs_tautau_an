@@ -74,9 +74,9 @@ def eval_chebyt(n, x, a = 0, b = 0):
     elif n == 3:
         return (4 * np.power(x, 3) - 3 * x)/norm
     elif n == 4:
-        return (8 * np.power(x, 4) - 8 * np.power(x, 2) + 1)//norm
+        return (8 * np.power(x, 4) - 8 * np.power(x, 2) + 1)/norm
     elif n == 5:
-        return (16 * np.power(x, 5) - 20 * np.power(x, 3) + 5 * x)//norm
+        return (16 * np.power(x, 5) - 20 * np.power(x, 3) + 5 * x)/norm
 
 eval_chebyt(1, x)
 
