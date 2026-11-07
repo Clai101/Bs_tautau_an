@@ -8,19 +8,26 @@ from pathlib import Path
 import json
 from source import *
 
-mask = (pc.field("E_gamma_in_ROE") < 1.2) & (pc.field("Bs_lik") > 0.0012) & (pc.field("N_KS") < 0.5)
-mask_M = (pc.field("M0") > 5.347) &  (pc.field("M0") < 5.387) 
+# Монте-карло проверки
 mask_is1 = pc.field("correct_nu_0") & pc.field("correct_nu_1") & pc.field("correct_gamma_0") & pc.field("correct_gamma_1") & pc.field("lost_0") & pc.field("lost_1") & pc.field("Miss_id_0") & pc.field("Miss_id_1")
 mask_is0 = pc.field("is0") == 1
 mask_miss_id = pc.field("Miss_id_0") & pc.field("Miss_id_1")
 mask_lost_Kpi = pc.field("lost_0") & pc.field("lost_1")
 
+
+# Проверка сигнала
+mask_MBs = (pc.field("M0") > 5.347) &  (pc.field("M0") < 5.387) 
+mask_min = (pc.field("E_gamma_in_ROE") < 1.2) & (pc.field("Bs_lik") > 0.0012) & (pc.field("N_KS") < 0.5)
+
+
+# Отбор каналов
 mask_lep = ((pc.field("idec0") == 0) | (pc.field("idec0") == 1)) & ((pc.field("idec1") == 0) | (pc.field("idec1") == 1))
 mask_pi = ((pc.field("idec0") == 2) & (pc.field("idec1") == 2))
 mask_rho = ((pc.field("idec0") == 3) & (pc.field("idec1") == 3))
 mask_pirho = ((pc.field("idec0") == 2) & (pc.field("idec1") == 3)) | ((pc.field("idec0") == 3) & (pc.field("idec1") == 2))
 mask_pilep = ((pc.field("idec0") == 2)) & ((pc.field("idec1") == 0) | (pc.field("idec1") == 1)) | ((pc.field("idec1") == 2)) & ((pc.field("idec0") == 0) | (pc.field("idec0") == 1))
 mask_rholep = ((pc.field("idec0") == 3)) & ((pc.field("idec1") == 0) | (pc.field("idec1") == 1)) | ((pc.field("idec1") == 3)) & ((pc.field("idec0") == 0) | (pc.field("idec0") == 1))
+
 
 #decay_mod_tau = ["$e^+ \\nu_e \\bar \\nu_\\tau$", "$\mu^+ \\nu_\\mu \\bar \\nu_\\tau$", "$\\pi^+ \\bar \\nu_\\tau$", "$\\rho^+ (\\pi^+ \\pi^0) \\bar \\nu_\\tau$", "$\\pi^+ \\pi^+ \\pi^- \\bar \\nu_\\tau$", "$\\rho^+ (\\pi^+ \\gamma) \\bar \\nu_\\tau$"]
 
@@ -52,5 +59,3 @@ Bs_m = 5.36693
 
 tau_m = 1.77693
 mu_m = 0.1056583755
-
-

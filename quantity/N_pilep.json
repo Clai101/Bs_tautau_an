@@ -1,0 +1,11 @@
+{
+    "N_bg": 1188,
+    "N_sig": 4982,
+    "N_bg_bsbs": 628,
+    "N_bg_ubs": 560,
+    "background_scale": 4,
+    "background_components": {
+        "bsbs": "bsbs MC with is0 == 1",
+        "ubs": "all remaining events, including undefined is0"
+    }
+}
